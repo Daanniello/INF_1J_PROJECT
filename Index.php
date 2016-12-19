@@ -12,7 +12,11 @@ and open the template in the editor.
     <body>
         <div class="Container">
             <div class="header">
-            </di> 
+            </div> 
+            <div class="inhoud">
+            </div>
+            <div class="footer">
+            </div>
         </div>
         <?php
         // put your code here
