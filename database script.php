@@ -66,6 +66,7 @@
                                 GebruikerID int NOT NULL AUTO_INCREMENT,
                                 Gebruiker varchar(30),
                                 Rechtcode int,
+                                Wachtwoord varchar(21),
                                 PRIMARY KEY (GebruikerID),
                                 FOREIGN KEY (Rechtcode) REFERENCES Recht(Rechtcode)
                                 )";
