@@ -33,8 +33,10 @@
                                 TelefoonNummer varchar(10),
                                 Email varchar(40),
                                 ProjectNummmer int,
+                                GebruikerID int,
                                 PRIMARY KEY (DocentCode),
-                                FOREIGN KEY (ProjectNummmer) REFERENCES Project(ProjectNummer)
+                                FOREIGN KEY (ProjectNummmer) REFERENCES Project(ProjectNummer),
+                                FOREIGN KEY (GebruikerID) REFERENCES Gebruiker(GebruikerID)
                                 )";
             $SQLTableStudent = "CREATE TABLE Student
                                 (
@@ -50,8 +52,10 @@
                                 GeboorteDatum Date,
                                 SLBProductCode int,
                                 Profielfoto varchar(45),
+                                GebruikerID int,
                                 PRIMARY KEY (StudentNummer),
-                                FOREIGN KEY (SLBProductCode) REFERENCES SLBProduct(SLBProductCode)
+                                FOREIGN KEY (SLBProductCode) REFERENCES SLBProduct(SLBProductCode),
+                                FOREIGN KEY (GebruikerID) REFERENCES Gebruiker(GebruikerID)
                                 )";
             $SQLTableAdmin = "CREATE TABLE Admin
                                 (
@@ -59,7 +63,9 @@
                                 Naam varchar(30),
                                 TelphoneNumber int(10),
                                 Email varchar(40),
-                                PRIMARY KEY (AdminCode)
+                                GebruikerID int,
+                                PRIMARY KEY (AdminCode),
+                                FOREIGN KEY (GebruikerID) REFERENCES Gebruiker(GebruikerID)
                                 )";
             $SQLTableGebruiker = "CREATE TABLE Gebruiker
                                 (
@@ -113,7 +119,9 @@
                                 Naam varchar(30),
                                 TelefoonNummer int(10),
                                 Email varchar(40),
-                                PRIMARY KEY (SLBerID)
+                                GebruikerID int,
+                                PRIMARY KEY (SLBerID),
+                                FOREIGN KEY (GebruikerID) REFERENCES Gebruiker(GebruikerID)
                                 )";
             $SQLTableProject = "CREATE TABLE Project
                                 (
@@ -145,10 +153,10 @@
                                 )";
         }
         $queryArray = [];
-        array_push($queryArray, $SQLTableAdmin);
         array_push($queryArray, $SQLTableInterneCommunicatie);
         array_push($queryArray, $SQLTableRecht);
         array_push($queryArray, $SQLTableGebruiker);
+        array_push($queryArray, $SQLTableAdmin);
         array_push($queryArray, $SQLTableGebruikerCommunicatie);
         array_push($queryArray, $SQLTableSLBProduct);
         array_push($queryArray, $SQLTableStudent);
