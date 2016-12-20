@@ -22,11 +22,12 @@
                                     
 					if ($count == 1) {
 						$_SESSION['id'] = $row["GebruikerID"];
-                                                if ($row["rechtcode"]== 2){
-                                                    $_SESSION['login_docent']= 2;
-                                                }else {
-						$_SESSION['login_user'] = 1;
-                                                }
+						
+						if ($row["rechtcode"]== 2){
+							$_SESSION['login_docent']= 2;
+						} else {
+							$_SESSION['login_user'] = 1;
+						}
 						$_SESSION['username']= $username;
 
 						header("location: index.php");
