@@ -1,19 +1,19 @@
 <?php include "includes/topinclude.php"; ?>
 	<div class="inhoud">
 		<form action="Register.php" method="post">
-			Gebruikersnaam: <input type="text" name="username"><br>
-			wachtwoord: <input type="password" name="password"><br>
-			herhaal wachtwoord: <input type="password" name="password1"><br>
-			E-mail: <input type="text" name="mail"><br>
-			Naam: <input type="text" name="naam"><br>
-			Telefoonnummer: <input type="text" name="telefoon"><br>
-			School: <input type="text" name="school"><br>
-			Geboortedatum: <input type="text" name="geboortedatum"><br>
-			Woonplaats: <input type="text" name="woonplaats"><br>
-			Adres: <input type="text" name="adres"><br>
-			Postcode: <input type="text" name="postcode"><br>
-			Land: <input type="text" name="land"><br>
-			Profiel foto: <input type="file" name ="upload"><br>
+			<label class="formlabel">Gebruikersnaam: </label><input type="text" name="username"><br>
+			<label class="formlabel">wachtwoord: </label><input type="password" name="password"><br>
+			<label class="formlabel">herhaal wachtwoord: </label><input type="password" name="password1"><br>
+			<label class="formlabel">E-mail: </label><input type="text" name="mail"><br>
+			<label class="formlabel">Naam: </label><input type="text" name="naam"><br>
+			<label class="formlabel">Telefoonnummer: </label><input type="text" name="telefoon"><br>
+			<label class="formlabel">School: </label><input type="text" name="school"><br>
+			<label class="formlabel">Geboortedatum: </label><input type="text" name="geboortedatum"><br>
+			<label class="formlabel">Woonplaats: </label><input type="text" name="woonplaats"><br>
+			<label class="formlabel">Adres: </label><input type="text" name="adres"><br>
+			<label class="formlabel">Postcode: </label><input type="text" name="postcode"><br>
+			<label class="formlabel">Land: </label><input type="text" name="land"><br>
+			<label class="formlabel">Profiel foto: </label><input type="file" name ="upload"><br>
 			<input type="submit" name="submit">
 
 		</form>

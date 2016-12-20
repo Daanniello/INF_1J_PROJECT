@@ -1,8 +1,8 @@
 <?php include "includes/topinclude.php"; ?>
 	<div class="inhoud">
 		<form action="#" method="post">
-			Username: <input type="text" name="username"><br>
-			Password: <input type="password" name="password"><br>
+			<label class="formlabel">Username: </label><input type="text" name="username"><br>
+			<label class="formlabel">Password: </label><input type="password" name="password"><br>
 			<input type="submit" name="sub">
 		</form>
            
