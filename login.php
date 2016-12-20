@@ -5,6 +5,7 @@
 			Password: <input type="password" name="password"><br>
 			<input type="submit" name="sub">
 		</form>
+           
 		<?php
                 
 			if (isset($_POST["sub"]))
@@ -19,12 +20,15 @@
 					$username = $_POST["username"];
 					$password = $_POST["password"];
 					$string = "SELECT gebruiker, wachtwoord FROM gebruiker WHERE gebruiker = '$username' AND wachtwoord = '$password'";
+                                        #$ID = mysqli_query($DBConnect,"SELECT gebruikerID FROM gebruiker WHERE gebruiker = '$username'");
 					$result = mysqli_query($DBConnect, $string);
 					$count = mysqli_num_rows($result);
+                                    
 					if ($count == 1)
 					{
 						$_SESSION['login_user'] = 1;
                                                 $_SESSION['username']= $username;
+                                               # $_SESSION['ID'] = 2 ;
 
 						header("location: index.php");
 					} else
