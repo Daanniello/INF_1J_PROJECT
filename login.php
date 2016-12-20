@@ -37,7 +37,7 @@ and open the template in the editor.
                         $count = mysqli_num_rows($result);
                         if ($count == 1)
                         {
-                            $_SESSION['login_user'] = $username;
+                            $_SESSION['login_user'] = '1';
 
                             header("location: index.php");
                         } else
