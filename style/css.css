@@ -8,6 +8,16 @@ p{
     margin:0;
     padding:0;
 }
+
+input[type="submit"] {
+	border: 3px solid cadetblue;
+	background-color: white;
+	padding: 8px 14px;
+	color: cadetblue;
+	cursor: pointer;
+	margin-bottom: 10px;
+}
+
 .container {
 	margin: 0 auto;
 	width: 1000px;
@@ -16,7 +26,7 @@ p{
 .header {
 	background-color: paleturquoise;
 	min-height: 100px;
-	padding: 10px;
+	padding: 10px 0 10px 10px;
 }
 
 .inhoud {
@@ -30,12 +40,16 @@ p{
 	min-height: 60px;
 	padding: 10px;
 }
+
+.clear {
+	clear: both;
+}
 /*  Project upload form (begin)   */
 .project_upload{
-    width:300px;
-    height:400px;
+    width: 300px;
+    height: 400px;
     background-color: firebrick;
-    
+    margin-right: 40px;
 }
 
 .project_upload input{
@@ -43,25 +57,25 @@ p{
 } 
 
 .project_upload_title{
-    width:300px;
-    height:60px;
-    float:left;
-    font-size:10pt;
-    margin-left:5px;
+    width: 300px;
+    height: 60px;
+    float: left;
+    font-size: 10pt;
+    margin-left: 5px;
 }
 
 .project_upload_title_project{
-    width:300px;
-    height:100%;
-    float:left;
-    font-size:20pt;
+    width: 300px;
+    height: 100%;
+    float: left;
+    font-size: 20pt;
     margin: 5px;
 }
 
 .project_upload_file{
-    width:300px;
-    height:250px;
-    float:left; 
+    width: 300px;
+    height: 250px;
+    float: left; 
     background-color: #f3f3f3;
 }
 /*  Project upload form (end)   */
@@ -70,4 +84,19 @@ p{
 	width: 200px;
 	display: inline-block;
 	margin-bottom: 15px;
+}
+
+.nav {
+	width: 79%;
+	float: left;
+	padding-left: 1%;
+}
+
+.headerimg {
+	width: 20%;
+	float: left;
+}
+
+.headerimg img {
+	width: 100%;
 }
