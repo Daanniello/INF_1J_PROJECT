@@ -8,6 +8,7 @@ p{
     margin:0;
     padding:0;
 }
+
 .container {
 	margin: 0 auto;
 	width: 1000px;
@@ -36,10 +37,10 @@ p{
 }
 /*  Project upload form (begin)   */
 .project_upload{
-    width:300px;
-    height:400px;
+    width: 300px;
+    height: 400px;
     background-color: firebrick;
-    
+    margin-right: 40px;
 }
 
 .project_upload input{
@@ -47,25 +48,25 @@ p{
 } 
 
 .project_upload_title{
-    width:300px;
-    height:60px;
-    float:left;
-    font-size:10pt;
-    margin-left:5px;
+    width: 300px;
+    height: 60px;
+    float: left;
+    font-size: 10pt;
+    margin-left: 5px;
 }
 
 .project_upload_title_project{
-    width:300px;
-    height:100%;
-    float:left;
-    font-size:20pt;
+    width: 300px;
+    height: 100%;
+    float: left;
+    font-size: 20pt;
     margin: 5px;
 }
 
 .project_upload_file{
-    width:300px;
-    height:250px;
-    float:left; 
+    width: 300px;
+    height: 250px;
+    float: left; 
     background-color: #f3f3f3;
 }
 /*  Project upload form (end)   */
