@@ -4,23 +4,28 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<?php 
+<?php
 session_start();
 ?>
 <html>
     <head>
         <meta charset="UTF-8">
         <title></title>
-		<link rel="stylesheet" type="text/css" href="style/css.css"> 
+        <link rel="stylesheet" type="text/css" href="style/css.css"> 
     </head>
-	<body>
+    <body>
         <div class="container">
             <div class="header">
-			<?php 
-                        echo "<a href='logout.php'>Log out </a> <br>";
-                        echo "<a href='login.php'>Log in </a> <br>";
-                        echo "<a href='portfolio.php'>Portfolio </a><br>";
-                        echo "<a href='register.php'>Register </a>";
-                        ?>
-              
+                <?php
+                
+                echo "<a href='logout.php'>Log out </a> <br>";
+                echo "<a href='login.php'>Log in </a> <br>";
+                echo "<a href='portfolio.php'>Portfolio </a><br>";
+                echo "<a href='register.php'>Register </a><br>";
+                if (isset($_SESSION['username']))
+                {
+                    echo "Hello {$_SESSION['username']}!";
+                }
+                ?>
+
             </div>

@@ -6,6 +6,7 @@ include "includes/topinclude.php";
     <?php 
     session_destroy();
     echo "you have been logged out";
+   
     ?>
 </div>
 <?php 

@@ -6,6 +6,7 @@
 			<input type="submit" name="sub">
 		</form>
 		<?php
+                
 			if (isset($_POST["sub"]))
 			{
 				require "connection_database.php";
@@ -22,7 +23,8 @@
 					$count = mysqli_num_rows($result);
 					if ($count == 1)
 					{
-						$_SESSION['login_user'] = '1';
+						$_SESSION['login_user'] = 1;
+                                                $_SESSION['username']= $username;
 
 						header("location: index.php");
 					} else
