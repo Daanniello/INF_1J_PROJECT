@@ -19,16 +19,16 @@
 				{
 					$username = $_POST["username"];
 					$password = $_POST["password"];
-					$string = "SELECT gebruiker, wachtwoord FROM gebruiker WHERE gebruiker = '$username' AND wachtwoord = '$password'";
-                                        #$ID = mysqli_query($DBConnect,"SELECT gebruikerID FROM gebruiker WHERE gebruiker = '$username'");
+					$string = "SELECT Gebruiker, Wachtwoord, GebruikerID FROM gebruiker WHERE gebruiker = '$username' AND wachtwoord = '$password'";
 					$result = mysqli_query($DBConnect, $string);
 					$count = mysqli_num_rows($result);
+					$row = mysqli_fetch_assoc($result);
                                     
 					if ($count == 1)
 					{
+						$_SESSION['id'] = $row["GebruikerID"];
 						$_SESSION['login_user'] = 1;
-                                                $_SESSION['username']= $username;
-                                               # $_SESSION['ID'] = 2 ;
+						$_SESSION['username']= $username;
 
 						header("location: index.php");
 					} else

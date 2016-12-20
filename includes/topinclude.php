@@ -17,7 +17,8 @@ session_start();
         <div class="container">
             <div class="header">
                 <?php
-                
+                print_r($_SESSION);
+				echo "<br>";
                 echo "<a href='logout.php'>Log out </a> <br>";
                 echo "<a href='login.php'>Log in </a> <br>";
                 echo "<a href='portfolio.php'>Portfolio </a><br>";

@@ -15,18 +15,18 @@ p{
 
 .header {
 	background-color: paleturquoise;
-	height: 100px;
+	min-height: 100px;
 }
 
 .inhoud {
 	background-color: white;
-	height: 100%;
+	min-height: 100%;
 	padding: 12px;
 }
 
 .footer {
 	background-color: paleturquoise;
-	height: 60px;
+	min-height: 60px;
 }
 /*  Project upload form (begin)   */
 .project_upload{
