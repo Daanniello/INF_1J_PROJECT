@@ -11,7 +11,6 @@
 			if (isset($_POST["sub"]))
 			{
 				require "connection_database.php";
-				session_start();
 				if (empty($_POST["username"]) || empty($_POST["password"]))
 				{
 					echo "You have tof hdshsvdjk";

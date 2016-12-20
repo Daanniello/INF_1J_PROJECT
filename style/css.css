@@ -16,7 +16,7 @@ p{
 .header {
 	background-color: paleturquoise;
 	min-height: 100px;
-	padding: 10px;
+	padding: 10px 0 10px 10px;
 }
 
 .inhoud {
@@ -29,6 +29,10 @@ p{
 	background-color: paleturquoise;
 	min-height: 60px;
 	padding: 10px;
+}
+
+.clear {
+	clear: both;
 }
 /*  Project upload form (begin)   */
 .project_upload{
@@ -70,4 +74,19 @@ p{
 	width: 200px;
 	display: inline-block;
 	margin-bottom: 15px;
+}
+
+.nav {
+	width: 79%;
+	float: left;
+	padding-left: 1%;
+}
+
+.headerimg {
+	width: 20%;
+	float: left;
+}
+
+.headerimg img {
+	width: 100%;
 }
