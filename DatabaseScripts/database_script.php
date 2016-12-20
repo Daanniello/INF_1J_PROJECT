@@ -94,7 +94,7 @@
             $SQLTableRecht = "CREATE TABLE Recht
                                 (
                                 RechtCode int NOT NULL AUTO_INCREMENT,
-                                Recht int,
+                                Recht varchar(8),
                                 PRIMARY KEY (RechtCode)
                                 )";
             $SQLTableSLBProduct = "CREATE TABLE SLBProduct

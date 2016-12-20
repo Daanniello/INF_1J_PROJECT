@@ -40,7 +40,7 @@
 				$adres = $_POST["adres"];
 				$postcode = $_POST["postcode"];
 				$land = $_POST["land"];
-				$string = "INSERT INTO gebruiker (gebruikerID,gebruiker,rechtcode,wachtwoord) VALUES (NULL,'$username',NULL,'$password')";
+				$string = "INSERT INTO gebruiker (gebruikerID,gebruiker,rechtcode,wachtwoord) VALUES (NULL,'$username',1,'$password')";
 				$stringstudent = "INSERT INTO student (Studentnummer,naam,telefoonnummer,email,land,woonplaats,adres,postcode,school,geboortedatum,slbproductcode,profielfoto,gebruikerid) VALUES (NULL,'$naam','$telefoon','$mail','$land','$woonplaats','$adres','$postcode','$school','$geboorte',NULL,'$upload',NULL)";
 				mysqli_query($DBConnect, $string);
 				mysqli_query($DBConnect, $stringstudent);
