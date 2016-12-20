@@ -16,23 +16,25 @@ p{
 .header {
 	background-color: paleturquoise;
 	min-height: 100px;
+	padding: 10px;
 }
 
 .inhoud {
 	background-color: white;
 	min-height: 100%;
-	padding: 12px;
+	padding: 10px;
 }
 
 .footer {
 	background-color: paleturquoise;
 	min-height: 60px;
+	padding: 10px;
 }
 /*  Project upload form (begin)   */
 .project_upload{
     width:300px;
     height:400px;
-    background-color: grey;
+    background-color: firebrick;
     
 }
 
@@ -60,7 +62,7 @@ p{
     width:300px;
     height:250px;
     float:left; 
-    background-color: aqua;
+    background-color: #f3f3f3;
 }
 /*  Project upload form (end)   */
 
