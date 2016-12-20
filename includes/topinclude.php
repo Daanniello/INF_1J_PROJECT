@@ -4,6 +4,9 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
+<?php 
+session_start();
+?>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -13,5 +16,11 @@ and open the template in the editor.
 	<body>
         <div class="container">
             <div class="header">
-			
+			<?php 
+                        echo "<a href='logout.php'>Log out </a> <br>";
+                        echo "<a href='login.php'>Log in </a> <br>";
+                        echo "<a href='portfolio.php'>Portfolio </a><br>";
+                        echo "<a href='register.php'>Register </a>";
+                        ?>
+              
             </div>
