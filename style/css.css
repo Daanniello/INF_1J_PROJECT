@@ -1,0 +1,29 @@
+body {
+    margin:0;
+    padding:0;
+	background-color: #f3f3f3;
+}
+
+.container {
+	margin: 0 auto;
+	width: 1000px;
+}
+
+.header {
+	background-color: paleturquoise;
+	height: 100px;
+}
+
+.inhoud {
+	background-color: white;
+	height: 500px;
+	padding: 12px;
+}
+
+.footer {
+	background-color: paleturquoise;
+	height: 60px;
+}
+
+
+
