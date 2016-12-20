@@ -2,8 +2,12 @@ body {
     margin:0;
     padding:0;
 	background-color: #f3f3f3;
+    font-family: arial;
 }
-
+p{
+    margin:0;
+    padding:0;
+}
 .container {
 	margin: 0 auto;
 	width: 1000px;
@@ -24,6 +28,39 @@ body {
 	background-color: paleturquoise;
 	height: 60px;
 }
+/*  Project upload form (begin)   */
+.project_upload{
+    width:300px;
+    height:100%;
+    background-color: grey;
+    float:left;
+}
 
+.project_upload input{
+    margin-top: 5px;
+} 
 
+.project_upload_title{
+    width:300px;
+    height:60px;
+    float:left;
+    font-size:10pt;
+    margin-left:5px;
+}
+
+.project_upload_title_project{
+    width:300px;
+    height:100%;
+    float:left;
+    font-size:20pt;
+    margin: 5px;
+}
+
+.project_upload_file{
+    width:300px;
+    height:250px;
+    float:left; 
+    background-color: aqua;
+}
+/*  Project upload form (end)   */
 
