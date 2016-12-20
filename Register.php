@@ -15,18 +15,15 @@
 			<label class="formlabel">Land: </label><input type="text" name="land"><br>
 			<label class="formlabel">Profiel foto: </label><input type="file" name ="upload"><br>
 			<input type="submit" name="submit">
-
 		</form>
 		<?php
-		if (isset($_POST["submit"]))
-		{
-			if (empty($_POST["username"]) || empty($_POST["password"]) || empty($_POST["mail"]) || empty($_POST["naam"]) || empty($_POST["telefoon"]) || empty($_POST["school"]) || empty($_POST["geboortedatum"]) || empty($_POST["woonplaats"]) || empty($_POST["adres"]) || empty($_POST["postcode"]) || empty($_POST["land"]) || empty($_POST["upload"]))
-			{
+		if (isset($_POST["submit"])) {
+			if (empty($_POST["username"]) || empty($_POST["password"]) || empty($_POST["mail"]) || empty($_POST["naam"]) || empty($_POST["telefoon"]) || empty($_POST["school"]) || empty($_POST["geboortedatum"]) || empty($_POST["woonplaats"]) || empty($_POST["adres"]) || empty($_POST["postcode"]) || empty($_POST["land"]) || empty($_POST["upload"])) {
 				echo "You have ";
-			} elseif ($_POST["password"] !== $_POST["password1"]){
+			} 
+			elseif ($_POST["password"] !== $_POST["password1"]){
 				echo "the password is not the same.";
-			}else
-			{
+			} else {
 				require 'connection_database.php';
 				$username = $_POST["username"];
 				$password = $_POST["password"];

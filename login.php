@@ -8,14 +8,11 @@
            
 		<?php
                 
-			if (isset($_POST["sub"]))
-			{
+			if (isset($_POST["sub"])) {
 				require "connection_database.php";
-				if (empty($_POST["username"]) || empty($_POST["password"]))
-				{
+				if (empty($_POST["username"]) || empty($_POST["password"])) {
 					echo "You have tof hdshsvdjk";
-				} else
-				{
+				} else {
 					$username = $_POST["username"];
 					$password = $_POST["password"];
 					$string = "SELECT Gebruiker, Wachtwoord, GebruikerID FROM gebruiker WHERE gebruiker = '$username' AND wachtwoord = '$password'";
@@ -23,15 +20,13 @@
 					$count = mysqli_num_rows($result);
 					$row = mysqli_fetch_assoc($result);
                                     
-					if ($count == 1)
-					{
+					if ($count == 1) {
 						$_SESSION['id'] = $row["GebruikerID"];
 						$_SESSION['login_user'] = 1;
 						$_SESSION['username']= $username;
 
 						header("location: index.php");
-					} else
-					{
+					} else {
 						echo "Je gebruikersnaam of wachtwoord is verkeerd";
 					}
 				}

@@ -25,8 +25,7 @@ and open the template in the editor.
 					echo "<a href='login.php'>Log in </a> <br>";
 					echo "<a href='portfolio.php'>Portfolio </a><br>";
 					echo "<a href='register.php'>Register </a><br>";
-					if (isset($_SESSION['username']))
-					{
+					if (isset($_SESSION['username'])) {
 						echo "Hello {$_SESSION['username']}!";
 						#echo "GebruikerID: {$_SESSION['ID']}";
 					}
