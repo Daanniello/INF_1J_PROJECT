@@ -29,5 +29,6 @@ session_start();
                     #echo "GebruikerID: {$_SESSION['ID']}";
                 }
                 ?>
+                <img src="includes/images/stenden.png">
 
             </div>
