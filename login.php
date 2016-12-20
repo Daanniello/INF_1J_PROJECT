@@ -4,56 +4,33 @@
 			Username: <input type="text" name="username"><br>
 			Password: <input type="password" name="password"><br>
 			<input type="submit" name="sub">
-
-<<<<<<< HEAD
 		</form>
 		<?php
-		if (isset($_POST["sub"]))
-		{
-			require "connection_database.php";
-			session_start();
-			if (empty($_POST["username"]) || empty($_POST["password"]))
+			if (isset($_POST["sub"]))
 			{
-				echo "You have tof hdshsvdjk";
-			} else
-			{
-				$username = $_POST["username"];
-				$password = $_POST["password"];
-				$string = "SELECT gebruiker, wachtwoord FROM gebruiker WHERE gebruiker = '$username' AND wachtwoord = '$password'";
-				$result = mysqli_query($DBConnect, $string);
-				$count = mysqli_num_rows($result);
-				if ($count == 1)
+				require "connection_database.php";
+				session_start();
+				if (empty($_POST["username"]) || empty($_POST["password"]))
 				{
-					$_SESSION['login_user'] = $username;
-=======
-                </form>
-                <?php
-                if (isset($_POST["sub"]))
-                {
-                    require "connection_database.php";
-                    session_start();
-                    if (empty($_POST["username"]) || empty($_POST["password"]))
-                    {
-                        echo "You have tof hdshsvdjk";
-                    } else
-                    {
-                        $username = $_POST["username"];
-                        $password = $_POST["password"];
-                        $string = "SELECT gebruiker, wachtwoord FROM gebruiker WHERE gebruiker = '$username' AND wachtwoord = '$password'";
-                        $result = mysqli_query($DBConnect, $string);
-                        $count = mysqli_num_rows($result);
-                        if ($count == 1)
-                        {
-                            $_SESSION['login_user'] = '1';
->>>>>>> origin/master
-
-					header("location: index.php");
+					echo "You have tof hdshsvdjk";
 				} else
 				{
-					echo "Je gebruikersnaam of wachtwoord is verkeerd";
+					$username = $_POST["username"];
+					$password = $_POST["password"];
+					$string = "SELECT gebruiker, wachtwoord FROM gebruiker WHERE gebruiker = '$username' AND wachtwoord = '$password'";
+					$result = mysqli_query($DBConnect, $string);
+					$count = mysqli_num_rows($result);
+					if ($count == 1)
+					{
+						$_SESSION['login_user'] = '1';
+
+						header("location: index.php");
+					} else
+					{
+						echo "Je gebruikersnaam of wachtwoord is verkeerd";
+					}
 				}
 			}
-		}
 		?>
 	</div>
 <?php include "includes/botinclude.php"; ?>
