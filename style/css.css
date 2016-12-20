@@ -9,6 +9,15 @@ p{
     padding:0;
 }
 
+input[type="submit"] {
+	border: 3px solid cadetblue;
+	background-color: white;
+	padding: 8px 14px;
+	color: cadetblue;
+	cursor: pointer;
+	margin-bottom: 10px;
+}
+
 .container {
 	margin: 0 auto;
 	width: 1000px;
