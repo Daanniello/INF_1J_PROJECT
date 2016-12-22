@@ -15,7 +15,7 @@
 				} else {
 					$username = $_POST["username"];
 					$password = $_POST["password"];
-					$string = "SELECT Gebruiker, Wachtwoord, GebruikerID, rechtcode FROM gebruiker WHERE gebruiker = '$username' AND wachtwoord = '$password'";
+					$string = "SELECT Gebruiker, Wachtwoord, GebruikerID, rechtcode FROM gebruiker WHERE BINARY gebruiker = '$username' AND BINARY wachtwoord = '$password'";
 					$result = mysqli_query($DBConnect, $string);
 					$count = mysqli_num_rows($result);
 					$row = mysqli_fetch_assoc($result);
