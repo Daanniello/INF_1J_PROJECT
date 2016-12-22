@@ -34,4 +34,3 @@ and open the template in the editor.
                     echo "</div>";
                 ?>
                 <div class="clear"></div>
-            </div>
