@@ -15,21 +15,23 @@ and open the template in the editor.
         <div class="container">
             <div class="header">
                 <div class="headerimg">
-					<img src="includes/images/stenden.png">
-				</div>
-				<div class="nav">
-					<?php
-					print_r($_SESSION);
-					echo "<br>";
-					echo "<a href='logout.php'>Log out </a> <br>";
-					echo "<a href='login.php'>Log in </a> <br>";
-					echo "<a href='portfolio.php'>Portfolio </a><br>";
-					echo "<a href='register.php'>Register </a><br>";
-					if (isset($_SESSION['username'])) {
-						echo "Hello {$_SESSION['username']}!";
-						#echo "GebruikerID: {$_SESSION['ID']}";
-					}
-					?>
+                    <img src="includes/images/stenden.png">
                 </div>
-				<div class="clear"></div>
+                <?php
+                    print_r($_SESSION);
+                    if (isset($_SESSION['username'])) {
+                        echo "Hello {$_SESSION['username']}!";
+                        #echo "GebruikerID: {$_SESSION['ID']}";
+                    }
+                    echo "</div>";
+                    echo "<div class='nav'>";
+                        echo "<ul>";
+                            echo "<li><a href='logout.php'>Log out</a></li>";
+                            echo "<li><a href='login.php'>Log in </a></li>";
+                            echo "<li><a href='portfolio.php'>Portfolio </a></li>";
+                            echo "<li><a href='register.php'>Register </a></li>";
+                        echo "</ul>";
+                    echo "</div>";
+                ?>
+                <div class="clear"></div>
             </div>

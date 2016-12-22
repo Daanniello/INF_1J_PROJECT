@@ -87,9 +87,16 @@ input[type="submit"] {
 }
 
 .nav {
-	width: 79%;
 	float: left;
-	padding-left: 1%;
+        height: 50px;
+        width: 100%;
+        background-color:cadetblue;
+        text-align: center;
+        list-style: none;
+}
+.nav li{
+        display: inline;
+        margin: 5px;
 }
 
 .headerimg {
