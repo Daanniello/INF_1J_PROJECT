@@ -12,10 +12,10 @@ p{
 }
 
 input[type="submit"] {
-	border: 3px solid cadetblue;
+	border: 3px solid #6e4381;
 	background-color: white;
 	padding: 8px 14px;
-	color: cadetblue;
+	color: #6e4381;
 	cursor: pointer;
 	margin-bottom: 10px;
 }
@@ -52,6 +52,7 @@ input[type="submit"] {
     height: 400px;
     background-color: #6e4381;
     margin-right: 40px;
+    margin-bottom:10px;
 }
 
 .project_upload input{
@@ -64,6 +65,7 @@ input[type="submit"] {
     float: left;
     font-size: 10pt;
     margin-left: 5px;
+    margin-bottom:10px;
 }
 
 .project_upload_title_project{
