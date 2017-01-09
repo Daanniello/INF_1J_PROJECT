@@ -1,7 +1,9 @@
 body {
     margin:0;
     padding:0;
-	background-color: #f3f3f3;
+    
+    background-image: url("../includes/images/background.jpg");
+    background-size: cover;
     font-family: arial;
 }
 p{
@@ -24,7 +26,7 @@ input[type="submit"] {
 }
 
 .header {
-	background-color: paleturquoise;
+	background-color: #6e4381;
 	min-height: 100px;
 	padding: 10px 0 10px 10px;
 }
@@ -36,7 +38,7 @@ input[type="submit"] {
 }
 
 .footer {
-	background-color: paleturquoise;
+	background-color: #6e4381;
 	min-height: 60px;
 	padding: 10px;
 }
@@ -48,7 +50,7 @@ input[type="submit"] {
 .project_upload{
     width: 300px;
     height: 400px;
-    background-color: firebrick;
+    background-color: #6e4381;
     margin-right: 40px;
 }
 
@@ -90,13 +92,16 @@ input[type="submit"] {
 	float: left;
         height: 50px;
         width: 100%;
-        background-color:cadetblue;
+        background-color: #6e4381;
         text-align: center;
         list-style: none;
 }
 .nav li{
         display: inline;
         margin: 5px;
+         
+    color:white;
+    text-decoration: none;
 }
 
 .headerimg {
@@ -106,4 +111,23 @@ input[type="submit"] {
 
 .headerimg img {
 	width: 100%;
+}
+
+.a_opmaak{
+    display: block;
+    
+    border-bottom:5px solid #6e4381;
+    background-color: #6e4381;
+    color:white;
+    text-decoration: none;
+    width:100px;
+    float:left;
+}
+.a_opmaak:hover{
+    display: block;
+    border-bottom:5px solid white;
+    
+    background-color: #6e4381;
+    color:white;
+    
 }
