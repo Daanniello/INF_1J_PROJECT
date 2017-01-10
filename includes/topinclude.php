@@ -22,7 +22,7 @@ and open the template in the editor.
                     if (isset($_SESSION['username']))
                     {
                         require 'connection_database.php';
-                        $query = "SELECT * FROM student WHERE StudentNummer = '{$_SESSION['login_user']}'";
+                        $query = "SELECT * FROM student WHERE GebruikerID = '{$_SESSION['login_user']}'";
                         $show = mysqli_query($DBConnect, $query);
                         $row = mysqli_fetch_assoc($show);
                         $fish = substr($row["Profielfoto"], strrpos($row["Profielfoto"], "."), 5);
