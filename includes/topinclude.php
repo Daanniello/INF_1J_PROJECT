@@ -8,7 +8,7 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>Homo</title>
         <link rel="stylesheet" type="text/css" href="style/css.css"> 
     </head>
     <body>

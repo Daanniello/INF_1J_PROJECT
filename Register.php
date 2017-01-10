@@ -49,8 +49,9 @@
                 echo "username or mail already taken";
             } else
             {
-                mysqli_query($DBConnect, $string);
+                
                 mysqli_query($DBConnect, $stringstudent);
+                mysqli_query($DBConnect, $string);
                 $target_path = "includes/profielfoto/";
 
                 $target_path = $target_path . $username . substr(basename($_FILES['upload']['name']), strrpos(basename($_FILES['upload']['name']), "."), 5);
