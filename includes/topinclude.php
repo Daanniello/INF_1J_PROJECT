@@ -30,9 +30,10 @@ and open the template in the editor.
 								echo "<li class='li_opmaak'><a href='logout.php' class='a_opmaak' >Log out</a></li>";
 							} else {
 								echo "<li class='li_opmaak'><a href='login.php' class='a_opmaak'>Log in </a></li>";
-							}
-								echo "<li class='li_opmaak'><a href='portfolio.php' class='a_opmaak'>Portfolio </a></li>";
 								echo "<li class='li_opmaak'><a href='register.php' class='a_opmaak'>Register </a></li>";
+							}
+							echo "<li class='li_opmaak'><a href='portfolio.php' class='a_opmaak'>Portfolio </a></li>";
+								
 							
                         echo "</ul>";
                     echo "</div>";
