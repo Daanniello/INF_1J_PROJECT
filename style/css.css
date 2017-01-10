@@ -125,6 +125,7 @@ input[type="submit"] {
     width:100px;
     float:left;
 }
+
 .a_opmaak:hover{
     display: block;
     border-bottom:5px solid white;
@@ -140,4 +141,11 @@ input[type="submit"] {
     float:right;
     background-color:green;
     margin-right:10px;
+}
+
+.titel{
+    width: 400px;
+    height: 100px;
+    float: left;
+    text-align: center;
 }

@@ -17,6 +17,9 @@ and open the template in the editor.
                 <div class="headerimg">
                     <a href="index.php"><img src="includes/images/stenden_logo.png"></a>
                 </div>
+                <div class="titel">
+                    <h1>Port Stenden</h1>
+                </div>
                 <div class="avatar">
                     <?php
                     if (isset($_SESSION['username']))
