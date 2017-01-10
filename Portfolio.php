@@ -42,9 +42,6 @@ include "connection_database.php";
                 if (isset($_SESSION['username']))
                 {
                     require "Connection_database.php";
-                } else
-                {
-                    echo "Je moet eerst inloggen";
                 }
                 ?>
 
@@ -91,9 +88,6 @@ include "connection_database.php";
                 if (isset($_SESSION['username']))
                 {
                     echo "";
-                } else
-                {
-                    echo "Je moet eerst inloggen";
                 }
                 ?>
             </div>
