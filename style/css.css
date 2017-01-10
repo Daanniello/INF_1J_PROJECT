@@ -133,3 +133,11 @@ input[type="submit"] {
     color:white;
     
 }
+
+.avatar{
+    width:100px;
+    height:100px;
+    float:right;
+    background-color:green;
+    margin-right:10px;
+}
