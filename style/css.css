@@ -6,6 +6,9 @@ body {
     background-size: cover;
     font-family: arial;
 }
+h1{
+    color:white;
+}
 p{
     margin:0;
     padding:0;
@@ -148,4 +151,29 @@ input[type="submit"] {
     height: 100px;
     float: left;
     text-align: center;
+}
+
+.social{
+    width:40px;
+    height:160px;
+    background-color:#6e4381;
+    float:left;
+    position: fixed;
+    margin-top:100px;
+    border-radius: 0px 20px 20px 0px;
+}
+
+.image_social{
+   margin-left:5px;
+   
+    height: 30px;
+    width:30px;
+    
+}
+.image_socialx{
+    margin-top:15px;
+    margin-left:5px;
+    height: 30px;
+    width:30px;
+    
 }
