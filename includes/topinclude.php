@@ -8,8 +8,9 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Homo</title>
+        <title>Stenden Portfolio</title>
         <link rel="stylesheet" type="text/css" href="style/css.css"> 
+        <link rel="icon" href="includes/images/stenden_logo.png" type="image/x-icon"/>
     </head>
     <div class="social">
         <a href="https://twitter.com/stenden" target="_blank"><img class='image_socialx' src="includes/images/twitter.png" ></a>
