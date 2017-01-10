@@ -25,31 +25,37 @@ and open the template in the editor.
                         $query = "SELECT * FROM student WHERE StudentNummer = '{$_SESSION['login_user']}'";
                         $show = mysqli_query($DBConnect, $query);
                         $row = mysqli_fetch_assoc($show);
-                        $fish = substr($row["Profielfoto"],strrpos($row["Profielfoto"],"."),5);
+                        $fish = substr($row["Profielfoto"], strrpos($row["Profielfoto"], "."), 5);
                         echo "<img src='includes/profielfoto/{$_SESSION['username']}{$fish}' width='100' height='100' >";
                     } else
                     {
                         echo "<img src='includes/images/avatar.png' width='100' height='100' >";
                     }
-                    ?>
+                        ?>
 
-                </div>
-                <?php
-                print_r($_SESSION);
-                if (isset($_SESSION['username']))
-                {
-                    echo "Hello {$_SESSION['username']}!";
-                    #echo "GebruikerID: {$_SESSION['ID']}";
-                }
-                echo "</div>";
-                echo "<div class='nav'>";
-                echo "<ul>";
-                echo "<li class='li_opmaak'><a href='logout.php' class='a_opmaak' >Log out</a></li>";
-                echo "<li class='li_opmaak'><a href='login.php' class='a_opmaak'>Log in </a></li>";
-                echo "<li class='li_opmaak'><a href='portfolio.php' class='a_opmaak'>Portfolio </a></li>";
-                echo "<li class='li_opmaak'><a href='register.php' class='a_opmaak'>Register </a></li>";
-                echo "</ul>";
-                echo "</div>";
-                ?>
+                    </div>
+                    <?php
+                    print_r($_SESSION);
+                    if (isset($_SESSION['username']))
+                    {
+                        echo "Hello {$_SESSION['username']}!";
+                        #echo "GebruikerID: {$_SESSION['ID']}";
+                    }
+                    echo "</div>";
+                    echo "<div class='nav'>";
+                    echo "<ul>";
+                    echo "<li class='li_opmaak'><a href='index.php' class='a_opmaak' >Home</a></li>";
+                    if (isset($_SESSION["id"]))
+                    {
+                        echo "<li class='li_opmaak'><a href='logout.php' class='a_opmaak' >Log out</a></li>";
+                    } else
+                    {
+                        echo "<li class='li_opmaak'><a href='login.php' class='a_opmaak'>Log in </a></li>";
+                        echo "<li class='li_opmaak'><a href='register.php' class='a_opmaak'>Register </a></li>";
+                    }
+                    echo "<li class='li_opmaak'><a href='portfolio.php' class='a_opmaak'>Portfolio </a></li>";
+                    echo "</ul>";
+                    echo "</div>";
+                    ?>
 
                 <div class="clear"></div>
