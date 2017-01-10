@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 <?php
 include "includes/topinclude.php";
 include "connection_database.php";
@@ -97,4 +96,3 @@ include "connection_database.php";
     </div>
 </div>
 <?php include "includes/botinclude.php"; ?>
->>>>>>> b2b0c906248a311ee83231e7e7001fa9a09320ef
