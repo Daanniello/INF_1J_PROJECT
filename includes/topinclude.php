@@ -26,6 +26,7 @@ and open the template in the editor.
                     echo "</div>";
                     echo "<div class='nav'>";
                         echo "<ul>";
+							echo "<li class='li_opmaak'><a href='index.php' class='a_opmaak' >Home</a></li>";
 							if(isset($_SESSION["id"])) {
 								echo "<li class='li_opmaak'><a href='logout.php' class='a_opmaak' >Log out</a></li>";
 							} else {
