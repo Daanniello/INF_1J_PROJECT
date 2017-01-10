@@ -165,15 +165,32 @@ input[type="submit"] {
 
 .image_social{
    margin-left:5px;
-   
+   margin-top:2px;
+   margin-bottom:2px;
     height: 30px;
     width:30px;
     
 }
 .image_socialx{
-    margin-top:15px;
+    margin-top:8px;
     margin-left:5px;
+    margin-bottom:2px;
     height: 30px;
     width:30px;
     
+}
+
+.image_social:hover{
+    border:2px solid white;
+    border-radius: 20px 20px 20px 20px;
+    margin-left:3px;
+    margin-top:0px;
+    margin-bottom:0px;
+}
+.image_socialx:hover{
+    border:2px solid white;
+    border-radius: 20px 20px 20px 20px;
+    margin-left:3px;
+    margin-top:6px;
+    margin-bottom:0px;
 }

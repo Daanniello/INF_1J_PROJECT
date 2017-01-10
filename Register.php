@@ -6,7 +6,7 @@
         <label class="formlabel">herhaal wachtwoord: </label><input type="password" name="password1"><br>
         <label class="formlabel">E-mail: </label><input type="text" name="mail"><br>
         <label class="formlabel">Naam: </label><input type="text" name="naam"><br>
-        <label class="formlabel">Telefoonnummer: </label><input type="text" name="telefoon"><br>
+        <label class="formlabel">Telefoonnummer: </label><input type="number" name="telefoon"><br>
         <label class="formlabel">School: </label><input type="text" name="school"><br>
         <label class="formlabel">Geboortedatum: </label><input type="text" name="geboortedatum"><br>
         <label class="formlabel">Woonplaats: </label><input type="text" name="woonplaats"><br>
@@ -21,11 +21,17 @@
     {
         if (empty($_POST["username"]) || empty($_POST["password"]) || empty($_POST["mail"]) || empty($_POST["naam"]) || empty($_POST["telefoon"]) || empty($_POST["school"]) || empty($_POST["geboortedatum"]) || empty($_POST["woonplaats"]) || empty($_POST["adres"]) || empty($_POST["postcode"]) || empty($_POST["land"]) || empty($_FILES["upload"]))
         {
-            echo "You have ";
+            echo "You have not filled everything in. ";
         } elseif ($_POST["password"] !== $_POST["password1"])
         {
             echo "the password is not the same.";
-        } else
+        } elseif (strlen($_POST['password']) < 6 ||strlen($_POST['username']) < 6 ){
+            echo "Your password and username must have atleast 6 characters";
+        } elseif (!filter_var($_POST['mail'], !FILTER_VALIDATE_EMAIL)){
+            echo "Email is not correct";
+        } elseif (strlen($_POST['telefoon'])<6){
+            echo "Number is not correct";
+        }else
         {
             require 'connection_database.php';
             $username = $_POST["username"];
