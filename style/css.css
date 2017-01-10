@@ -1,7 +1,9 @@
 body {
     margin:0;
     padding:0;
-	background-color: #f3f3f3;
+    
+    background-image: url("../includes/images/background.jpg");
+    background-size: cover;
     font-family: arial;
 }
 p{
@@ -10,10 +12,10 @@ p{
 }
 
 input[type="submit"] {
-	border: 3px solid cadetblue;
+	border: 3px solid #6e4381;
 	background-color: white;
 	padding: 8px 14px;
-	color: cadetblue;
+	color: #6e4381;
 	cursor: pointer;
 	margin-bottom: 10px;
 }
@@ -24,7 +26,7 @@ input[type="submit"] {
 }
 
 .header {
-	background-color: paleturquoise;
+	background-color: #6e4381;
 	min-height: 100px;
 	padding: 10px 0 10px 10px;
 }
@@ -36,7 +38,7 @@ input[type="submit"] {
 }
 
 .footer {
-	background-color: paleturquoise;
+	background-color: #6e4381;
 	min-height: 60px;
 	padding: 10px;
 }
@@ -48,8 +50,9 @@ input[type="submit"] {
 .project_upload{
     width: 300px;
     height: 400px;
-    background-color: firebrick;
+    background-color: #6e4381;
     margin-right: 40px;
+    margin-bottom:10px;
 }
 
 .project_upload input{
@@ -62,6 +65,7 @@ input[type="submit"] {
     float: left;
     font-size: 10pt;
     margin-left: 5px;
+    margin-bottom:10px;
 }
 
 .project_upload_title_project{
@@ -90,13 +94,16 @@ input[type="submit"] {
 	float: left;
         height: 50px;
         width: 100%;
-        background-color:cadetblue;
+        background-color: #6e4381;
         text-align: center;
         list-style: none;
 }
 .nav li{
         display: inline;
         margin: 5px;
+         
+    color:white;
+    text-decoration: none;
 }
 
 .headerimg {
@@ -106,4 +113,23 @@ input[type="submit"] {
 
 .headerimg img {
 	width: 100%;
+}
+
+.a_opmaak{
+    display: block;
+    
+    border-bottom:5px solid #6e4381;
+    background-color: #6e4381;
+    color:white;
+    text-decoration: none;
+    width:100px;
+    float:left;
+}
+.a_opmaak:hover{
+    display: block;
+    border-bottom:5px solid white;
+    
+    background-color: #6e4381;
+    color:white;
+    
 }
