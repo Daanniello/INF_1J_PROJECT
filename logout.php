@@ -4,7 +4,7 @@
     if (isset($_SESSION["username"]))
     {
         session_destroy();
-        header("Refresh:0");
+        header("Location: index.php");
     } else
     {
 
