@@ -46,12 +46,12 @@
                                 Email varchar(40),
                                 Land varchar(20),
                                 Woonplaats varchar(25),
-                                Adres varchar(9),
+                                Adres varchar(250),
                                 Postcode varchar(6),
                                 School varchar(20),
                                 GeboorteDatum Date,
                                 SLBProductCode int,
-                                Profielfoto varchar(45),
+                                Profielfoto varchar(400),
                                 GebruikerID int,
                                 PRIMARY KEY (StudentNummer),
                                 FOREIGN KEY (SLBProductCode) REFERENCES SLBProduct(SLBProductCode),
@@ -102,6 +102,7 @@
                                 SLBProductCode int NOT NULL AUTO_INCREMENT,
                                 Historie varchar(255),
                                 SLBProduct varchar(20),
+                                Cijfer FLOAT(4),
                                 PRIMARY KEY (SLBProductCode)
                                 )";
             $SQLTableSLBERSLBProduct = "CREATE TABLE SLBer_heeft_SLBProduct
@@ -129,6 +130,7 @@
                                 Naam varchar(20),
                                 Project varchar(20),
                                 StudentNummer int,
+                                Cijfer FLOAT(4),
                                 PRIMARY KEY (ProjectNummer),
                                 FOREIGN KEY (StudentNummer) REFERENCES Student(StudentNummer)
                                 )";
@@ -151,6 +153,14 @@
                                 PRIMARY KEY (CV_ID),
                                 FOREIGN KEY (StudentNummer) REFERENCES Student(StudentNummer)
                                 )";
+            $SQLRechtStudent = "INSERT INTO recht(RechtCode,Recht)
+                            VALUES (1,'student')";
+            $SQLRechtDocent = "INSERT INTO $table(RechtCode,Recht)
+                            VALUES (2,'docent')";
+            $SQLRechtSLBer = "INSERT INTO $table(RechtCode,Recht)
+                            VALUES (3,'SLBer')";
+            $SQLRechtAdmin = "INSERT INTO $table(RechtCode,Recht)
+                            VALUES (4,'admin')";
         }
         $queryArray = [];
         array_push($queryArray, $SQLTableInterneCommunicatie);
@@ -166,6 +176,11 @@
         array_push($queryArray, $SQLTableDocent);
         array_push($queryArray, $SQLTableStyle);
         array_push($queryArray, $SQLTableCV);
+        array_push($queryArray, $SQLAlterRecht);
+        array_push($queryArray, $SQLRechtStudent);
+        array_push($queryArray, $SQLRechtDocent);
+        array_push($queryArray, $SQLRechtSLBer);
+        array_push($queryArray, $SQLRechtAdmin);
 
         foreach ($queryArray as $query) {
             $QueryResult = mysqli_query($DBConnect, $query);
