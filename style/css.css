@@ -204,7 +204,6 @@ input[type="submit"] {
 
 .information ul{
     list-style-type: none;
-<<<<<<< HEAD
 }
 
 /* footer style */
@@ -221,9 +220,6 @@ input[type="submit"] {
     
 }
 
-=======
-    color:white;
-}
 .information il{
     float:right;
     
@@ -233,4 +229,3 @@ input[type="submit"] {
     color:white;
     text-decoration: none;
 }
->>>>>>> f5353227d344b594f38ed334b326396bf3741030
