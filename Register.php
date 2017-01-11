@@ -49,10 +49,16 @@
             $string = "INSERT INTO gebruiker (gebruikerID,gebruiker,rechtcode,wachtwoord) VALUES (NULL,'$username',1,'$password')";
             $stringcheck = "SELECT Gebruiker, Email FROM gebruiker,student WHERE Gebruiker = '$username' OR Email = '$mail'";
             $querycheck = mysqli_query($DBConnect, $stringcheck);
+            $target_path = "includes/profielfoto/";
+            $target_path = $target_path . $username . substr(basename($_FILES['upload']['name']), strrpos(basename($_FILES['upload']['name']), "."), 5);
+            $imageFileType = pathinfo($target_path, PATHINFO_EXTENSION);
             if (mysqli_num_rows($querycheck) == 1)
             {
                 echo "username or mail already taken";
-            }else
+            } elseif ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
+                echo "only JPG, PNG en JPEG files.";
+            }
+            else
             {
                 mysqli_query($DBConnect, $string);
                 $stringGetID = "SELECT gebruikerID FROM gebruiker WHERE gebruiker = '$username' AND wachtwoord = '$password'";
@@ -61,9 +67,7 @@
                 $gebruikerID = $gebruikerIDarray['gebruikerID'];
                 $stringstudent = "INSERT INTO student (Studentnummer,naam,telefoonnummer,email,land,woonplaats,adres,postcode,school,geboortedatum,slbproductcode,profielfoto,gebruikerid) VALUES (NULL,'$naam','$telefoon','$mail','$land','$woonplaats','$adres','$postcode','$school','$geboorte',NULL,'$upload','$gebruikerID')";
                 mysqli_query($DBConnect, $stringstudent);
-                $target_path = "includes/profielfoto/";
-
-                $target_path = $target_path . $username . substr(basename($_FILES['upload']['name']), strrpos(basename($_FILES['upload']['name']), "."), 5);
+                
 
                 if (move_uploaded_file($_FILES['upload']['tmp_name'], $target_path))
                 {
