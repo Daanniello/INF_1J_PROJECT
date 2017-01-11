@@ -37,7 +37,6 @@ input[type="submit"] {
 .inhoud {
 	background-color: white;
 	min-height: 100%;
-	padding: 10px;
 }
 
 .footer {
@@ -241,9 +240,15 @@ input[type="submit"] {
     
 }
 
-
 .information a{
     color:white;
     text-decoration: none;
 }
 
+.homeFoto{
+    
+}
+
+.homeText{
+    
+}
