@@ -8,9 +8,16 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>Stenden Portfolio</title>
         <link rel="stylesheet" type="text/css" href="style/css.css"> 
+        <link rel="icon" href="includes/images/stenden_logo.png" type="image/x-icon"/>
     </head>
+    <div class="social">
+        <a href="https://twitter.com/stenden" target="_blank"><img class='image_socialx' src="includes/images/twitter.png" ></a>
+        <a href="https://www.instagram.com/stenden/" target="_blank"><img class='image_social' src="includes/images/instagram.png" ></a>
+        <a href="https://www.instagram.com/stenden/" target="_blank"><img class='image_social' src="includes/images/facebook.png" ></a>
+        <a href="https://www.youtube.com/user/marketingstenden" target="_blank"><img class='image_social' src="includes/images/youtube.png" ></a>
+    </div>
     <body>
         <div class="container">
             <div class="header">
@@ -29,10 +36,10 @@ and open the template in the editor.
                         $show = mysqli_query($DBConnect, $query);
                         $row = mysqli_fetch_assoc($show);
                         $fish = substr($row["Profielfoto"], strrpos($row["Profielfoto"], "."), 5);
-                        echo "<img src='includes/profielfoto/{$_SESSION['username']}{$fish}' width='100' height='100' >";
+                        echo "<a href='portfolio.php'><img src='includes/profielfoto/{$_SESSION['username']}{$fish}' width='100' height='100' ></a>";
                     } else
                     {
-                        echo "<img src='includes/images/avatar.png' width='100' height='100' >";
+                        echo "<a href='index.php'><img src='includes/images/avatar.png' width='100' height='100' ></a>";
                     }
                     ?>
 

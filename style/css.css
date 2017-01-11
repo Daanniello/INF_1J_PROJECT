@@ -6,6 +6,9 @@ body {
     background-size: cover;
     font-family: arial;
 }
+h1{
+    color:white;
+}
 p{
     margin:0;
     padding:0;
@@ -144,6 +147,51 @@ input[type="submit"] {
     height: 100px;
     float: left;
     text-align: center;
+<<<<<<< HEAD
     font-size: 150%;
     color: greenyellow;
+=======
+}
+
+.social{
+    width:40px;
+    height:160px;
+    background-color:#6e4381;
+    float:left;
+    position: fixed;
+    margin-top:200px;
+    border-radius: 0px 20px 20px 0px;
+}
+
+.image_social{
+   margin-left:5px;
+   margin-top:2px;
+   margin-bottom:2px;
+    height: 30px;
+    width:30px;
+    
+}
+.image_socialx{
+    margin-top:8px;
+    margin-left:5px;
+    margin-bottom:2px;
+    height: 30px;
+    width:30px;
+    
+}
+
+.image_social:hover{
+    border:2px solid white;
+    border-radius: 20px 20px 20px 20px;
+    margin-left:3px;
+    margin-top:0px;
+    margin-bottom:0px;
+}
+.image_socialx:hover{
+    border:2px solid white;
+    border-radius: 20px 20px 20px 20px;
+    margin-left:3px;
+    margin-top:6px;
+    margin-bottom:0px;
+>>>>>>> 40d6ae1781cee9f87d2f68c174593218b28b9b43
 }
