@@ -200,11 +200,14 @@ input[type="submit"] {
 .information ul{
     list-style-type: none;
     color:white;
+    text-align: right;
+    margin-top:0px;
 }
 .information il{
-    float:right;
+    float:left;
     
 }
+
 
 .information a{
     color:white;
