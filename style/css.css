@@ -147,10 +147,8 @@ input[type="submit"] {
     height: 100px;
     float: left;
     text-align: center;
-<<<<<<< HEAD
     font-size: 150%;
     color: greenyellow;
-=======
 }
 
 .social{
@@ -193,5 +191,4 @@ input[type="submit"] {
     margin-left:3px;
     margin-top:6px;
     margin-bottom:0px;
->>>>>>> 40d6ae1781cee9f87d2f68c174593218b28b9b43
 }
