@@ -47,7 +47,6 @@
             $postcode = $_POST["postcode"];
             $land = $_POST["land"];
             $string = "INSERT INTO gebruiker (gebruikerID,gebruiker,rechtcode,wachtwoord) VALUES (NULL,'$username',1,'$password')";
-            $stringstudent = "INSERT INTO student (Studentnummer,naam,telefoonnummer,email,land,woonplaats,adres,postcode,school,geboortedatum,slbproductcode,profielfoto,gebruikerid) VALUES (NULL,'$naam','$telefoon','$mail','$land','$woonplaats','$adres','$postcode','$school','$geboorte',NULL,'$upload',NULL)";
             $stringcheck = "SELECT Gebruiker, Email FROM gebruiker,student WHERE Gebruiker = '$username' OR Email = '$mail'";
             $querycheck = mysqli_query($DBConnect, $stringcheck);
             if (mysqli_num_rows($querycheck) == 1)
@@ -55,9 +54,13 @@
                 echo "username or mail already taken";
             }else
             {
-                
-                mysqli_query($DBConnect, $stringstudent);
                 mysqli_query($DBConnect, $string);
+                $stringGetID = "SELECT gebruikerID FROM gebruiker WHERE gebruiker = '$username' AND wachtwoord = '$password'";
+                $ResultID = mysqli_query($DBConnect, $stringGetID);
+                $gebruikerIDarray = mysqli_fetch_assoc($ResultID);
+                $gebruikerID = $gebruikerIDarray['gebruikerID'];
+                $stringstudent = "INSERT INTO student (Studentnummer,naam,telefoonnummer,email,land,woonplaats,adres,postcode,school,geboortedatum,slbproductcode,profielfoto,gebruikerid) VALUES (NULL,'$naam','$telefoon','$mail','$land','$woonplaats','$adres','$postcode','$school','$geboorte',NULL,'$upload','$gebruikerID')";
+                mysqli_query($DBConnect, $stringstudent);
                 $target_path = "includes/profielfoto/";
 
                 $target_path = $target_path . $username . substr(basename($_FILES['upload']['name']), strrpos(basename($_FILES['upload']['name']), "."), 5);

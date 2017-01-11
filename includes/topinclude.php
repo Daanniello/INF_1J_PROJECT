@@ -27,7 +27,7 @@ and open the template in the editor.
                 <div class="titel">
                     <h1>Port Stenden</h1>
                 </div>
-                
+
                 <div class="avatar">
                     <?php
                     if (isset($_SESSION['username']))
@@ -42,48 +42,46 @@ and open the template in the editor.
                     {
                         echo "<a href='index.php'><img src='includes/images/avatar.png' width='100' height='100' ></a>";
                     }
-                        ?>
-
-                    </div>
-                <div class="information">
-                    <?php
+                    ?>
                     
-                    if (isset($_SESSION['username'])){
-                        echo "<ul>
+                </div>
+                <div class="information">
+                        <?php
+                        if (isset($_SESSION['username']))
+                        {
+                            echo "<ul>
                         <li>{$row['Naam']}</li>
                         <li>{$row['Email']}</li>
                         <li{$row['Nummer']}</li>
                         <li><a href='cijfer.php'>Cijfers</a></li>
                     </ul>";
-                        
-                    }else{
-                        
-                    }
-                    
-                    ?>
-                </div>
-                    <?php
-                    print_r($_SESSION);
-                    if (isset($_SESSION['username']))
-                    {
-                        echo "Hello {$_SESSION['username']}!";
-                        #echo "GebruikerID: {$_SESSION['ID']}";
-                    }
-                    echo "</div>";
-                    echo "<div class='nav'>";
-						echo "<ul>";
-							echo "<li class='li_opmaak'><a href='index.php' class='a_opmaak' >Home</a></li>";
-							if (isset($_SESSION["id"]))
-							{
-								echo "<li class='li_opmaak'><a href='logout.php' class='a_opmaak' >Log out</a></li>";
-								echo "<li class='li_opmaak'><a href='portfolio.php' class='a_opmaak'>Portfolio </a></li>";
-							} else
-							{
-								echo "<li class='li_opmaak'><a href='login.php' class='a_opmaak'>Log in </a></li>";
-								echo "<li class='li_opmaak'><a href='register.php' class='a_opmaak'>Register </a></li>";
-							}
-						echo "</ul>";
-                    echo "</div>";
-                    ?>
+                        } else
+                        {
+                            
+                        }
+                        ?>
+                    </div>
+                <?php
+                if (isset($_SESSION['username']))
+                {
+                    echo "Hello {$_SESSION['username']}!";
+                    #echo "GebruikerID: {$_SESSION['ID']}";
+                }
+                echo "</div>";
+                echo "<div class='nav'>";
+                echo "<ul>";
+                echo "<li class='li_opmaak'><a href='index.php' class='a_opmaak' >Home</a></li>";
+                if (isset($_SESSION["id"]))
+                {
+                    echo "<li class='li_opmaak'><a href='logout.php' class='a_opmaak' >Log out</a></li>";
+                    echo "<li class='li_opmaak'><a href='portfolio.php' class='a_opmaak'>Portfolio </a></li>";
+                } else
+                {
+                    echo "<li class='li_opmaak'><a href='login.php' class='a_opmaak'>Log in </a></li>";
+                    echo "<li class='li_opmaak'><a href='register.php' class='a_opmaak'>Register </a></li>";
+                }
+                echo "</ul>";
+                echo "</div>";
+                ?>
 
                 <div class="clear"></div>
