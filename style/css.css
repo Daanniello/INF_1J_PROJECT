@@ -235,7 +235,6 @@ input[type="submit"] {
 
 .information il{
     float:left;
-
 }
 
 
@@ -250,9 +249,17 @@ input[type="submit"] {
     float: left;
 }
 
-.homeText{
+.homeTitel{
     float: left;
     position: absolute;
     font-size: 70%;
     padding-left: 15px;
+}
+
+.homeTekst{
+    width: 248px;
+    height: 300px;
+    padding-top: 100px;
+    text-align: center;
+    float: right;
 }
