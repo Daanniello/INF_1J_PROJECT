@@ -39,7 +39,7 @@ and open the template in the editor.
                         echo "<a href='portfolio.php'><img src='includes/profielfoto/{$_SESSION['username']}{$fish}' width='100' height='100' ></a>";
                     } else
                     {
-                        echo "<a href='portfolio.php'><img src='includes/images/avatar.png' width='100' height='100' ></a>";
+                        echo "<a href='index.php'><img src='includes/images/avatar.png' width='100' height='100' ></a>";
                     }
                         ?>
 

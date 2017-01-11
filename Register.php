@@ -53,7 +53,7 @@
             if (mysqli_num_rows($querycheck) == 1)
             {
                 echo "username or mail already taken";
-            } else
+            }else
             {
                 
                 mysqli_query($DBConnect, $stringstudent);
