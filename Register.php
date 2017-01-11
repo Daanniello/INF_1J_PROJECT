@@ -27,7 +27,7 @@
             echo "the password is not the same.";
         } elseif (strlen($_POST['password']) < 6 ||strlen($_POST['username']) < 6 ){
             echo "Your password and username must have atleast 6 characters";
-        } elseif (!filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)){
+        } elseif (!filter_var($_POST['mail'], !FILTER_VALIDATE_EMAIL)){
             echo "Email is not correct";
         } elseif (strlen($_POST['telefoon'])<6){
             echo "Number is not correct";
