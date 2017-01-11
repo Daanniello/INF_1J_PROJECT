@@ -209,15 +209,28 @@ input[type="submit"] {
 /* footer style */
 
 .school{
-    
+    width: 250px;
+    min-height: 75px;
+    float: left;
+    padding-top: 25px;
 }
 
 .link{
-    
+    width: 720px;
+    min-height: 100px;
+    float: left;
+}
+
+.link a{
+    color: white;
 }
 
 .linkStyle{
-    
+    width: 240px;
+    min-height: 100px;
+    float: left;
+    font-size: 75%;
+    line-height: 15pt;
 }
 
 .information il{
