@@ -102,9 +102,8 @@ input[type="submit"] {
         list-style: none;
 }
 .nav li{
-        display: inline;
-        margin: 5px;
-         
+    display: inline;
+    margin: 5px;
     color:white;
     text-decoration: none;
 }
@@ -120,7 +119,6 @@ input[type="submit"] {
 
 .a_opmaak{
     display: block;
-    
     border-bottom:5px solid #6e4381;
     background-color: #6e4381;
     color:white;
@@ -132,10 +130,8 @@ input[type="submit"] {
 .a_opmaak:hover{
     display: block;
     border-bottom:5px solid white;
-    
     background-color: #6e4381;
     color:white;
-    
 }
 
 .avatar{
@@ -147,10 +143,12 @@ input[type="submit"] {
 }
 
 .titel{
-    width: 400px;
+    width: 650px;
     height: 100px;
     float: left;
     text-align: center;
+    font-size: 150%;
+    color: greenyellow;
 }
 
 .social{
