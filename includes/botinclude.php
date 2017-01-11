@@ -21,5 +21,8 @@
     </div>	
 </div>
 </div>
+    <?php
+        dbclose
+    ?>
 </body>
 </html>
