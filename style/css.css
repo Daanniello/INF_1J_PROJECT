@@ -199,11 +199,17 @@ input[type="submit"] {
 .information{
     float:right;
     margin-right:40px;
-    
+    color:white;
 }
 
 .information ul{
     list-style-type: none;
+
+    color:white;
+    text-align: right;
+    margin-top:0px;
+
+
 }
 
 /* footer style */
@@ -234,9 +240,10 @@ input[type="submit"] {
 }
 
 .information il{
-    float:right;
+    float:left;
     
 }
+
 
 .information a{
     color:white;
