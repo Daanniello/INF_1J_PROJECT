@@ -204,12 +204,9 @@ input[type="submit"] {
 
 .information ul{
     list-style-type: none;
-
     color:white;
     text-align: right;
     margin-top:0px;
-
-
 }
 
 /* footer style */
@@ -249,3 +246,4 @@ input[type="submit"] {
     color:white;
     text-decoration: none;
 }
+
