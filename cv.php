@@ -29,9 +29,10 @@
                     echo "Je hebt geen bestand gekozen.";
                 } else
                 {
+                    
                     $target_path = "includes/CV/";
 
-                    $target_path = $target_path . $username;
+                    $target_path = $target_path . $_SESSION;
 
                     if (move_uploaded_file($_FILES['upload']['tmp_name'], $target_path))
                     {
