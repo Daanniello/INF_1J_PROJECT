@@ -15,7 +15,7 @@ and open the template in the editor.
     <div class="social">
         <a href="https://twitter.com/stenden" target="_blank"><img class='image_socialx' src="includes/images/twitter.png" ></a>
         <a href="https://www.instagram.com/stenden/" target="_blank"><img class='image_social' src="includes/images/instagram.png" ></a>
-        <a href="https://www.instagram.com/stenden/" target="_blank"><img class='image_social' src="includes/images/facebook.png" ></a>
+        <a href="https://www.facebook.com/stenden/" target="_blank"><img class='image_social' src="includes/images/facebook.png" ></a>
         <a href="https://www.youtube.com/user/marketingstenden" target="_blank"><img class='image_social' src="includes/images/youtube.png" ></a>
     </div>
     <body>
@@ -27,6 +27,7 @@ and open the template in the editor.
                 <div class="titel">
                     <h1>Port Stenden</h1>
                 </div>
+                
                 <div class="avatar">
                     <?php
                     if (isset($_SESSION['username']))
@@ -44,6 +45,23 @@ and open the template in the editor.
                         ?>
 
                     </div>
+                <div class="information">
+                    <?php
+                    
+                    if (isset($_SESSION['username'])){
+                        echo "<ul>
+                        <li>{$row['Naam']}</li>
+                        <li>{$row['Email']}</li>
+                        <li{$row['Nummer']}</li>
+                        <li><a href='cijfer.php'>Cijfers</a></li>
+                    </ul>";
+                        
+                    }else{
+                        
+                    }
+                    
+                    ?>
+                </div>
                     <?php
                     print_r($_SESSION);
                     if (isset($_SESSION['username']))

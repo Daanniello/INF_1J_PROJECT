@@ -194,3 +194,10 @@ input[type="submit"] {
     margin-top:6px;
     margin-bottom:0px;
 }
+.information{
+    float:right;
+    margin-right:40px;
+}
+.information ul{
+    list-style-type: none;
+}
