@@ -52,7 +52,7 @@ and open the template in the editor.
                             echo "<ul>
                         <li>{$row['Naam']}</li>
                         <li>{$row['Email']}</li>
-                        <li{$row['TelefoonNummer']}</li>
+                        <li>{$row['TelefoonNummer']}</li>
                         <li><a href='cijfer.php'>Cijfers</a></li>
                     </ul>";
                         } else
@@ -62,11 +62,7 @@ and open the template in the editor.
                         ?>
                     </div>
                 <?php
-                if (isset($_SESSION['username']))
-                {
-                    echo "Hello {$_SESSION['username']}!";
-                    #echo "GebruikerID: {$_SESSION['ID']}";
-                }
+                
                 echo "</div>";
                 echo "<div class='nav'>";
                 echo "<ul>";

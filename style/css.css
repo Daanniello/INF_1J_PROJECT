@@ -195,7 +195,18 @@ input[type="submit"] {
 .information{
     float:right;
     margin-right:40px;
+    
 }
 .information ul{
     list-style-type: none;
+    color:white;
+}
+.information il{
+    float:right;
+    
+}
+
+.information a{
+    color:white;
+    text-decoration: none;
 }
