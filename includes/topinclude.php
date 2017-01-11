@@ -54,6 +54,7 @@ and open the template in the editor.
                         <li>{$row['Email']}</li>
                         <li>{$row['TelefoonNummer']}</li>
                         <li><a href='cijfer.php'>Cijfers</a></li>
+                        <li><a href='cv.php'>Curriculum vitae</a></li>
                     </ul>";
                         } else
                         {

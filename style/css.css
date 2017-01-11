@@ -199,38 +199,53 @@ input[type="submit"] {
 .information{
     float:right;
     margin-right:40px;
-    
+    color:white;
 }
 
 .information ul{
     list-style-type: none;
-<<<<<<< HEAD
+
+    color:white;
+    text-align: right;
+    margin-top:0px;
+
+
 }
 
 /* footer style */
 
 .school{
-    
+    width: 250px;
+    min-height: 75px;
+    float: left;
+    padding-top: 25px;
 }
 
 .link{
-    
+    width: 720px;
+    min-height: 100px;
+    float: left;
+}
+
+.link a{
+    color: white;
 }
 
 .linkStyle{
+    width: 240px;
+    min-height: 100px;
+    float: left;
+    font-size: 75%;
+    line-height: 15pt;
+}
+
+.information il{
+    float:left;
     
 }
 
-=======
-    color:white;
-}
-.information il{
-    float:right;
-    
-}
 
 .information a{
     color:white;
     text-decoration: none;
 }
->>>>>>> f5353227d344b594f38ed334b326396bf3741030
