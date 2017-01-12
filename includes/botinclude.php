@@ -21,3 +21,9 @@
     </div>	
 </div>
 </div>
+    <?php
+        $DBConnect = mysqli_connect("localhost", "root", "");
+        mysqli_close($DBConnect);
+    ?>
+</body>
+</html>
