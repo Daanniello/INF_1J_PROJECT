@@ -26,6 +26,7 @@ and open the template in the editor.
                 </div>
                 <div class="titel">
                     <h1>Port Stenden</h1>
+					<?php print_r($_SESSION); ?>
                 </div>
 
                 <div class="avatar">
@@ -36,7 +37,10 @@ and open the template in the editor.
                         $query = "SELECT * FROM student WHERE GebruikerID = '{$_SESSION['id']}'";
                         $show = mysqli_query($DBConnect, $query);
                         $row = mysqli_fetch_assoc($show);
-                        $fish = substr($row["Profielfoto"], strrpos($row["Profielfoto"], "."), 5);
+						$proffoto = $row["Profielfoto"];
+						$pointpos = strrpos($row["Profielfoto"], ".");
+                        $fish = substr($proffoto, $pointpos, 5);
+						
                         echo "<a href='portfolio.php'><img src='includes/profielfoto/{$_SESSION['username']}{$fish}' width='100' height='100' ></a>";
                     } else
                     {
