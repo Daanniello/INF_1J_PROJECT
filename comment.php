@@ -50,12 +50,11 @@ include "Connection_database.php";
 
 CREATE TABLE Comment{
 CommentID INT NOT NULL AUTO_INCREMENT
-Message VARCHAR(250),
-GebruikerID int,
-Date ,
-Time,
-FOREIGN KEY (GebruikerID) REFERENCES Gebruiker(GebruikerID),
-FOREIGN KEY 
-FOREIGN KEY 
+Message VARCHAR(250) NOT NULL,
+GebruikerID INT NOT NULL,
+Date INT NOT NULL,
+Time INT NOT NULL,
+PRIMARY KEY (CommentID),
+FOREIGN KEY (GebruikerID) REFERENCES Gebruiker(GebruikerID));
 
 
