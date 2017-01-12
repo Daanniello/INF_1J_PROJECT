@@ -47,27 +47,26 @@ and open the template in the editor.
                         echo "<a href='index.php'><img src='includes/images/avatar.png' width='100' height='100' ></a>";
                     }
                     ?>
-                    
+
                 </div>
                 <div class="information">
-                        <?php
-                        if (isset($_SESSION['username']))
-                        {
-                            echo "<ul>
+                    <?php
+                    if (isset($_SESSION['username']))
+                    {
+                        echo "<ul>
                         <li>{$row['Naam']}</li>
                         <li>{$row['Email']}</li>
                         <li>{$row['TelefoonNummer']}</li>
                         <li><a href='cijfer.php'>Cijfers</a></li>
                         <li><a href='cv.php'>Curriculum vitae</a></li>
                     </ul>";
-                        } else
-                        {
-                            
-                        }
-                        ?>
-                    </div>
+                    } else
+                    {
+                        
+                    }
+                    ?>
+                </div>
                 <?php
-                
                 echo "</div>";
                 echo "<div class='nav'>";
                 echo "<ul>";
@@ -76,6 +75,7 @@ and open the template in the editor.
                 {
                     echo "<li class='li_opmaak'><a href='logout.php' class='a_opmaak' >Log out</a></li>";
                     echo "<li class='li_opmaak'><a href='portfolio.php' class='a_opmaak'>Portfolio </a></li>";
+                    echo "<li class='li_opmaak'><a href='comment.php' class='a_opmaak' >Comment</a></li>";
                 } else
                 {
                     echo "<li class='li_opmaak'><a href='login.php' class='a_opmaak'>Log in </a></li>";
