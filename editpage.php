@@ -45,17 +45,31 @@ include "connection_database.php";
                 </form>
             </div>";
         require 'connection_database.php';
-        $style = $_POST["style"];
-        $color = $_POST["color"];
-        $ltype = $_POST["ltype"];
-        $lsize = $_POST["lsize"];
-        $userid = $_SESSION["id"];
-        $sql = "INSERT INTO style (StyleID, StyleCode, KleurCode, Lettertype, LetterGrote, StudentNummer) "
-        . "VALUES(NULL,$style,$color,'$ltype',$lsize,$userid);";
-        $result = mysqli_query($DBConnect, $sql);
-        echo $sql;
-    } else
-    {
+        if(isset($_POST["style"])){
+            $userid = $_SESSION["id"];
+            $style = $_POST["style"];
+            $color = $_POST["color"];
+            $ltype = $_POST["ltype"];
+            $lsize = $_POST["lsize"];
+            $sql = "SELECT StudentNummer FROM style WHERE StudentNummer = $userid LIMIT 1;";
+            $result = mysqli_query($DBConnect, $sql);
+            if(! $result){
+                echo "sqlstring not working";
+            }
+            if($rows==0){
+                $sql = "INSERT INTO style (StyleID, StyleCode, KleurCode, Lettertype, LetterGrote, StudentNummer) "
+                . "VALUES(NULL,$style,$color,'$ltype',$lsize,$userid);";
+                $result = mysqli_query($DBConnect, $sql);
+                echo "<p>Your style has succesfully been set</p>";
+            }else{
+                echo "EXISTS";
+                $sql = "UPDATE style SET StyleCode = $style, KleurCode = $color, Lettertype = '$ltype', Lettergrote = $lsize 
+                    WHERE StudentNummer = $userid";
+                $result = mysqli_query($DBConnect, $sql);
+                echo "<p>Your style has succesfully been updated</p>";
+            }
+        }
+    } else{
         echo "<div class=editbox> <div class='project_upload_title'> you have to log in first. <a href='login.php'>Login</a> </div></div>";
     } 
 ?>
