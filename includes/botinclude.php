@@ -22,7 +22,7 @@
 </div>
 </div>
     <?php
-        mysqli_close($DBConnect);
+        
     ?>
 </body>
 </html>
