@@ -26,7 +26,7 @@ and open the template in the editor.
                 </div>
                 <div class="titel">
                     <h1>Port Stenden</h1>
-					<?php print_r($_SESSION); ?>
+                    <?php print_r($_SESSION); ?>
                 </div>
 
                 <div class="avatar">
@@ -37,10 +37,10 @@ and open the template in the editor.
                         $query = "SELECT * FROM student WHERE GebruikerID = '{$_SESSION['id']}'";
                         $show = mysqli_query($DBConnect, $query);
                         $row = mysqli_fetch_assoc($show);
-						$proffoto = $row["Profielfoto"];
-						$pointpos = strrpos($row["Profielfoto"], ".");
+                        $proffoto = $row["Profielfoto"];
+                        $pointpos = strrpos($row["Profielfoto"], ".");
                         $fish = substr($proffoto, $pointpos, 5);
-						
+
                         echo "<a href='portfolio.php'><img src='includes/profielfoto/{$_SESSION['username']}{$fish}' width='100' height='100' ></a>";
                     } else
                     {
@@ -49,6 +49,7 @@ and open the template in the editor.
                     ?>
 
                 </div>
+
                 <div class="information">
                     <?php
                     if (isset($_SESSION['username']))
@@ -65,6 +66,41 @@ and open the template in the editor.
                         
                     }
                     ?>
+                    <?php
+                    if (isset($_SESSION['username']))
+                    {
+                        require 'Connection_database.php';
+
+
+                        echo "</br><form enctype='multipart/form-data' action='#' method='post'><input type='file' name='upload'><br><input type='submit' name='sub_foto' value='Change Photo'></form>";
+                        if (isset($_POST['sub_foto']))
+                        {
+                            if (empty($_FILES['upload']['name']))
+                            {
+                                echo "<br><br>You can not leave it empty";
+                            } else
+                            {
+                                $upload = $_FILES['upload']['name'];
+                                $string = "UPDATE student SET Profielfoto = '$upload' WHERE GebruikerID = '{$_SESSION['id']}' ";
+                                mysqli_query($DBConnect, $string);
+                                $target_path = "includes/profielfoto/";
+
+                                $target_path = $target_path . $_SESSION['username'] . substr(basename($_FILES['upload']['name']), strrpos(basename($_FILES['upload']['name']), "."), 5);
+
+                                if (move_uploaded_file($_FILES['upload']['tmp_name'], $target_path))
+                                {
+                                    
+                                } else
+                                {
+                                    echo "There was an error uploading the file, please try again!";
+                                } echo "<br><br> It can take some time to change...";
+                            }
+                        }
+                    } else
+                    {
+                        
+                    }
+                    ?> 
                 </div>
                 <?php
                 echo "</div>";

@@ -14,10 +14,11 @@
 
         $string_cv = "SELECT * FROM cv WHERE StudentNummer = '$studentnumber'";
         $result2 = mysqli_query($DBConnect, $string_cv);
+         $fetch2 = mysqli_fetch_assoc($result2);
         $count2 = mysqli_num_rows($result2);
         if ($count2 == 1)
         {
-            echo "hoi";
+            echo "<a href='includes/CV/{$_SESSION['username']}.{$fetch2['Link']}'>"."CV_". $_SESSION['username']."</a>";
         } else
         {
             echo "Je hebt nog geen CV, Upload hem nu.";
@@ -29,7 +30,9 @@
                     echo "Je hebt geen bestand gekozen.";
                 } else
                 {
-                    $query = "INSERT INTO cv (CV_ID,Link,StudentNummer) VALUES(NULL,'{$_SESSION['username']}','$studentnumber')";
+                    $path = $_FILES['upload']['name'];
+                    $ext = pathinfo($path, PATHINFO_EXTENSION);
+                    $query = "INSERT INTO cv (CV_ID,Link,StudentNummer) VALUES(NULL,'$ext','$studentnumber')";
                     mysqli_query($DBConnect, $query);
                     $target_path = "includes/CV/";
 
