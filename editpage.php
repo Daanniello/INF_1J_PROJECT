@@ -60,7 +60,7 @@ include "connection_database.php";
                 $sql = "INSERT INTO style (StyleID, StyleCode, KleurCode, Lettertype, LetterGrote, StudentNummer) "
                 . "VALUES(NULL,$style,$color,'$ltype',$lsize,$userid);";
                 $result = mysqli_query($DBConnect, $sql);
-                echo "<p>Your style has succesfully been set</p>";
+                echo "<p>Your style has succesfully been set!</p>";
             }else{
                 $sql = "UPDATE style SET StyleCode = $style, KleurCode = $color, Lettertype = '$ltype', Lettergrote = $lsize 
                     WHERE StudentNummer = $userid";
