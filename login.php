@@ -15,12 +15,13 @@
 				} else {
 					$username = $_POST["username"];
 					$password = $_POST["password"];
-					$string = "SELECT Gebruiker, Wachtwoord, GebruikerID, rechtcode FROM gebruiker WHERE BINARY gebruiker = '$username' AND BINARY wachtwoord = '$password'";
+					$string = "SELECT Gebruiker, Wachtwoord, GebruikerID, rechtcode FROM gebruiker WHERE BINARY gebruiker = '$username'";
 					$result = mysqli_query($DBConnect, $string);
 					$count = mysqli_num_rows($result);
 					$row = mysqli_fetch_assoc($result);
+                                        $password_crypt = $row['Wachtwoord'];
                                     
-					if ($count == 1) {
+					if ($count == 1 && password_verify($password, $password_crypt)) {
 						$_SESSION['id'] = $row["GebruikerID"];
 						
 						if ($row["rechtcode"]== 2){
