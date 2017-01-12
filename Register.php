@@ -25,17 +25,33 @@
         } elseif ($_POST["password"] !== $_POST["password1"])
         {
             echo "the password is not the same.";
-        } elseif (strlen($_POST['password']) < 6 ||strlen($_POST['username']) < 6 ){
+        } elseif (strlen($_POST['password']) < 6 || strlen($_POST['username']) < 6)
+        {
             echo "Your password and username must have atleast 6 characters";
-        } elseif (!filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)){
+        } elseif (!filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL))
+        {
             echo "Email is not correct";
-        } elseif (strlen($_POST['telefoon'])<6){
+        } elseif (strlen($_POST['telefoon']) < 6)
+        {
             echo "Number is not correct";
-        }else
+        } else
         {
             require 'connection_database.php';
+
+            function better_crypt($input, $rounds = 7)
+            {
+                $salt = "";
+                $salt_chars = array_merge(range('A', 'Z'), range('a', 'z'), range(0, 9));
+                for ($i = 0; $i < 22; $i++)
+                {
+                    $salt .= $salt_chars[array_rand($salt_chars)];
+                }
+                return crypt($input, sprintf('$2a$%02d$', $rounds) . $salt);
+            }
+
             $username = $_POST["username"];
             $password = $_POST["password"];
+            $password_hash = better_crypt($password);
             $mail = $_POST["mail"];
             $upload = $_FILES["upload"]["name"];
             $naam = $_POST["naam"];
@@ -46,7 +62,7 @@
             $adres = $_POST["adres"];
             $postcode = $_POST["postcode"];
             $land = $_POST["land"];
-            $string = "INSERT INTO gebruiker (gebruikerID,gebruiker,rechtcode,wachtwoord) VALUES (NULL,'$username',1,'$password')";
+            $string = "INSERT INTO gebruiker (gebruikerID,gebruiker,rechtcode,wachtwoord) VALUES (NULL,'$username',1,'$password_hash')";
             $stringcheck = "SELECT Gebruiker, Email FROM gebruiker,student WHERE Gebruiker = '$username' OR Email = '$mail'";
             $querycheck = mysqli_query($DBConnect, $stringcheck);
             $target_path = "includes/profielfoto/";
@@ -55,19 +71,19 @@
             if (mysqli_num_rows($querycheck) == 1)
             {
                 echo "username or mail already taken";
-            } elseif ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
+            } elseif ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg")
+            {
                 echo "only JPG, PNG en JPEG files.";
-            }
-            else
+            } else
             {
                 mysqli_query($DBConnect, $string);
-                $stringGetID = "SELECT gebruikerID FROM gebruiker WHERE gebruiker = '$username' AND wachtwoord = '$password'";
+                $stringGetID = "SELECT gebruikerID FROM gebruiker WHERE gebruiker = '$username'";
                 $ResultID = mysqli_query($DBConnect, $stringGetID);
                 $gebruikerIDarray = mysqli_fetch_assoc($ResultID);
                 $gebruikerID = $gebruikerIDarray['gebruikerID'];
                 $stringstudent = "INSERT INTO student (Studentnummer,naam,telefoonnummer,email,land,woonplaats,adres,postcode,school,geboortedatum,slbproductcode,profielfoto,gebruikerid) VALUES (NULL,'$naam','$telefoon','$mail','$land','$woonplaats','$adres','$postcode','$school','$geboorte',NULL,'$upload','$gebruikerID')";
                 mysqli_query($DBConnect, $stringstudent);
-                
+
 
                 if (move_uploaded_file($_FILES['upload']['tmp_name'], $target_path))
                 {
