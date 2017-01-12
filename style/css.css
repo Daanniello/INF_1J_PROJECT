@@ -1,7 +1,6 @@
 body {
     margin:0;
     padding:0;
-
     background-image: url("../includes/images/background.jpg");
     background-size: cover;
     font-family: arial;
@@ -34,6 +33,12 @@ input[type="submit"] {
 
 .inhoud {
     background-color: white;
+    min-height: 100%;
+	padding: 20px;
+}
+
+.inhoud_home {
+	background-color: white;
     min-height: 100%;
 }
 
@@ -97,14 +102,13 @@ input[type="submit"] {
     height: 50px;
     width: 100%;
     background-color: #6e4381;
-    text-align: center;
     list-style: none;
 }
 .nav li{
-    display: inline;
-    margin: 5px;
+    display: inline-block;
     color:white;
     text-decoration: none;
+	text-align: center;
 }
 
 .headerimg {
@@ -117,17 +121,15 @@ input[type="submit"] {
 }
 
 .a_opmaak{
-    display: block;
-    border-bottom:5px solid #6e4381;
+    border-bottom: 5px solid #6e4381;
     background-color: #6e4381;
-    color:white;
+    color: white;
     text-decoration: none;
-    width:100px;
-    float:left;
+    width: 100px;
+	padding: 12px;
 }
 
 .a_opmaak:hover{
-    display: block;
     border-bottom:5px solid white;
     background-color: #6e4381;
     color:white;
@@ -213,6 +215,7 @@ input[type="submit"] {
     min-height: 75px;
     float: left;
     padding-top: 25px;
+	color: #fff;
 }
 
 .link{

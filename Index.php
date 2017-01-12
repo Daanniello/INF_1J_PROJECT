@@ -1,5 +1,5 @@
 <?php include "includes/topinclude.php"; ?>
-<div class="inhoud">
+<div class="inhoud_home">
     <div class="homeTitel">
         <h1>Welkom bij het Portfolio van Stenden.</h1>
     </div>
