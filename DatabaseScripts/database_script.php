@@ -72,7 +72,7 @@
                                 GebruikerID int NOT NULL AUTO_INCREMENT,
                                 Gebruiker varchar(30),
                                 Rechtcode int,
-                                Wachtwoord varchar(21),
+                                Wachtwoord varchar(61),
                                 PRIMARY KEY (GebruikerID),
                                 FOREIGN KEY (Rechtcode) REFERENCES Recht(Rechtcode)
                                 )";
@@ -154,13 +154,13 @@
                                 FOREIGN KEY (StudentNummer) REFERENCES Student(StudentNummer)
                                 )";
             $SQLRechtStudent = "INSERT INTO recht(RechtCode,Recht)
-                            VALUES (1,'student')";
-            $SQLRechtDocent = "INSERT INTO $table(RechtCode,Recht)
-                            VALUES (2,'docent')";
-            $SQLRechtSLBer = "INSERT INTO $table(RechtCode,Recht)
+                            VALUES (1,'Student')";
+            $SQLRechtDocent = "INSERT INTO recht(RechtCode,Recht)
+                            VALUES (2,'Docent')";
+            $SQLRechtSLBer = "INSERT INTO recht(RechtCode,Recht)
                             VALUES (3,'SLBer')";
-            $SQLRechtAdmin = "INSERT INTO $table(RechtCode,Recht)
-                            VALUES (4,'admin')";
+            $SQLRechtAdmin = "INSERT INTO recht(RechtCode,Recht)
+                            VALUES (4,'Admin')";
         }
         $queryArray = [];
         array_push($queryArray, $SQLTableInterneCommunicatie);
