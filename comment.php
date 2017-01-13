@@ -11,9 +11,13 @@ include "Connection_database.php";
     <?php
     $comment = stripslashes($_POST['comment']);
     if(empty ($_POST['comment'])){
-        echo"PLease fill everyting in";
+        echo"Please fill everything in";
     }else{
         echo"It's fine";
+        $comment = stripslashes($_POST["comment"]);
+        $date = date("Y-m-d");
+        $time = date("h:i:s");
+        $SQLstring = INSERT INTO TABLE
     }
     
     
