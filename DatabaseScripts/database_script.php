@@ -155,11 +155,11 @@
                                 )";
             $SQLRechtStudent = "INSERT INTO recht(RechtCode,Recht)
                             VALUES (1,'Student')";
-            $SQLRechtDocent = "INSERT INTO $table(RechtCode,Recht)
+            $SQLRechtDocent = "INSERT INTO recht(RechtCode,Recht)
                             VALUES (2,'Docent')";
-            $SQLRechtSLBer = "INSERT INTO $table(RechtCode,Recht)
+            $SQLRechtSLBer = "INSERT INTO recht(RechtCode,Recht)
                             VALUES (3,'SLBer')";
-            $SQLRechtAdmin = "INSERT INTO $table(RechtCode,Recht)
+            $SQLRechtAdmin = "INSERT INTO recht(RechtCode,Recht)
                             VALUES (4,'Admin')";
         }
         $queryArray = [];
@@ -176,7 +176,6 @@
         array_push($queryArray, $SQLTableDocent);
         array_push($queryArray, $SQLTableStyle);
         array_push($queryArray, $SQLTableCV);
-        array_push($queryArray, $SQLAlterRecht);
         array_push($queryArray, $SQLRechtStudent);
         array_push($queryArray, $SQLRechtDocent);
         array_push($queryArray, $SQLRechtSLBer);

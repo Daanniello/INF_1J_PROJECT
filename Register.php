@@ -81,7 +81,7 @@
                 $ResultID = mysqli_query($DBConnect, $stringGetID);
                 $gebruikerIDarray = mysqli_fetch_assoc($ResultID);
                 $gebruikerID = $gebruikerIDarray['gebruikerID'];
-                $stringstudent = "INSERT INTO student (Studentnummer,naam,telefoonnummer,email,land,woonplaats,adres,postcode,school,geboortedatum,slbproductcode,profielfoto,gebruikerid) VALUES (NULL,'$naam','$telefoon','$mail','$land','$woonplaats','$adres','$postcode','$school','$geboorte',NULL,'$upload','$gebruikerID')";
+                $stringstudent = "INSERT INTO student (Studentnummer,naam,telefoonnummer,email,land,woonplaats,adres,postcode,school,geboortedatum,slbproductcode,profielfoto,gebruikerid) VALUES ('$gebruikerID','$naam','$telefoon','$mail','$land','$woonplaats','$adres','$postcode','$school','$geboorte',NULL,'$upload','$gebruikerID')";
                 mysqli_query($DBConnect, $stringstudent);
 
 
