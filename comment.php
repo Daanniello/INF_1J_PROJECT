@@ -17,9 +17,9 @@ include "Connection_database.php";
     {
         $comment = stripslashes($_POST['comment']);
         $GID = $_SESSION['id'];
-        $date = date("d-m-Y");
+        $date = date("Y-m-d");
         $time = date("h:i:s");
-        $SQLstring = "INSERT INTO $tablenaam VALUES ('NULL', $comment', '$GID', '$date', '$time')";
+        $SQLstring = "INSERT INTO $tablenaam VALUES ('NULL', '$comment', '$GID', '$date', '$time')";
         $QueryResult = mysqli_query($DBConnect, $SQLstring);
         if ($QueryResult === FALSE)
         {
