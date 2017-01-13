@@ -34,5 +34,42 @@ include "Connection_database.php";
         }
     }
     ?>
+    <div class="tabel">
+        <?php
+        if ($DBConnect === FALSE)
+        {
+            echo "<p>Unable to connect to the database server.</p>"
+            . "<p>Error code " . mysqli_errno() . ": " . mysqli_error()
+            . "</p>";
+        } else
+        {
+            $DBName = "digital_portfolio";
+            if (!mysqli_select_db($DBConnect, $DBName))
+            {
+                echo "<p>There areno comments yet!</p>";
+            } else
+            {
+                $TableName = "comment";
+                $SQLstring2 = "SELECT * FROM $TableName";
+                $QueryResult2 = mysqli_query($DBConnect, $SQLstring2);
+                if (mysqli_num_rows($QueryResult2) == 0)
+                {
+                    echo "<p>There is no flight planned!</p>";
+                } else
+                {
+                    echo "<p>The following flights have been planned:</p>";
+                    echo "<table width='100%' border='1'>";
+                    echo "<tr><th>Date</th><th>Time</th><th>Message</th></tr>";
+                    while ($Row = mysqli_fetch_assoc($QueryResult2))
+                    {
+                        echo "<tr><td>{$Row['Date']}</td>";
+                        echo "<td>{$Row['Time']}</td>";
+                        echo "<td>{$Row['Message']}</td></tr>";
+                    }
+                }
+            }
+        }
+        ?>
+    </div>
 </div>
 <?php include "includes/botinclude.php"; ?>
