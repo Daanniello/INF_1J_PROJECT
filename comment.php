@@ -9,6 +9,12 @@ include "Connection_database.php";
         <p><input type="submit" name="submit" value="submit"/></p>
     </form>
     <?php
+    $comment = stripslashes($_POST['comment']);
+    if(empty ($_POST['comment'])){
+        echo"PLease fill everting in";
+    }else{
+        echo"It's fine";
+    }
     $TableName = "digital_portfolio";
     $SQLstring = "SELECT * FROM $TableName";
     $QueryResult = mysqli_query($DBConnect, $SQLstring);
@@ -41,11 +47,10 @@ include "Connection_database.php";
         echo "<a href='index.php'><img src='includes/images/avatar.png' width='100' height='100' ></a>";
     }
     $datum = date("Y-m-d-hisa");
-    echo "<br/>" .$datum;
+    echo "<br/>" . $datum;
     ?>
 </div>
 <?php include "includes/botinclude.php"; ?>
-
 
 
 CREATE TABLE Comment{
