@@ -11,10 +11,18 @@ include "Connection_database.php";
     <?php
     $comment = stripslashes($_POST['comment']);
     if(empty ($_POST['comment'])){
-        echo"PLease fill everting in";
+        echo"PLease fill everyting in";
     }else{
         echo"It's fine";
     }
+    
+    
+    
+    
+    
+    
+    
+    
     $TableName = "digital_portfolio";
     $SQLstring = "SELECT * FROM $TableName";
     $QueryResult = mysqli_query($DBConnect, $SQLstring);
