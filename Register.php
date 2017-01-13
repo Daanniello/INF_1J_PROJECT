@@ -8,7 +8,7 @@
         <label class="formlabel">Naam: </label><input type="text" name="naam"><br>
         <label class="formlabel">Telefoonnummer: </label><input type="number" name="telefoon"><br>
         <label class="formlabel">School: </label><input type="text" name="school"><br>
-        <label class="formlabel">Geboortedatum: </label><input type="text" name="geboortedatum"><br>
+        <label class="formlabel">Geboortedatum: </label><input type="date" name="geboortedatum"><br>
         <label class="formlabel">Woonplaats: </label><input type="text" name="woonplaats"><br>
         <label class="formlabel">Adres: </label><input type="text" name="adres"><br>
         <label class="formlabel">Postcode: </label><input type="text" name="postcode"><br>
