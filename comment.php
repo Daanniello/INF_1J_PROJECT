@@ -9,25 +9,24 @@ include "Connection_database.php";
         <p><input type="submit" name="submit" value="submit"/></p>
     </form>
     <?php
+    $tablenaam = "comment";
     if (empty($_POST['comment']))
     {
-        echo"Please fill everything in";
+        echo"Please fill something in";
     } else
     {
-        $tablenaam = "comment";
         $comment = stripslashes($_POST['comment']);
+        $GID = $_SESSION['id'];
         $date = date("d-m-Y");
         $time = date("h:i:s");
-        $query = "SELECT GebruikerID FROM student WHERE GebruikerID = '{$_SESSION['id']}'";
-        $con = $_SESSION['id'];
-        $input = "INSERT INTO $tablenaam VALUES ('NULL', $comment', '$con', '$date', '$time')";
-        $QueryResult = mysqli_query($DBConnect, $input);
+        $SQLstring = "INSERT INTO $tablenaam VALUES ('NULL', $comment', '$GID', '$date', '$time')";
+        $QueryResult = mysqli_query($DBConnect, $SQLstring);
         if ($QueryResult === FALSE)
         {
             echo "<p>Unable to execute the query.</p>"
             . "<p>Error code " . mysqli_errno($DBConnect)
             . ": " . mysqli_error($DBConnect) . "</p>";
-            echo"$input";
+            echo"$SQLstring";
         } else
         {
             echo "<h1>Thanks for the Comment!</h1>";
