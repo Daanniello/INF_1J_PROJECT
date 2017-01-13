@@ -25,7 +25,7 @@
             $result2 = mysqli_query($DBConnect, $string_cv);
             $fetch2 = mysqli_fetch_assoc($result2);
             
-            echo "<a href='includes/CV/{$_SESSION['username']}.{$fetch2['Link']}'>" . "CV_" . $_SESSION['username'] . "</a>";
+            echo "<a href='includes/CV/{$_SESSION['username']}.{$fetch2['Link']}' target='blank'>" . "CV_" . $_SESSION['username'] . "</a>";
             echo "<form enctype='multipart/form-data' action='cv.php' method='post'><input type='file' name='upload1' value='CV'> <input type='submit' name='submit1' value='edit cv' ></form>";
             if (isset($_POST['submit1']))
             {
