@@ -12,10 +12,14 @@ p{
     padding:0;
 }
 
+<<<<<<< HEAD
 textarea{
     resize: none;
     outline: none;
 }
+=======
+
+>>>>>>> 4cc8b7a44f3070f6611dc2158b08dd2b9483f8c9
 
 input[type="submit"] {
     border: 3px solid #6e4381;
@@ -66,6 +70,19 @@ input[type="submit"] {
     background-color: #6e4381;
     margin-right: 40px;
     padding-bottom: 10px;
+    
+}
+.beschrijving{
+    float:left;
+   background-color:white;
+   border: 2px solid black;
+    width:200px;
+    height:200px;
+}
+.beschrijving textarea{
+    
+    width:200px;
+    height:200px;
 }
 
 .project_upload input{
