@@ -5,7 +5,8 @@ include "Connection_database.php";
 <div class="inhoud">
 
     <form Method="POST" Action="comment.php">
-        <p>Comment: <input type="textarea" name="comment" cols="40" rows="5"></p>
+        <p>Comment:</p>
+        <p><textarea name="comment" rows="4" cols="50" maxlength="250"></textarea></p>
         <p><input type="submit" name="submit" value="submit"/></p>
     </form>
     <?php

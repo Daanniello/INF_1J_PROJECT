@@ -12,6 +12,11 @@ p{
     padding:0;
 }
 
+textarea{
+    resize: none;
+    outline: none;
+}
+
 input[type="submit"] {
     border: 3px solid #6e4381;
     background-color: white;
@@ -271,25 +276,25 @@ input[type="submit"] {
 .tabel{
     width: 960px;
     height: 100%;
-    float: left;
 }
 
 .post{
     width: 960px;
     height: 118px;
-    float: left;
     padding-bottom: 50px;
 }
 
 .gebruiker{
     width: 100px;
-    height: 118px;
+    height: 120px;
     float: left;
 }
 
 .naam{
     width: 100px;
-    height: 18px;
+    height: 20px;
+    text-align: center;
+    background-color: lightgrey;
 }
 
 .profielfoto{
@@ -302,19 +307,22 @@ input[type="submit"] {
     padding: 10px;
     height: 80px;
     float: left;
+    background-color: silver;
 }
 
 .date{
-    width: 790px;
-    height: 18px;
+    width: 770px;
+    height: 20px;
     padding-right: 5px;
     float: left;
     text-align: right;
+    background-color: lightgrey;
 }
 
 .time{
-    width: 40px;
-    height: 18px;
+    width: 60px;
+    height: 20px;
     padding-right: 5px;
     float: left;
+    background-color: lightgrey;
 }
