@@ -46,7 +46,7 @@ include "Connection_database.php";
             $DBName = "digital_portfolio";
             if (!mysqli_select_db($DBConnect, $DBName))
             {
-                echo "<p>There areno comments yet!</p>";
+                echo "<p>There are no comments yet!</p>";
             } else
             {
                 $TableName = "comment";
@@ -58,9 +58,7 @@ include "Connection_database.php";
                     echo "<p>There are no comments given yet!</p>";
                 } else
                 {
-                    echo "<p>The following flights have been planned:</p>";
-                    echo "<table width='100%' border='1'>";
-                    echo "<tr><th>Naam</th><th>Profielfoto</th><th>Date</th><th>Time</th><th>Message</th></tr>";
+                    echo "<p>The following comment have been given:</p>";
                     while ($Row = mysqli_fetch_assoc($QueryResult2))
                     {
                         $commentID = $Row['CommentID'];
@@ -73,11 +71,37 @@ include "Connection_database.php";
                                 WHERE CommentID = $commentID";
                         $QueryResult3 = mysqli_query($DBConnect, $SQLstring4);
                         $naamFoto = mysqli_fetch_assoc($QueryResult3);
-                        echo "<tr><td>{$naamFoto['Naam']}</td>";
-                        echo "<td><img src='includes/profielfoto/" .$naamFoto['Gebruiker'] .$naamFoto['Profielfoto']. "' alt='profielfoto' width='100' height='100'/></td>";
-                        echo "<td>{$Row['Date']}</td>";
-                        echo "<td>{$Row['Time']}</td>";
-                        echo "<td>{$Row['Message']}</td></tr>";
+                        ?>
+                        <div class="post">
+                            <div class="gebruiker">
+                                <div class="naam">
+                                    <?php
+                                    echo "{$naamFoto['Naam']}";
+                                    ?>
+                                </div>
+                                <div class="profielfoto">
+                                    <?php
+                                    echo "<img src='includes/profielfoto/" . $naamFoto['Gebruiker'] . $naamFoto['Profielfoto'] . "' alt='profielfoto' width='100' height='100'/>";
+                                    ?>
+                                </div>
+                            </div>
+                            <div class="message">
+                                <?php
+                                echo "{$Row['Message']}";
+                                ?>
+                            </div>
+                            <div class="date">
+                                <?php
+                                echo "{$Row['Date']} |";
+                                ?>
+                            </div>
+                            <div class="time">  
+                                <?php
+                                echo "{$Row['Time']}";
+                                ?>
+                            </div>
+                        </div>
+                        <?php
                     }
                 }
             }

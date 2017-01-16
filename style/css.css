@@ -266,3 +266,54 @@ input[type="submit"] {
     text-align: center;
     float: right;
 }
+
+.tabel{
+    width: 960px;
+    height: 100%;
+    float: left;
+}
+
+.post{
+    width: 960px;
+    height: 118px;
+    float: left;
+    padding-bottom: 50px;
+}
+
+.gebruiker{
+    width: 100px;
+    height: 118px;
+    float: left;
+}
+
+.naam{
+    width: 100px;
+    height: 18px;
+}
+
+.profielfoto{
+    width: 100px;
+    height: 100px;
+}
+
+.message{
+    width: 820px;
+    padding: 10px;
+    height: 80px;
+    float: left;
+}
+
+.date{
+    width: 790px;
+    height: 18px;
+    padding-right: 5px;
+    float: left;
+    text-align: right;
+}
+
+.time{
+    width: 40px;
+    height: 18px;
+    padding-right: 5px;
+    float: left;
+}
