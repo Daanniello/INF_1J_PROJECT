@@ -53,7 +53,6 @@ $countries = array("Afghanistan", "Albania", "Algeria", "American Samoa", "Andor
             $password = $_POST["password"];
             $password_hash = better_crypt($password);
             $mail = $_POST["mail"];
-            $upload = $_FILES["upload"]["name"];
             $naam = $_POST["naam"];
             $telefoon = $_POST["telefoon"];
             $school = $_POST["school"];
@@ -68,6 +67,7 @@ $countries = array("Afghanistan", "Albania", "Algeria", "American Samoa", "Andor
             $target_path = "includes/profielfoto/";
             $target_path = $target_path . $username . substr(basename($_FILES['upload']['name']), strrpos(basename($_FILES['upload']['name']), "."), 5);
             $imageFileType = pathinfo($target_path, PATHINFO_EXTENSION);
+            $upload = ".$imageFileType";
             if (mysqli_num_rows($querycheck) == 1) {
                 echo "username or mail already taken";
             } elseif ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
