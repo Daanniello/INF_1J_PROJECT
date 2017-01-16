@@ -39,8 +39,8 @@ include "connection_database.php";
                         <option value='12'>12</option> 
                         <option value='14'>14</option> 
                         <option value='16'>16</option>
-                    </select>
-                    <input type='submit'>
+                    </select></p>
+                    <input type='submit' value='Versturen'>
                 </div>
                 </form>
             </div>";
@@ -54,18 +54,19 @@ include "connection_database.php";
             $sql = "SELECT StudentNummer FROM style WHERE StudentNummer = $userid LIMIT 1;";
             $result = mysqli_query($DBConnect, $sql);
             if(! $result){
-                echo "sqlstring not working";
+                echo "sqlstring werkt niet";
             }
+            $rows = mysqli_num_rows($result);
             if($rows==0){
                 $sql = "INSERT INTO style (StyleID, StyleCode, KleurCode, Lettertype, LetterGrote, StudentNummer) "
                 . "VALUES(NULL,$style,$color,'$ltype',$lsize,$userid);";
                 $result = mysqli_query($DBConnect, $sql);
-                echo "<p>Your style has succesfully been set!</p>";
+                echo "<p>Je gekozen stijl is opgeslagen!</p>";
             }else{
                 $sql = "UPDATE style SET StyleCode = $style, KleurCode = $color, Lettertype = '$ltype', Lettergrote = $lsize 
                     WHERE StudentNummer = $userid";
                 $result = mysqli_query($DBConnect, $sql);
-                echo "<p>Your style has succesfully been updated!</p>";
+                echo "<p>Je gekozen stijl is aangepast!</p>";
             }
         }
     } else{

@@ -83,5 +83,6 @@ include "Connection_database.php";
         }
         ?>
     </div>
+    <img src="includes/profielfoto/janjanjan.jpg"/>
 </div>
 <?php include "includes/botinclude.php"; ?>
