@@ -73,7 +73,7 @@ include "Connection_database.php";
                         $naamFoto = mysqli_fetch_assoc($QueryResult3);
                         $username = $_SESSION['username'];
                         echo "<tr><td>{$naamFoto['Naam']}</td>";
-                        echo "<td><img scr='$username" .$naamFoto['Profielfoto']. "' /></td>";
+                        echo "<td><img src='includes/profielfoto/$username" .$naamFoto['Profielfoto']. "' alt='profielfoto' width='100' height='100'/></td>";
                         echo "<td>{$Row['Date']}</td>";
                         echo "<td>{$Row['Time']}</td>";
                         echo "<td>{$Row['Message']}</td></tr>";
@@ -83,6 +83,5 @@ include "Connection_database.php";
         }
         ?>
     </div>
-    <img src="includes/profielfoto/janjanjan.jpg"/>
 </div>
 <?php include "includes/botinclude.php"; ?>
