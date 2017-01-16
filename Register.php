@@ -18,8 +18,7 @@ $countries = array("Afghanistan", "Albania", "Algeria", "American Samoa", "Andor
         <label class="formlabel">Land: <select name="land"></label>
                 <?php
                 foreach ($countries as $country) {
-                    echo "<option value='$country'";
-                    echo ">$country</option>\n";
+                    echo "<option value='$country'>$country</option>\n";
                 }
                 ?>
             </select><br>
