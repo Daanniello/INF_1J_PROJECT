@@ -60,7 +60,7 @@ include "Connection_database.php";
                 {
                     echo "<p>The following flights have been planned:</p>";
                     echo "<table width='100%' border='1'>";
-                    echo "<tr><th>Date</th><th>Time</th><th>Message</th></tr>";
+                    echo "<tr><th>Naam</th><th>Profielfoto</th><th>Date</th><th>Time</th><th>Message</th></tr>";
                     while ($Row = mysqli_fetch_assoc($QueryResult2))
                     {
                         $commentID = $Row['CommentID'];
@@ -83,6 +83,5 @@ include "Connection_database.php";
         }
         ?>
     </div>
-    <img src="includes/profielfoto/janjanjan.jpg"/>
 </div>
 <?php include "includes/botinclude.php"; ?>
