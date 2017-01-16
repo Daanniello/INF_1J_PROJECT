@@ -12,14 +12,12 @@ p{
     padding:0;
 }
 
-<<<<<<< HEAD
+
 textarea{
     resize: none;
     outline: none;
 }
-=======
 
->>>>>>> 4cc8b7a44f3070f6611dc2158b08dd2b9483f8c9
 
 input[type="submit"] {
     border: 3px solid #6e4381;
