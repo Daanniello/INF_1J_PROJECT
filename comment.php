@@ -64,16 +64,17 @@ include "Connection_database.php";
                     while ($Row = mysqli_fetch_assoc($QueryResult2))
                     {
                         $commentID = $Row['CommentID'];
-                        $SQLstring4 = "SELECT Naam, Profielfoto
+                        $SQLstring4 = "SELECT Naam, Profielfoto, Gebruiker
                                 FROM student
                                 JOIN comment
                                 ON student.GebruikerID = comment.GebruikerID
+                                JOIN gebruiker
+                                ON gebruiker.GebruikerID = comment.GebruikerID
                                 WHERE CommentID = $commentID";
                         $QueryResult3 = mysqli_query($DBConnect, $SQLstring4);
                         $naamFoto = mysqli_fetch_assoc($QueryResult3);
-                        $username = $_SESSION['username'];
                         echo "<tr><td>{$naamFoto['Naam']}</td>";
-                        echo "<td><img src='includes/profielfoto/$username" .$naamFoto['Profielfoto']. "' alt='profielfoto' width='100' height='100'/></td>";
+                        echo "<td><img src='includes/profielfoto/" .$naamFoto['Gebruiker'] .$naamFoto['Profielfoto']. "' alt='profielfoto' width='100' height='100'/></td>";
                         echo "<td>{$Row['Date']}</td>";
                         echo "<td>{$Row['Time']}</td>";
                         echo "<td>{$Row['Message']}</td></tr>";
