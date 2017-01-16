@@ -153,14 +153,25 @@
                                 PRIMARY KEY (CV_ID),
                                 FOREIGN KEY (StudentNummer) REFERENCES Student(StudentNummer)
                                 )";
+            $SQLTableComment = "CREATE TABLE Comment
+                                (
+                                CommentID INT NOT NULL AUTO_INCREMENT,
+                                Message VARCHAR(250) NOT NULL,
+                                GebruikerID INT NOT NULL,
+                                Date Date NOT NULL,
+                                Time VARCHAR(10) NOT NULL,
+                                PRIMARY KEY (CommentID),
+                                FOREIGN KEY (GebruikerID) REFERENCES Gebruiker(GebruikerID)
+                                )";
             $SQLRechtStudent = "INSERT INTO recht(RechtCode,Recht)
                             VALUES (1,'Student')";
-            $SQLRechtDocent = "INSERT INTO $table(RechtCode,Recht)
+            $SQLRechtDocent = "INSERT INTO recht(RechtCode,Recht)
                             VALUES (2,'Docent')";
-            $SQLRechtSLBer = "INSERT INTO $table(RechtCode,Recht)
+            $SQLRechtSLBer = "INSERT INTO recht(RechtCode,Recht)
                             VALUES (3,'SLBer')";
-            $SQLRechtAdmin = "INSERT INTO $table(RechtCode,Recht)
+            $SQLRechtAdmin = "INSERT INTO recht(RechtCode,Recht)
                             VALUES (4,'Admin')";
+            
         }
         $queryArray = [];
         array_push($queryArray, $SQLTableInterneCommunicatie);
@@ -175,8 +186,8 @@
         array_push($queryArray, $SQLTableProject);
         array_push($queryArray, $SQLTableDocent);
         array_push($queryArray, $SQLTableStyle);
-        array_push($queryArray, $SQLTableCV);
-        array_push($queryArray, $SQLAlterRecht);
+        array_push($queryArray, $SQLTableCV); 
+        array_push($queryArray, $SQLTableComment);
         array_push($queryArray, $SQLRechtStudent);
         array_push($queryArray, $SQLRechtDocent);
         array_push($queryArray, $SQLRechtSLBer);

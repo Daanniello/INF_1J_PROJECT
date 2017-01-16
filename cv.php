@@ -14,11 +14,52 @@
 
         $string_cv = "SELECT * FROM cv WHERE StudentNummer = '$studentnumber'";
         $result2 = mysqli_query($DBConnect, $string_cv);
-         $fetch2 = mysqli_fetch_assoc($result2);
+        $fetch2 = mysqli_fetch_assoc($result2);
         $count2 = mysqli_num_rows($result2);
         if ($count2 == 1)
         {
-            echo "<a href='includes/CV/{$_SESSION['username']}.{$fetch2['Link']}'>"."CV_". $_SESSION['username']."</a>";
+            require 'connection_database.php';
+
+            
+            $string_cv = "SELECT * FROM cv WHERE StudentNummer = '$studentnumber'";
+            $result2 = mysqli_query($DBConnect, $string_cv);
+            $fetch2 = mysqli_fetch_assoc($result2);
+            
+            echo "<a href='includes/CV/{$_SESSION['username']}.{$fetch2['Link']}' target='blank'>" . "CV_" . $_SESSION['username'] . "</a>";
+            echo "<form enctype='multipart/form-data' action='cv.php' method='post'><input type='file' name='upload1' value='CV'> <input type='submit' name='submit1' value='edit cv' ></form>";
+            if (isset($_POST['submit1']))
+            {
+                if (empty($_FILES['upload1']))
+                {
+                    echo "Je hebt geen bestand gekozen.";
+                } else
+                {
+                    $path1 = $_FILES['upload1']['name'];
+                    $ext1 = pathinfo($path1, PATHINFO_EXTENSION);
+                    $query1 = "UPDATE cv SET link = '$ext1' WHERE StudentNummer = {$_SESSION['id']}";
+                    mysqli_query($DBConnect, $query1);
+                    $file = "includes/CV/" . $_SESSION['username'] . "." . $fetch2['Link'];
+                    if (!unlink($file))
+                    {
+                        echo ("Error deleting $file");
+                    } else
+                    {
+                        echo ("Deleted $file");
+                    }
+                    $target_path = "includes/CV/";
+
+                    $target_path = $target_path . $_SESSION['username'] . "." . $ext1;
+
+                    if (move_uploaded_file($_FILES['upload1']['tmp_name'], $target_path))
+                    {
+                        
+                    } else
+                    {
+                        echo "There was an error uploading the file, please try again!";
+                    }
+                    header("Refresh:0");
+                }
+            }
         } else
         {
             echo "Je hebt nog geen CV, Upload hem nu.";

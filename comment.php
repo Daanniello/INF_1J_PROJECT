@@ -9,52 +9,67 @@ include "Connection_database.php";
         <p><input type="submit" name="submit" value="submit"/></p>
     </form>
     <?php
-    $TableName = "digital_portfolio";
-    $SQLstring = "SELECT * FROM $TableName";
-    $QueryResult = mysqli_query($DBConnect, $SQLstring);
-    if (mysqli_num_rows($QueryResult) == 0)
+    $tablenaam = "comment";
+    if (empty($_POST['comment']))
     {
-        echo "<p></p>";
+        echo"Please fill something in";
     } else
     {
-        echo "<p></p>";
-        while ($Row = mysqli_fetch_assoc($QueryResult))
+        $comment = stripslashes($_POST['comment']);
+        $GID = $_SESSION['id'];
+        $date = date("Y-m-d");
+        $time = date("h:i:s");
+        $SQLstring = "INSERT INTO $tablenaam VALUES ('NULL', '$comment', '$GID', '$date', '$time')";
+        $QueryResult = mysqli_query($DBConnect, $SQLstring);
+        if ($QueryResult === FALSE)
         {
-            echo $Row[''];
+            echo "<p>Unable to execute the query.</p>"
+            . "<p>Error code " . mysqli_errno($DBConnect)
+            . ": " . mysqli_error($DBConnect) . "</p>";
+            echo"$SQLstring";
+        } else
+        {
+            echo "<h1>Thanks for the Comment!</h1>";
+            echo "<h2>The comment has been added.</h2>";
         }
     }
     ?>
-    <?php
-    if (isset($_SESSION['username']))
-    {
-        require 'connection_database.php';
-        $query = "SELECT * FROM student WHERE GebruikerID = '{$_SESSION['id']}'";
-        $show = mysqli_query($DBConnect, $query);
-        $row = mysqli_fetch_assoc($show);
-        $proffoto = $row["Profielfoto"];
-        $pointpos = strrpos($row["Profielfoto"], ".");
-        $fish = substr($proffoto, $pointpos, 5);
-
-        echo "<a href='portfolio.php'><img src='includes/profielfoto/{$_SESSION['username']}{$fish}' width='100' height='100' ></a>";
-    } else
-    {
-        echo "<a href='index.php'><img src='includes/images/avatar.png' width='100' height='100' ></a>";
-    }
-    $datum = date("Y-m-d-hisa");
-    echo "<br/>" .$datum;
-    ?>
+    <div class="tabel">
+        <?php
+        if ($DBConnect === FALSE)
+        {
+            echo "<p>Unable to connect to the database server.</p>"
+            . "<p>Error code " . mysqli_errno() . ": " . mysqli_error()
+            . "</p>";
+        } else
+        {
+            $DBName = "digital_portfolio";
+            if (!mysqli_select_db($DBConnect, $DBName))
+            {
+                echo "<p>There areno comments yet!</p>";
+            } else
+            {
+                $TableName = "comment";
+                $SQLstring2 = "SELECT * FROM $TableName";
+                $QueryResult2 = mysqli_query($DBConnect, $SQLstring2);
+                if (mysqli_num_rows($QueryResult2) == 0)
+                {
+                    echo "<p>There is no flight planned!</p>";
+                } else
+                {
+                    echo "<p>The following flights have been planned:</p>";
+                    echo "<table width='100%' border='1'>";
+                    echo "<tr><th>Date</th><th>Time</th><th>Message</th></tr>";
+                    while ($Row = mysqli_fetch_assoc($QueryResult2))
+                    {
+                        echo "<tr><td>{$Row['Date']}</td>";
+                        echo "<td>{$Row['Time']}</td>";
+                        echo "<td>{$Row['Message']}</td></tr>";
+                    }
+                }
+            }
+        }
+        ?>
+    </div>
 </div>
 <?php include "includes/botinclude.php"; ?>
-
-
-
-CREATE TABLE Comment{
-CommentID INT NOT NULL AUTO_INCREMENT
-Message VARCHAR(250) NOT NULL,
-GebruikerID INT NOT NULL,
-Date INT NOT NULL,
-Time INT NOT NULL,
-PRIMARY KEY (CommentID),
-FOREIGN KEY (GebruikerID) REFERENCES Gebruiker(GebruikerID));
-
-
