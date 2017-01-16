@@ -55,7 +55,7 @@ include "Connection_database.php";
                 $QueryResult2 = mysqli_query($DBConnect, $SQLstring2);
                 if (mysqli_num_rows($QueryResult2) == 0)
                 {
-                    echo "<p>There is no flight planned!</p>";
+                    echo "<p>There are no comments given yet!</p>";
                 } else
                 {
                     echo "<p>The following flights have been planned:</p>";
