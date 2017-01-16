@@ -63,7 +63,18 @@ include "Connection_database.php";
                     echo "<tr><th>Date</th><th>Time</th><th>Message</th></tr>";
                     while ($Row = mysqli_fetch_assoc($QueryResult2))
                     {
-                        echo "<tr><td>{$Row['Date']}</td>";
+                        $commentID = $Row['CommentID'];
+                        $SQLstring4 = "SELECT Naam, Profielfoto
+                                FROM student
+                                JOIN comment
+                                ON student.GebruikerID = comment.GebruikerID
+                                WHERE CommentID = $commentID";
+                        $QueryResult3 = mysqli_query($DBConnect, $SQLstring4);
+                        $naamFoto = mysqli_fetch_assoc($QueryResult3);
+                        $username = $_SESSION['username'];
+                        echo "<tr><td>{$naamFoto['Naam']}</td>";
+                        echo "<td><img scr='$username" .$naamFoto['Profielfoto']. "' /></td>";
+                        echo "<td>{$Row['Date']}</td>";
                         echo "<td>{$Row['Time']}</td>";
                         echo "<td>{$Row['Message']}</td></tr>";
                     }
