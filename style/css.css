@@ -70,14 +70,23 @@ input[type="submit"] {
     background-color: #6e4381;
     margin-right: 40px;
     padding-bottom: 10px;
+    display: inline-block;
     
 }
-.beschrijving{
+.titel_naam{
+    width:960px;
+    height:100px;
+    font-size:50px;
     float:left;
+    text-align: center;
+}
+.beschrijving{
+    
    background-color:white;
-   border: 2px solid black;
+   border: 2px solid #6e4381;
     width:200px;
     height:200px;
+    float:right;
 }
 .beschrijving textarea{
     
