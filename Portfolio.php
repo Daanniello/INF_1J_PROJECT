@@ -111,7 +111,7 @@ include "connection_database.php";
             $query = mysqli_query($DBConnect, $get);
             $row = mysqli_fetch_assoc($query);
             
-            if (mysqli_num_rows($query)!== 1)
+            if (empty($row['beschrijving']))
             {
                 echo "<form action='#' method='post'><textarea name='area' ></textarea><input type='submit' name='submit2' value='Voeg toe'> </form> ";
                 if (isset($_POST['submit2'])){
@@ -119,6 +119,8 @@ include "connection_database.php";
                     $querie = "UPDATE student SET beschrijving = '$vul' WHERE GebruikerID = '{$_SESSION['id']}' ";
                     mysqli_query($DBConnect, $querie);
                     echo "query send";
+                    header("Refresh:0");
+                   
                 }
             } else
             {

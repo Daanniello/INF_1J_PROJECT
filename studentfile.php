@@ -7,6 +7,7 @@
             $query = mysqli_query($DBConnect, $get);
             $row = mysqli_fetch_assoc($query);
             echo "CV: <a href='includes/CV/{$row['Gebruiker']}.{$row['Link']}'> {$row['Gebruiker']}_CV</a>";
+            echo "";
         }
         ?>
            

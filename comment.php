@@ -51,7 +51,7 @@ include "Connection_database.php";
             } else
             {
                 $TableName = "comment";
-                $SQLstring2 = "SELECT * FROM $TableName";
+                $SQLstring2 = "SELECT * FROM $TableName ORDER BY CommentID DESC";
                 $SQLstring3 = "SELECT 'Naam', 'Profielfoto' FROM 'student'";
                 $QueryResult2 = mysqli_query($DBConnect, $SQLstring2);
                 if (mysqli_num_rows($QueryResult2) == 0)
