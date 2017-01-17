@@ -16,7 +16,9 @@ textarea{
     resize: none;
     outline: none;
 }
-
+.li_opmaak1{
+    float:right;
+}
 input[type="submit"] {
     border: 3px solid #6e4381;
     background-color: white;

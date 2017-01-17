@@ -4,7 +4,7 @@ include "includes/topinclude.php";
 include "connection_database.php";
 ?>
 
-<div class="inhoud">
+<div class="inhoud" >
     <div class="titel_naam">
         
         <?php 
