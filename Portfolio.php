@@ -50,7 +50,7 @@ include "connection_database.php";
                         $name = $_POST['name'];
                         $file = $_FILES['upload_project']['name'];
                         $ext = pathinfo($file, PATHINFO_EXTENSION);
-                        $query = "INSERT INTO project VALUES(NULL,'$name','$ext','{$_SESSION['id']}')";
+                        $query = "INSERT INTO project VALUES(NULL,'$name','$ext','{$_SESSION['id']}',NULL)";
                         mysqli_query($DBConnect, $query);
                     $target_path = "includes/project/";
 
