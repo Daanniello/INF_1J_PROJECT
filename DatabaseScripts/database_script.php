@@ -50,12 +50,10 @@
                                 Postcode varchar(6),
                                 School varchar(20),
                                 GeboorteDatum Date,
-                                SLBProductCode int,
                                 Profielfoto varchar(400),
                                 GebruikerID int,
                                 beschrijving varchar(200),
                                 PRIMARY KEY (StudentNummer),
-                                FOREIGN KEY (SLBProductCode) REFERENCES SLBProduct(SLBProductCode),
                                 FOREIGN KEY (GebruikerID) REFERENCES Gebruiker(GebruikerID)
                                 )";
             $SQLTableAdmin = "CREATE TABLE Admin
@@ -104,7 +102,9 @@
                                 Historie varchar(255),
                                 SLBProduct varchar(20),
                                 Cijfer FLOAT(4),
-                                PRIMARY KEY (SLBProductCode)
+                                GebruikerID int,
+                                PRIMARY KEY (SLBProductCode),
+                                FOREIGN KEY (GebruikerID) REFERENCES Gebruiker(GebruikerID)
                                 )";
             $SQLTableSLBERSLBProduct = "CREATE TABLE SLBer_heeft_SLBProduct
                                 (
