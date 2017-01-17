@@ -53,6 +53,7 @@
                                 SLBProductCode int,
                                 Profielfoto varchar(400),
                                 GebruikerID int,
+                                beschrijving varchar(200),
                                 PRIMARY KEY (StudentNummer),
                                 FOREIGN KEY (SLBProductCode) REFERENCES SLBProduct(SLBProductCode),
                                 FOREIGN KEY (GebruikerID) REFERENCES Gebruiker(GebruikerID)
