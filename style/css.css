@@ -16,7 +16,9 @@ textarea{
     resize: none;
     outline: none;
 }
-
+.li_opmaak1{
+    float:right;
+}
 input[type="submit"] {
     border: 3px solid #6e4381;
     background-color: white;
@@ -96,7 +98,7 @@ input[type="submit"] {
 
 .project_upload_title{
     width: 300px;
-    height: 60px;
+    height: 100px;
     float: left;
     font-size: 10pt;
     margin-left: 5px;
@@ -148,17 +150,19 @@ input[type="submit"] {
     width: 100%;
 }
 
+
 .a_opmaak{
-    border-bottom: 5px solid #6e4381;
+    border-bottom: 4px solid #6e4381;
     background-color: #6e4381;
     color: white;
     text-decoration: none;
     width: 100px;
     padding: 12px;
+    
 }
 
 .a_opmaak:hover{
-    border-bottom:5px solid white;
+    border-bottom:3px solid white;
     background-color: #6e4381;
     color:white;
 }

@@ -4,17 +4,21 @@ include "includes/topinclude.php";
 include "connection_database.php";
 ?>
 
-<div class="inhoud">
+<div class="inhoud" >
     <div class="titel_naam">
         
         <?php 
-        $show = "SELECT * FROM student WHERE GebruikerID = '{$_SESSION['id']}'";
+        if (isset($_SESSION['username'])){
+            $show = "SELECT * FROM student WHERE GebruikerID = '{$_SESSION['id']}'";
         $result = mysqli_query($DBConnect, $query);
         $row = mysqli_fetch_assoc($result);
-        echo "Portfolio van {$row['Naam']}" ?>
+        echo "Portfolio van {$row['Naam']}";
+        }else{
+        }
+         ?>
     </div>
     <div class="project_upload">
-        <form action="portfolio.php" method="post">
+        <form enctype='multipart/form-data' action="portfolio.php" method="post">
             <div class="project_upload_title_project">
                 Projecten
             </div>
@@ -25,6 +29,7 @@ include "connection_database.php";
         
 				<div class="project_upload_title">
 					<input type="file" name="upload_project">
+                                        <input type="text" name="name" placeholder="Name of project">
 					<p><input type="submit" name="submit" value="upload" ></p>
 				</div>';
             } else
@@ -37,20 +42,43 @@ include "connection_database.php";
                 <?php
                 if (isset($_POST['submit']))
                 {
-                    if (empty($_POST['upload_project']))
+                    if (empty($_FILES['upload_project']['name']) || empty($_POST['name']))
                     {
-                        echo "Je hebt geen bestand gekozen.";
+                        echo "Je hebt geen bestand of naam gekozen.";
                     } else
                     {
-                        $file = $_POST['upload_project'];
-                        echo $file;
+                        $name = $_POST['name'];
+                        $file = $_FILES['upload_project']['name'];
+                        $ext = pathinfo($file, PATHINFO_EXTENSION);
+                        $query = "INSERT INTO project VALUES(NULL,'$name','$ext','{$_SESSION['id']}',NULL)";
+                        mysqli_query($DBConnect, $query);
+                    $target_path = "includes/project/";
+
+                    $target_path = $target_path .$name .$_SESSION['username'] . ".".$ext;
+
+                    if (move_uploaded_file($_FILES['upload_project']['tmp_name'], $target_path))
+                    {
+                        
+                    } else
+                    {
+                        echo "There was an error uploading the file, please try again!";
+                    }
+                    header("Refresh:0"); 
                     }
                 }
+                
                 ?>
                 <?php
                 if (isset($_SESSION['username']))
                 {
-                    require "Connection_database.php";
+                    
+                    $naam = "SELECT * FROM project WHERE StudentNummer = '{$_SESSION['id']}'";
+                    $show = mysqli_query($DBConnect, $naam);
+                    
+                    while ($row = mysqli_fetch_assoc($show)){
+                        echo "<a href='includes/project/{$row['Naam']}{$_SESSION['username']}.{$row['Project']}' target='blank'>{$row['Naam']}</a><br> ";
+                    }
+                    
                 }
                 ?>
 
