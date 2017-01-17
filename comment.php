@@ -3,7 +3,6 @@ include "includes/topinclude.php";
 include "Connection_database.php";
 ?>
 <div class="inhoud">
-
     <form Method="POST" Action="comment.php">
         <p>Comment:</p>
         <p><textarea name="comment" rows="4" cols="50" maxlength="250"></textarea></p>
@@ -59,7 +58,7 @@ include "Connection_database.php";
                     echo "<p>There are no comments given yet!</p>";
                 } else
                 {
-                    echo "<p>The following comment have been given:</p>";
+                    echo "<p><h2>The following comment have been given:</h2></p>";
                     while ($Row = mysqli_fetch_assoc($QueryResult2))
                     {
                         $commentID = $Row['CommentID'];
