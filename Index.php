@@ -12,4 +12,3 @@
     <div class="clear"></div>
 </div>
 <?php include "includes/botinclude.php"; ?>
-            

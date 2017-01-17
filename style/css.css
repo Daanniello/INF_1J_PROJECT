@@ -1,24 +1,26 @@
+/* --------------------*/
+/* ------ Main ------ */
+/* ----------------- */
+
 body {
     margin:0;
     padding:0;
-    background-image: url("../includes/images/background.jpg");
+    background-color: #f3f3f3;
     background-size: cover;
     background-attachment: fixed;
     font-family: arial;
 }
 
-p{
-    margin:0;
-    padding:0;
+p {
+    margin: 0;
+    padding: 0;
 }
 
 textarea{
     resize: none;
     outline: none;
 }
-.li_opmaak1{
-    float:right;
-}
+
 input[type="submit"] {
     border: 3px solid #6e4381;
     background-color: white;
@@ -28,17 +30,129 @@ input[type="submit"] {
     margin-bottom: 10px;
 }
 
+
 .container {
     margin: 0 auto;
     width: 1000px;
 }
 
+/* ----------------------*/
+/* ------ Header ------ */
+/* ------------------- */
 .header {
     background-color: #6e4381;
-    min-height: 100px;
-    padding: 10px 0 10px 10px;
+    padding: 10px;
+	color: #fff;
 }
 
+.li_opmaak1 {
+    float:right;
+}
+
+
+
+.headerimg {
+    width: 20%;
+    float: left;
+}
+
+.headerimg img {
+    width: 175px;
+}
+
+
+
+
+
+.titel{
+	font-size: 36pt;
+	float: left;
+	margin-top: 55px;
+}
+
+/* ---- Social media bar ---- */
+.social{
+    width:40px;
+    height:160px;
+    background-color:#6e4381;
+    float:left;
+    position: fixed;
+    margin-top:200px;
+    border-radius: 0px 20px 20px 0px;
+}
+
+.image_social {
+	margin-top: 4px;
+    margin-left: 5px;
+    margin-bottom: 2px;
+    height: 30px;
+    width: 30px;
+
+}
+.image_social:hover {
+    border: 2px solid white;
+    border-radius: 20px;
+    margin-left: 3px;
+    margin-top: 2px;
+    margin-bottom: 0px;
+}
+
+/* ---- Informatie ---- */
+.information{
+    float:right;
+    margin-right:40px;
+    color:white;
+}
+
+.information ul{
+    list-style-type: none;
+    color:white;
+    text-align: right;
+    margin-top:0px;
+}
+
+/* ---- Avatar ---- */
+.avatar{
+    width: 100px;
+    height: 100px;
+    float: right;
+    background-color: #f3f3f3;
+}
+
+/* ---- Navigatie ---- */
+.nav {
+    float: left;
+    height: 50px;
+    width: 100%;
+    background-color: #6e4381;
+    list-style: none;
+}
+.nav li{
+    display: inline-block;
+    color:white;
+    text-decoration: none;
+    text-align: center;
+}
+
+.a_opmaak{
+    border-bottom: 4px solid #6e4381;
+    background-color: #6e4381;
+    color: white;
+    text-decoration: none;
+    width: 100px;
+    padding: 12px;
+    
+}
+
+.a_opmaak:hover{
+    border-bottom:3px solid white;
+    background-color: #6e4381;
+    color:white;
+}
+
+/* ----------------------*/
+/* ------ Inhoud ------ */
+/* ------------------- */
 .inhoud {
     background-color: white;
     min-height: 100%;
@@ -50,6 +164,9 @@ input[type="submit"] {
     min-height: 100%;
 }
 
+/* ----------------------*/
+/* ------ Footer ------ */
+/* ------------------- */
 .footer {
     background-color: #6e4381;
     min-height: 60px;
@@ -127,124 +244,10 @@ input[type="submit"] {
     margin-bottom: 15px;
 }
 
-.nav {
-    float: left;
-    height: 50px;
-    width: 100%;
-    background-color: #6e4381;
-    list-style: none;
-}
-.nav li{
-    display: inline-block;
-    color:white;
-    text-decoration: none;
-    text-align: center;
-}
-
-.headerimg {
-    width: 20%;
-    float: left;
-}
-
-.headerimg img {
-    width: 100%;
-}
-
-
-.a_opmaak{
-    border-bottom: 4px solid #6e4381;
-    background-color: #6e4381;
-    color: white;
-    text-decoration: none;
-    width: 100px;
-    padding: 12px;
-    
-}
-
-.a_opmaak:hover{
-    border-bottom:3px solid white;
-    background-color: #6e4381;
-    color:white;
-}
-
-.avatar{
-    width:100px;
-    height:100px;
-    float:right;
-    background-color:White;
-    margin-right:10px;
-}
-
-.titel{
-    width: 350px;
-    height: 100px;
-    float: left;
-    text-align: center;
-    font-size: 150%;
-    color: greenyellow;
-}
-
-.social{
-    width:40px;
-    height:160px;
-    background-color:#6e4381;
-    float:left;
-    position: fixed;
-    margin-top:200px;
-    border-radius: 0px 20px 20px 0px;
-}
-
-.image_social{
-    margin-left:5px;
-    margin-top:2px;
-    margin-bottom:2px;
-    height: 30px;
-    width:30px;
-
-}
-.image_socialx{
-    margin-top:8px;
-    margin-left:5px;
-    margin-bottom:2px;
-    height: 30px;
-    width:30px;
-
-}
-
-.image_social:hover{
-    border:2px solid white;
-    border-radius: 20px 20px 20px 20px;
-    margin-left:3px;
-    margin-top:0px;
-    margin-bottom:0px;
-}
-
-.image_socialx:hover{
-    border:2px solid white;
-    border-radius: 20px 20px 20px 20px;
-    margin-left:3px;
-    margin-top:6px;
-    margin-bottom:0px;
-}
-
-.information{
-    float:right;
-    margin-right:40px;
-    color:white;
-}
-
-.information ul{
-    list-style-type: none;
-    color:white;
-    text-align: right;
-    margin-top:0px;
-}
-
 /* footer style */
 
 .school{
     width: 250px;
-    min-height: 75px;
     float: left;
     padding-top: 25px;
     color: #fff;
@@ -252,17 +255,19 @@ input[type="submit"] {
 
 .link{
     width: 720px;
-    min-height: 100px;
     float: left;
 }
 
 .link a{
-    color: greenyellow;
+    color: #fff;
+}
+
+.link a:hover {
+	color: #A465CC;
 }
 
 .linkStyle{
     width: 240px;
-    min-height: 100px;
     float: left;
     font-size: 75%;
     line-height: 15pt;

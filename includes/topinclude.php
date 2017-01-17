@@ -13,9 +13,9 @@ and open the template in the editor.
         <link rel="icon" href="includes/images/stenden_logo.png" type="image/x-icon"/>
     </head>
     <div class="social">
-        <a href="https://twitter.com/stenden" target="_blank"><img class='image_socialx' src="includes/images/twitter.png" ></a>
-        <a href="https://www.instagram.com/stenden/" target="_blank"><img class='image_social' src="includes/images/instagram.png" ></a>
-        <a href="https://www.facebook.com/stenden/" target="_blank"><img class='image_social' src="includes/images/facebook.png" ></a>
+        <a href="https://twitter.com/stenden" target="_blank">					<img class='image_social' src="includes/images/twitter.png" ></a>
+        <a href="https://www.instagram.com/stenden/" target="_blank">			<img class='image_social' src="includes/images/instagram.png" ></a>
+        <a href="https://www.facebook.com/stenden/" target="_blank">			<img class='image_social' src="includes/images/facebook.png" ></a>
         <a href="https://www.youtube.com/user/marketingstenden" target="_blank"><img class='image_social' src="includes/images/youtube.png" ></a>
     </div>
     <body>
@@ -25,8 +25,8 @@ and open the template in the editor.
                     <a href="index.php"><img src="includes/images/stenden_logo.png"></a>
                 </div>
                 <div class="titel">
-                    <h1>Port Stenden</h1>
-                    <?php print_r($_SESSION); ?>
+                    <span>Port Stenden</span>
+                    
                 </div>
 
                 <div class="avatar">
@@ -102,6 +102,7 @@ and open the template in the editor.
                     }
                     ?> 
                 </div>
+				<div class="clear"></div>
                 <?php
                 echo "</div>";
                 echo "<div class='nav'>";
