@@ -12,10 +12,18 @@ p{
     padding:0;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 38bc354b25e8bf70472a84c1d56cc75b235069ec
 textarea{
     resize: none;
     outline: none;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 38bc354b25e8bf70472a84c1d56cc75b235069ec
 
 input[type="submit"] {
     border: 3px solid #6e4381;
@@ -66,19 +74,28 @@ input[type="submit"] {
     background-color: #6e4381;
     margin-right: 40px;
     padding-bottom: 10px;
+    display: inline-block;
     
 }
-.beschrijving{
+.titel_naam{
+    width:960px;
+    height:100px;
+    font-size:50px;
     float:left;
+    text-align: center;
+}
+.beschrijving{
+    
    background-color:white;
-   border: 2px solid black;
+   border: 2px solid #6e4381;
     width:200px;
     height:200px;
+    float:right;
 }
 .beschrijving textarea{
     
-    width:200px;
-    height:200px;
+    width:195px;
+    height:195px;
 }
 
 .project_upload input{
