@@ -1,5 +1,7 @@
 <?php
-require 'conncetion_database.php';
+define("ROOT",$_SERVER["DOCUMENT_ROOT"]);
+define("INF_1J_PROJECT",ROOT."/INF_1J_PROJECT/");
+require(INF_1J_PROJECT."Connection_database.php");
 $show = 'ALTER TABLE student ADD beschrijving varchar(200)';
 mysqli_query($DBConnect, $show);
 /* 
