@@ -151,16 +151,17 @@ input[type="submit"] {
 }
 
 .a_opmaak{
-    border-bottom: 5px solid #6e4381;
+    border-bottom: 4px solid #6e4381;
     background-color: #6e4381;
     color: white;
     text-decoration: none;
     width: 100px;
     padding: 12px;
+    
 }
 
 .a_opmaak:hover{
-    border-bottom:5px solid white;
+    border-bottom:3px solid white;
     background-color: #6e4381;
     color:white;
 }
