@@ -15,11 +15,11 @@ include "Connection_database.php";
         if (empty($_POST['comment']))
         {
             echo"Please fill something in";
-        }elseif(strlen(trim($_POST['comment']))){
+        }elseif(ctype_space($_POST['comment'])){
             echo"Please don't do that."
             . "I will find you"
-                    . "and I will kill you."
-                    . "especially if your name is Frank Tieck";
+                    . " and I will kill you."
+                    . " Especially if your name is Frank Tieck";
         } 
         
         else
