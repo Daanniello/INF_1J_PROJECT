@@ -44,7 +44,7 @@
                         echo ("Error deleting $file");
                     } else
                     {
-                        echo ("Deleted $file");
+                        echo "Loading...";
                     }
                     $target_path = "includes/CV/";
 
@@ -52,12 +52,12 @@
 
                     if (move_uploaded_file($_FILES['upload1']['tmp_name'], $target_path))
                     {
-                        
+                       
                     } else
                     {
                         echo "There was an error uploading the file, please try again!";
                     }
-                    header("Refresh:0");
+                    header("Refresh:0"); 
                 }
             }
         } else
@@ -86,6 +86,7 @@
                     {
                         echo "There was an error uploading the file, please try again!";
                     }
+                    header("Refresh:0"); 
                 }
             }
         }
