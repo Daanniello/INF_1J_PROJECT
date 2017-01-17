@@ -98,7 +98,7 @@ input[type="submit"] {
 
 .project_upload_title{
     width: 300px;
-    height: 60px;
+    height: 100px;
     float: left;
     font-size: 10pt;
     margin-left: 5px;
@@ -149,6 +149,7 @@ input[type="submit"] {
 .headerimg img {
     width: 100%;
 }
+
 
 .a_opmaak{
     border-bottom: 4px solid #6e4381;
