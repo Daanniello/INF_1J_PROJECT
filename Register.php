@@ -5,8 +5,8 @@ $countries = array("Afghanistan", "Albania", "Algeria", "American Samoa", "Andor
 <div class="inhoud">
     <form enctype="multipart/form-data" action="Register.php" method="post">
         <label class="formlabel">Gebruikersnaam: </label><input type="text" name="username"><br>
-        <label class="formlabel">wachtwoord: </label><input type="password" name="password"><br>
-        <label class="formlabel">herhaal wachtwoord: </label><input type="password" name="password1"><br>
+        <label class="formlabel">Wachtwoord: </label><input type="password" name="password"><br>
+        <label class="formlabel">Herhaal wachtwoord: </label><input type="password" name="password1"><br>
         <label class="formlabel">E-mail: </label><input type="text" name="mail"><br>
         <label class="formlabel">Naam: </label><input type="text" name="naam"><br>
         <label class="formlabel">Telefoonnummer: </label><input type="number" name="telefoon"><br>
@@ -15,13 +15,14 @@ $countries = array("Afghanistan", "Albania", "Algeria", "American Samoa", "Andor
         <label class="formlabel">Woonplaats: </label><input type="text" name="woonplaats"><br>
         <label class="formlabel">Adres: </label><input type="text" name="adres"><br>
         <label class="formlabel">Postcode: </label><input type="text" name="postcode"><br>
-        <label class="formlabel">Land: <select name="land"></label>
+        <label class="formlabel">Land: </label>
+		<select id="select_country"name="land">
                 <?php
                 foreach ($countries as $country) {
                     echo "<option value='$country'>$country</option>\n";
                 }
                 ?>
-            </select><br>
+        </select><br>
         <label class="formlabel">Profiel foto: </label><input type="file" name ="upload"><br>
         <input type="submit" name="submit">
     </form>

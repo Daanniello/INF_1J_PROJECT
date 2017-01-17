@@ -28,6 +28,12 @@ input[type="submit"] {
     color: #6e4381;
     cursor: pointer;
     margin-bottom: 10px;
+	outline: none;
+}
+
+input[type="submit"]:hover {
+	color: #A465CC;
+	border-color: #A465CC;
 }
 
 
@@ -59,10 +65,6 @@ input[type="submit"] {
 .headerimg img {
     width: 175px;
 }
-
-
-
-
 
 .titel{
 	font-size: 36pt;
@@ -134,7 +136,7 @@ input[type="submit"] {
     text-align: center;
 }
 
-.a_opmaak{
+.nav a{
     border-bottom: 4px solid #6e4381;
     background-color: #6e4381;
     color: white;
@@ -144,10 +146,9 @@ input[type="submit"] {
     
 }
 
-.a_opmaak:hover{
-    border-bottom:3px solid white;
-    background-color: #6e4381;
-    color:white;
+.nav a:hover{
+    border-bottom: 3px solid white;
+    color: #fff;
 }
 
 /* ----------------------*/
@@ -242,6 +243,36 @@ input[type="submit"] {
     width: 200px;
     display: inline-block;
     margin-bottom: 15px;
+}
+input[type="text"], 
+input[type="password"],
+input[type="date"],
+input[type="number"],
+#select_country {
+	outline: none;
+    border: none;
+    padding: 3px;
+	width: 200px;
+	height: 17px;
+    background-color: #f3f3f3;
+    border-right: 2px solid grey;
+    border-left: 2px solid grey;	
+}
+
+#select_country {
+	width: 210px;
+	height: 23px;
+	margin-left: -4px;
+}
+input[type="text"]:focus, 
+input[type="password"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+#select_country:focus {
+	border-top: 2px solid grey;
+	border-bottom: 2px solid grey;
+	margin-top: -2px;
+	margin-bottom: -2px;
 }
 
 /* footer style */
