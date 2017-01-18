@@ -102,9 +102,9 @@ and open the template in the editor.
                     }
                     ?> 
                 </div>
-				<div class="clear"></div>
+				
                 <?php
-                echo "</div>";
+               
                 echo "<div class='nav'>";
                 echo "<ul>";
                 echo "<li class='li_opmaak'><a href='index.php' >Home</a></li>";
@@ -124,6 +124,6 @@ and open the template in the editor.
                 }
                 echo "</ul>";
                 echo "</div>";
+				echo "<div class='clear'></div>";
+				echo "</div>";
                 ?>
-
-                <div class="clear"></div>

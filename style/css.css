@@ -42,12 +42,16 @@ input[type="submit"]:hover {
     width: 1000px;
 }
 
+.clear {
+    clear: both;
+}
+
 /* ----------------------*/
 /* ------ Header ------ */
 /* ------------------- */
 .header {
     background-color: #6e4381;
-    padding: 10px;
+    padding: 10px 10px 0 10px;
 	color: #fff;
 }
 
@@ -113,6 +117,11 @@ input[type="submit"]:hover {
     margin-top:0px;
 }
 
+.information a{
+    color:white;
+    text-decoration: none;
+}
+
 /* ---- Avatar ---- */
 .avatar{
     width: 100px;
@@ -165,22 +174,31 @@ input[type="submit"]:hover {
     min-height: 100%;
 }
 
-/* ----------------------*/
-/* ------ Footer ------ */
-/* ------------------- */
-.footer {
-    background-color: #6e4381;
-    min-height: 60px;
-    padding: 10px;
+
+.homeFoto img{
+    max-height: 400px;
+    max-width: 840px;
+    float: left;
 }
 
-.clear {
-    clear: both;
+/* ---- Homepage ---- */
+.homeTitel{
+    float: left;
+    position: absolute;
+    font-size: 70%;
+    padding-left: 15px;
 }
 
-/*  Project upload form (begin)   */
+.homeTekst{
+    width: 248px;
+    height: 300px;
+    padding-top: 100px;
+    text-align: center;
+    float: right;
+}
 
-.project_upload{
+/* ---- Portfolio page ---- */
+.project_upload {
     width: 300px;
     height: 400px;
     background-color: #6e4381;
@@ -189,23 +207,23 @@ input[type="submit"]:hover {
     display: inline-block;
     
 }
-.titel_naam{
-    width:960px;
-    height:100px;
-    font-size:50px;
-    float:left;
+
+.titel_naam {
+    width: 960px;
+    height: 100px;
+    font-size: 50px;
     text-align: center;
 }
-.beschrijving{
-    
-   background-color:white;
+
+.beschrijving {
+   background-color: white;
    border: 2px solid #6e4381;
-    width:200px;
-    height:200px;
-    float:right;
+   width: 200px;
+   height: 200px;
+   float: right;
 }
+
 .beschrijving textarea{
-    
     width:195px;
     height:195px;
 }
@@ -214,7 +232,7 @@ input[type="submit"]:hover {
     margin-top: 5px;
 } 
 
-.project_upload_title{
+.project_upload_title {
     width: 300px;
     height: 100px;
     float: left;
@@ -223,7 +241,7 @@ input[type="submit"]:hover {
     margin-bottom:10px;
 }
 
-.project_upload_title_project{
+.project_upload_title_project {
     width: 300px;
     height: 100%;
     float: left;
@@ -231,19 +249,20 @@ input[type="submit"]:hover {
     margin: 5px;
 }
 
-.project_upload_file{
+.project_upload_file {
     width: 300px;
     height: 250px;
     float: left; 
     background-color: #f3f3f3;
 }
-/*  Project upload form (end)   */
 
+/* ---- Form fields ---- */
 .formlabel {
     width: 200px;
     display: inline-block;
     margin-bottom: 15px;
 }
+
 input[type="text"], 
 input[type="password"],
 input[type="date"],
@@ -264,6 +283,7 @@ input[type="number"],
 	height: 23px;
 	margin-left: -4px;
 }
+
 input[type="text"]:focus, 
 input[type="password"]:focus,
 input[type="date"]:focus,
@@ -275,66 +295,7 @@ input[type="number"]:focus,
 	margin-bottom: -2px;
 }
 
-/* footer style */
-
-.school{
-    width: 250px;
-    float: left;
-    padding-top: 25px;
-    color: #fff;
-}
-
-.link{
-    width: 720px;
-    float: left;
-}
-
-.link a{
-    color: #fff;
-}
-
-.link a:hover {
-	color: #A465CC;
-}
-
-.linkStyle{
-    width: 240px;
-    float: left;
-    font-size: 75%;
-    line-height: 15pt;
-}
-
-.information il{
-    float:left;
-}
-
-
-.information a{
-    color:white;
-    text-decoration: none;
-}
-
-.homeFoto img{
-    max-height: 400px;
-    max-width: 840px;
-    float: left;
-}
-
-.homeTitel{
-    float: left;
-    position: absolute;
-    font-size: 70%;
-    padding-left: 15px;
-}
-
-.homeTekst{
-    width: 248px;
-    height: 300px;
-    padding-top: 100px;
-    text-align: center;
-    float: right;
-}
-
+/* ---- Comment page ---- */
 .tabel{
     width: 960px;
     height: 100%;
@@ -346,6 +307,9 @@ input[type="number"]:focus,
     padding-bottom: 50px;
     float: bottom;
 }
+
+/* 	Unknown purpose
+	Wie weet hier iets van?
 
 .gebruiker{
     width: 100px;
@@ -388,4 +352,41 @@ input[type="number"]:focus,
     padding-right: 5px;
     float: left;
     background-color: lightgrey;
+}
+*/
+
+/* ----------------------*/
+/* ------ Footer ------ */
+/* ------------------- */
+.footer {
+    background-color: #6e4381;
+    min-height: 60px;
+    padding: 10px;
+}
+
+.school{
+    width: 250px;
+    float: left;
+    padding-top: 25px;
+    color: #fff;
+}
+
+.link{
+    width: 720px;
+    float: left;
+}
+
+.link a{
+    color: #fff;
+}
+
+.link a:hover {
+	color: #A465CC;
+}
+
+.linkStyle{
+    width: 240px;
+    float: left;
+    font-size: 75%;
+    line-height: 15pt;
 }
