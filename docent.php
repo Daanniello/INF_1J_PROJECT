@@ -3,7 +3,7 @@
 	<?php 
         if (isset($_SESSION['login_docent'])){
             require 'connection_database.php';
-            $show = 'SELECT * FROM student';
+            $show = 'SELECT * FROM student JOIN gebruiker ON student.GebruikerID = gebruiker.GebruikerID WHERE Rechtcode = "1" ';
             $query = mysqli_query($DBConnect, $show);
             echo "<ul>";
             while ($row = mysqli_fetch_assoc($query)){
