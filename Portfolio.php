@@ -87,7 +87,7 @@ include "connection_database.php";
     </div>
 
     <div class="project_upload">
-        <form action="portfolio.php" method="post">
+        <form enctype='multipart/form-data' action="portfolio.php" method="post">
             <div class="project_upload_title_project">
                 SLB Projecten
             </div>
@@ -98,6 +98,7 @@ include "connection_database.php";
         
 				<div class="project_upload_title">
 					<input type="file" name="upload_project1">
+                                        <input type="text" name="textname" placeholder="Name of SLBProduct">
 					<p><input type="submit" name="submit1" value="upload" ></p>
 				</div>';
             } else
@@ -110,20 +111,42 @@ include "connection_database.php";
                 <?php
                 if (isset($_POST['submit1']))
                 {
-                    if (empty($_POST['upload_project1']))
+                    if (empty($_FILES['upload_project1']['name']) || empty($_POST['textname']))
                     {
-                        echo "Je hebt geen bestand gekozen.";
+                        echo "Je hebt geen bestand of naam gekozen.";
                     } else
                     {
-                        $file = $_POST['upload_project1'];
-                        echo $file;
+                        $name1 = $_POST['textname'];
+                        $file = $_FILES['upload_project1']['name'];
+                        $ext1 = pathinfo($file, PATHINFO_EXTENSION);
+                        $query = "INSERT INTO slbproduct VALUES(NULL,'$name1','$ext1',NULL,'{$_SESSION['id']}')";
+                        mysqli_query($DBConnect, $query);
+                    $target_path = "includes/SLB/";
+
+                    $target_path = $target_path .$name1 .$_SESSION['username'] . ".".$ext1;
+
+                    if (move_uploaded_file($_FILES['upload_project1']['tmp_name'], $target_path))
+                    {
+                        
+                    } else
+                    {
+                        echo "There was an error uploading the file, please try again!";
+                    }
+                    header("Refresh:0"); 
                     }
                 }
                 ?>
                 <?php
                 if (isset($_SESSION['username']))
                 {
-                    echo "";
+                    
+                    $naam1 = "SELECT * FROM slbproduct WHERE GebruikerID = '{$_SESSION['id']}'";
+                    $show1 = mysqli_query($DBConnect, $naam1);
+                    
+                    while ($row1 = mysqli_fetch_assoc($show1)){
+                        echo "<a href='includes/SLB/{$row1['Historie']}{$_SESSION['username']}.{$row1['SLBProduct']}' target='blank'>{$row1['Historie']}</a><br> ";
+                    }
+                    
                 }
                 ?>
             </div>

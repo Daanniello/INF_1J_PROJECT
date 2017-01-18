@@ -78,35 +78,48 @@ if (isset($_SESSION["login_user"]) == 1){
                 $fontcolor="LightGrey ";
         }
         switch($ltype){
-            case ($ltype=="Arial"):
+            case ($ltype=="arial"):
                 $font="Arial,Helvetica Neue,Helvetica,sans-serif";
                 break;
-            case ($ltype=="Arial"):
-                $font="Arial,Helvetica Neue,Helvetica,sans-serif";
+            case ($ltype=="georgia"):
+                $font="Georgia,Times,Times New Roman,serif";
                 break;
-            case ($kleur==3):
-                $color="red";
-                $color2="DarkOrange";
-                $bgcolor="LightGrey";
-                $fontcolor="LightGrey ";
+            case ($ltype=="palatino"):
+                $font="Palatino,Palatino Linotype,Palatino LT STD,Book Antiqua,Georgia,serif";
                 break;
-            case ($kleur==4):
-                $color="green";
-                $color2="GreenYellow";
-                $bgcolor="LightGrey";
-                $fontcolor="LightGrey ";
+            case ($ltype=="lucida"):
+                $font="Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif";
                 break;
             default:
-                $color="blue";
-                $color2="PowderBlue";
-                $bgcolor="LightGrey";
-                $fontcolor="LightGrey ";
+                $font="Arial,Helvetica Neue,Helvetica,sans-serif";
+        }
+        switch($ltype){
+            case ($ltype=="arial"):
+                $font="Arial,Helvetica Neue,Helvetica,sans-serif";
+                break;
+            case ($ltype=="georgia"):
+                $font="Georgia,Times,Times New Roman,serif";
+                break;
+            case ($ltype=="palatino"):
+                $font="Palatino,Palatino Linotype,Palatino LT STD,Book Antiqua,Georgia,serif";
+                break;
+            case ($ltype=="lucida"):
+                $font="Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif";
+                break;
+            default:
+                $font="Arial,Helvetica Neue,Helvetica,sans-serif";
         }
         ?>
         @import url("<?php echo $stylesheet; ?>");
         body {
             background-color:<?php echo $bgcolor; ?>;
+            font-family: <?php echo $font; ?>;
         }
+        p {
+            font-family: <?php echo $font; ?>;
+            font-size: <?php echo $lsize; ?>px;
+        }
+        
         .header {
         background:<?php echo $color; ?>;
         color:<?php echo $fontcolor; ?>;
