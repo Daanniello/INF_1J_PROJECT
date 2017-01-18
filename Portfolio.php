@@ -140,7 +140,7 @@ include "connection_database.php";
                 if (isset($_SESSION['username']))
                 {
                     
-                    $naam1 = "SELECT * FROM slbproduct WHERE StudentNummer = '{$_SESSION['id']}'";
+                    $naam1 = "SELECT * FROM slbproduct WHERE GebruikerID = '{$_SESSION['id']}'";
                     $show1 = mysqli_query($DBConnect, $naam1);
                     
                     while ($row1 = mysqli_fetch_assoc($show1)){
