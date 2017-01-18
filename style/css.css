@@ -188,6 +188,24 @@ input[type="submit"]:hover {
     font-size: 70%;
     padding-left: 15px;
 }
+.number_cijfer{
+    width:25px!important;
+    font-size:15px!important;
+}
+.number_sub{
+    width:30px!important;
+   height:20px!important;
+   font-size:10px!important; 
+   padding:0!important;
+   margin-left:10px!important;
+   
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+  
+}
 
 .homeTekst{
     width: 248px;
@@ -300,8 +318,6 @@ input[type="number"]:focus,
     float: bottom;
 }
 
-/* 	Unknown purpose
-	Wie weet hier iets van?
 
 .gebruiker{
     width: 100px;
@@ -345,7 +361,7 @@ input[type="number"]:focus,
     float: left;
     background-color: lightgrey;
 }
-*/
+
 
 /* ----------------------*/
 /* ------ Footer ------ */
