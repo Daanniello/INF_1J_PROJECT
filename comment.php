@@ -39,8 +39,7 @@ include "Connection_database.php";
                 echo"$SQLstring";
             } else
             {
-                echo "<h1>Thanks for the Comment!</h1>";
-                echo "<h2>The comment has been added.</h2>";
+                echo "<p>The comment has been added.</p>";
             }
         }
     }
@@ -57,7 +56,7 @@ include "Connection_database.php";
             $DBName = "digital_portfolio";
             if (!mysqli_select_db($DBConnect, $DBName))
             {
-                echo "<h2>There are no comments yet!</h2>";
+                echo "<p>There are no comments yet!</p>";
             } else
             {
                 $TableName = "comment";
@@ -69,7 +68,7 @@ include "Connection_database.php";
                     echo "<p>There are no comments given yet!</p>";
                 } else
                 {
-                    echo "<p><h2>The following comment have been given:</h2></p>";
+                    echo "<h2>The following comments have been given:</h2>";
                     while ($Row = mysqli_fetch_assoc($QueryResult2))
                     {
                         $commentID = $Row['CommentID'];

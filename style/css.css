@@ -6,8 +6,6 @@ body {
     margin:0;
     padding:0;
     background-color: #f3f3f3;
-    background-size: cover;
-    background-attachment: fixed;
     font-family: arial;
 }
 
@@ -23,7 +21,7 @@ textarea{
 
 input[type="submit"] {
     border: 3px solid #6e4381;
-    background-color: white;
+    background-color: #fff;
     padding: 8px 14px;
     color: #6e4381;
     cursor: pointer;
@@ -55,18 +53,8 @@ input[type="submit"]:hover {
 	color: #fff;
 }
 
-.li_opmaak1 {
-    float:right;
-}
-
-
-
-.headerimg {
-    width: 20%;
-    float: left;
-}
-
 .headerimg img {
+	float: left;
     width: 175px;
 }
 
@@ -77,13 +65,11 @@ input[type="submit"]:hover {
 }
 
 /* ---- Social media bar ---- */
-.social{
-    width:40px;
-    height:160px;
-    background-color:#6e4381;
-    float:left;
+.social {
+    width: 40px;
+    background-color: #6e4381;
     position: fixed;
-    margin-top:200px;
+    margin-top: 200px;
     border-radius: 0px 20px 20px 0px;
 }
 
@@ -96,7 +82,7 @@ input[type="submit"]:hover {
 
 }
 .image_social:hover {
-    border: 2px solid white;
+    border: 2px solid #fff;
     border-radius: 20px;
     margin-left: 3px;
     margin-top: 2px;
@@ -107,19 +93,12 @@ input[type="submit"]:hover {
 .information{
     float:right;
     margin-right:40px;
-    color:white;
 }
 
 .information ul{
     list-style-type: none;
-    color:white;
     text-align: right;
     margin-top:0px;
-}
-
-.information a{
-    color:white;
-    text-decoration: none;
 }
 
 /* ---- Avatar ---- */
@@ -133,82 +112,54 @@ input[type="submit"]:hover {
 /* ---- Navigatie ---- */
 .nav {
     float: left;
-    height: 50px;
     width: 100%;
-    background-color: #6e4381;
-    list-style: none;
 }
+
+.nav ul {
+	padding-left: 10px;
+}
+
 .nav li{
     display: inline-block;
-    color:white;
-    text-decoration: none;
-    text-align: center;
 }
 
 .nav a{
-    border-bottom: 4px solid #6e4381;
-    background-color: #6e4381;
-    color: white;
+    color: #fff;
     text-decoration: none;
-    width: 100px;
     padding: 12px;
-    
 }
 
 .nav a:hover{
-    border-bottom: 3px solid white;
-    color: #fff;
+    border-bottom: 3px solid #fff;
 }
 
 /* ----------------------*/
 /* ------ Inhoud ------ */
 /* ------------------- */
 .inhoud {
-    background-color: white;
-    min-height: 100%;
+    background-color: #fff;
     padding: 20px;
 }
 
+/* ---- Homepage ---- */
 .inhoud_home {
-    background-color: white;
-    min-height: 100%;
+    background-color: #fff;
 }
-
 
 .homeFoto img{
     max-height: 400px;
-    max-width: 840px;
     float: left;
 }
 
-/* ---- Homepage ---- */
 .homeTitel{
     float: left;
     position: absolute;
     font-size: 70%;
     padding-left: 15px;
 }
-.number_cijfer{
-    width:25px!important;
-    font-size:15px!important;
-}
-.number_sub{
-    width:30px!important;
-   height:20px!important;
-   font-size:10px!important; 
-   padding:0!important;
-   margin-left:10px!important;
-   
-}
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
-  
-}
 
 .homeTekst{
-    width: 248px;
+	width: 248px;
     height: 300px;
     padding-top: 100px;
     text-align: center;
@@ -217,15 +168,13 @@ input[type=number]::-webkit-outer-spin-button {
 
 /* ---- Portfolio page ---- */
 .titel_naam {
-    width: 960px;
-    height: 100px;
     font-size: 50px;
     text-align: center;
+	margin-bottom: 20px;
+	color: #333;
 }
 
 .project_upload {
-    width: 300px;
-    height: 400px;
     background-color: #6e4381;
     margin-right: 40px;
     padding-bottom: 10px;
@@ -235,6 +184,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .upload_top {
 	padding: 5px;
+	color: #fff;
 }
 
 .upload_top input {
@@ -243,18 +193,18 @@ input[type=number]::-webkit-outer-spin-button {
 
 .project_upload_title {
     font-size: 20pt;
-	color: #fff;
 }
 
 .project_upload_file {
-    width: 300px;
+    width: 280px;
     height: 250px;
     float: left; 
     background-color: #f3f3f3;
+	padding: 10px;
 }
 
 .beschrijving {
-   background-color: white;
+   background-color: #fff;
    border: 2px solid #6e4381;
    width: 200px;
    height: 200px;
@@ -315,9 +265,7 @@ input[type="number"]:focus,
     width: 960px;
     height: 118px;
     padding-bottom: 50px;
-    float: bottom;
 }
-
 
 .gebruiker{
     width: 100px;
@@ -362,6 +310,26 @@ input[type="number"]:focus,
     background-color: lightgrey;
 }
 
+/* ---- Cijfers ---- */
+.number_cijfer {
+    width: 25px!important;
+    font-size: 15px!important;
+}
+
+.number_sub {
+	width: 30px!important;
+	height: 20px!important;
+	font-size: 10px!important; 
+	padding: 0!important;
+	margin-left: 10px!important;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+	-webkit-appearance: none; 
+	margin: 0; 
+  
+}
 
 /* ----------------------*/
 /* ------ Footer ------ */
@@ -370,13 +338,13 @@ input[type="number"]:focus,
     background-color: #6e4381;
     min-height: 60px;
     padding: 10px;
+	color: #fff;
 }
 
 .school{
     width: 250px;
     float: left;
-    padding-top: 25px;
-    color: #fff;
+    padding-top: 23px;
 }
 
 .link{
@@ -384,8 +352,8 @@ input[type="number"]:focus,
     float: left;
 }
 
-.link a{
-    color: #fff;
+.link a {
+	color: #fff;
 }
 
 .link a:hover {
@@ -395,6 +363,6 @@ input[type="number"]:focus,
 .linkStyle{
     width: 240px;
     float: left;
-    font-size: 75%;
+    font-size: 9pt;
     line-height: 15pt;
 }
