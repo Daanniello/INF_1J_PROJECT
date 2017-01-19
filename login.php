@@ -26,6 +26,8 @@
 						
 						if ($row["rechtcode"]== 2){
 							$_SESSION['login_docent']= 2;
+						} elseif($row["rechtcode"]== 3){
+							$_SESSION['login_slber']= 3;
 						} else {
 							$_SESSION['login_user'] = 1;
 						}

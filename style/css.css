@@ -26,12 +26,12 @@ input[type="submit"] {
     color: #6e4381;
     cursor: pointer;
     margin-bottom: 10px;
-	outline: none;
+    outline: none;
 }
 
 input[type="submit"]:hover {
-	color: #A465CC;
-	border-color: #A465CC;
+    color: #A465CC;
+    border-color: #A465CC;
 }
 
 
@@ -50,18 +50,18 @@ input[type="submit"]:hover {
 .header {
     background-color: #6e4381;
     padding: 10px 10px 0 10px;
-	color: #fff;
+    color: #fff;
 }
 
 .headerimg img {
-	float: left;
+    float: left;
     width: 175px;
 }
 
 .titel{
-	font-size: 36pt;
-	float: left;
-	margin-top: 55px;
+    font-size: 36pt;
+    float: left;
+    margin-top: 55px;
 }
 
 /* ---- Social media bar ---- */
@@ -74,7 +74,7 @@ input[type="submit"]:hover {
 }
 
 .image_social {
-	margin-top: 4px;
+    margin-top: 4px;
     margin-left: 5px;
     margin-bottom: 2px;
     height: 30px;
@@ -116,7 +116,7 @@ input[type="submit"]:hover {
 }
 
 .nav ul {
-	padding-left: 10px;
+    padding-left: 10px;
 }
 
 .nav li{
@@ -159,7 +159,7 @@ input[type="submit"]:hover {
 }
 
 .homeTekst{
-	width: 248px;
+    width: 248px;
     height: 300px;
     padding-top: 100px;
     text-align: center;
@@ -170,8 +170,8 @@ input[type="submit"]:hover {
 .titel_naam {
     font-size: 50px;
     text-align: center;
-	margin-bottom: 20px;
-	color: #333;
+    margin-bottom: 20px;
+    color: #333;
 }
 
 .project_upload {
@@ -183,12 +183,12 @@ input[type="submit"]:hover {
 }
 
 .upload_top {
-	padding: 5px;
-	color: #fff;
+    padding: 5px;
+    color: #fff;
 }
 
 .upload_top input {
-	margin-top: 5px!important;
+    margin-top: 5px!important;
 }
 
 .project_upload_title {
@@ -200,7 +200,7 @@ input[type="submit"]:hover {
     height: 250px;
     float: left; 
     background-color: #f3f3f3;
-	padding: 10px;
+    padding: 10px;
 }
 
 .beschrijving {
@@ -228,20 +228,20 @@ input[type="password"],
 input[type="date"],
 input[type="number"],
 #select_country {
-	outline: none;
+    outline: none;
     border: none;
     padding: 3px;
-	width: 200px;
-	height: 17px;
+    width: 200px;
+    height: 17px;
     background-color: #f3f3f3;
     border-right: 2px solid grey;
     border-left: 2px solid grey;	
 }
 
 #select_country {
-	width: 210px;
-	height: 23px;
-	margin-left: -4px;
+    width: 210px;
+    height: 23px;
+    margin-left: -4px;
 }
 
 input[type="text"]:focus, 
@@ -249,10 +249,10 @@ input[type="password"]:focus,
 input[type="date"]:focus,
 input[type="number"]:focus,
 #select_country:focus {
-	border-top: 2px solid grey;
-	border-bottom: 2px solid grey;
-	padding-top: 1px;
-	padding-bottom: 1px;
+    border-top: 2px solid grey;
+    border-bottom: 2px solid grey;
+    padding-top: 1px;
+    padding-bottom: 1px;
 }
 
 /* ---- Comment page ---- */
@@ -317,18 +317,17 @@ input[type="number"]:focus,
 }
 
 .number_sub {
-	width: 30px!important;
-	height: 20px!important;
-	font-size: 10px!important; 
-	padding: 0!important;
-	margin-left: 10px!important;
+    width: 30px!important;
+    height: 20px!important;
+    font-size: 10px!important; 
+    padding: 0!important;
+    margin-left: 10px!important;
 }
 
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
-	-webkit-appearance: none; 
-	margin: 0; 
-  
+    -webkit-appearance: none; 
+    margin: 0; 
 }
 
 /* ----------------------*/
@@ -338,7 +337,7 @@ input[type=number]::-webkit-outer-spin-button {
     background-color: #6e4381;
     min-height: 60px;
     padding: 10px;
-	color: #fff;
+    color: #fff;
 }
 
 .school{
@@ -353,11 +352,11 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .link a {
-	color: #fff;
+    color: #fff;
 }
 
 .link a:hover {
-	color: #A465CC;
+    color: #A465CC;
 }
 
 .linkStyle{
