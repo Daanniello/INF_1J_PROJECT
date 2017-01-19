@@ -340,7 +340,7 @@ input[type="number"]:focus,
     background-color: lightgrey;
 }
 
-/* ---- Cijfers ---- */
+/* ---- Studentfile ---- */
 .number_cijfer {
     width: 25px!important;
     font-size: 15px!important;
@@ -359,6 +359,53 @@ input[type=number]::-webkit-outer-spin-button {
 	-webkit-appearance: none; 
 	margin: 0; 
   
+}
+
+/* ---- Cijfers ---- */
+.cijfer_header {
+	width: 46%;
+	font-size: 15pt;
+	background-color: #6e4381;
+	color: #fff;
+	float: left;
+	padding: 1%;
+	margin-right: 2%;
+}
+
+.cijfer_header:nth-child(2) {
+	margin-left: 2%;
+	margin-right: 0;
+}
+
+.cijfer_table {
+	width: 48%;
+	margin-right: 2%;
+	float: left;
+}
+
+.cijfer_table:last-child {
+	margin-left: 2%;
+	margin-right: 0;
+}
+
+.cijfer_table table {
+	width: 100%;
+	text-align: left
+}
+
+.cijfer_table th {
+	background-color: #9F4183;
+	color: #fff;
+	padding: 8px;
+	width: 50%;
+}
+
+.cijfer_table td {
+	padding: 8px;
+}
+
+.cijfer_table tr:nth-child(odd) > td {
+	background-color: #f3f3f3;
 }
 
 /* ---- Studenten ---- */
