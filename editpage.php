@@ -14,17 +14,14 @@ include "connection_database.php";
                 <div class=editform>
                     <p>Stijl optie: 
                     <select name='style'>
-                        <option value='1'>A</option>
-                        <option value='2'>B</option> 
-                        <option value='3'>C</option> 
-                        <option value='4'>D</option>
+                        <option value='1'>Reset</option>
+                        <option value='2'>Custom</option> 
+                        
                     </select>
                     </p>
                     <p>Kleur optie:</p><p>
-                        <input type='radio' name='color' value='1' checked> Purple 
-                        <input type='radio' name='color' value='2'> Blue
-                        <input type='radio' name='color' value='3'> Red
-                        <input type='radio' name='color' value='4'> Green
+                        <input type='color' name='color' checked> COLOR
+                        
                     </p>
                     <p>Lettertype:
                     <select name='ltype'>
@@ -59,14 +56,14 @@ include "connection_database.php";
             $rows = mysqli_num_rows($result);
             if($rows==0){
                 $sql = "INSERT INTO style (StyleID, StyleCode, KleurCode, Lettertype, LetterGrote, StudentNummer) "
-                . "VALUES(NULL,$style,$color,'$ltype',$lsize,$userid);";
+                . "VALUES(NULL,$style,'$color','$ltype',$lsize,$userid);";
                 $result = mysqli_query($DBConnect, $sql);
                 echo "<p>Je gekozen stijl is opgeslagen!</p>";
             }else{
-                $sql = "UPDATE style SET StyleCode = $style, KleurCode = $color, Lettertype = '$ltype', Lettergrote = $lsize 
+                $sql = "UPDATE style SET StyleCode = $style, KleurCode = '$color', Lettertype = '$ltype', Lettergrote = $lsize 
                     WHERE StudentNummer = $userid";
                 $result = mysqli_query($DBConnect, $sql);
-                echo "<p>Je gekozen stijl is aangepast!</p>";
+                echo "<p>Je gekozen stijl is aangepast!</p>$color";
             }
         }
     } else{
