@@ -276,20 +276,7 @@ function color_inverse($color)
                  echo color_inverse(color_inverse($dog['KleurCode']));
              } ?>;
     }
-    input[type="submit"] {
-        border: 3px solid <?php echo color_inverse($dog['KleurCode']); ?>!important;
-        background-color: #fff;
-        padding: 8px 14px;
-        color: <?php echo color_inverse($dog['KleurCode']); ?>!important;
-        cursor: pointer;
-        margin-bottom: 10px;
-        outline: none;
-    }
-
-    input[type="submit"]:hover {
-        color: <?php echo color_inverse(color_inverse($dog['KleurCode'])); ?>!important;
-        border-color: <?php echo color_inverse(color_inverse($dog['KleurCode'])); ?>!important;
-    }
+    
     
 
         
