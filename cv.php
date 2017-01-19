@@ -63,7 +63,10 @@
         } else
         {
             echo "Je hebt nog geen CV, Upload hem nu.";
-            echo "<form enctype='multipart/form-data' action='#' method='post'><input type='file' name='upload' value='CV'> <input type='submit' name='submit' value='upload cv' ></form> ";
+            echo "	<form enctype='multipart/form-data' action='#' method='post'>
+						<input type='file' name='upload' value='CV'><br>
+						<input type='submit' name='submit' value='upload cv' >
+					</form> ";
             if (isset($_POST['submit']))
             {
                 if (empty($_FILES['upload']))

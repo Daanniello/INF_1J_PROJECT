@@ -145,6 +145,7 @@ input[type="submit"]:hover {
 .inhoud {
     background-color: #fff;
     padding: 20px;
+	min-height: 500px;
 }
 
 /* ---- Homepage ---- */
@@ -358,6 +359,35 @@ input[type=number]::-webkit-outer-spin-button {
 	-webkit-appearance: none; 
 	margin: 0; 
   
+}
+
+/* ---- Studenten ---- */
+.students_table {
+	width: 100%;
+}
+
+.students_table th {
+	width: 25%;
+	text-align: left;
+	background-color: #9F4183;
+	padding: 8px;
+	color: #fff;
+}
+
+.students_table td {
+	padding: 8px;
+}
+
+.students_table tr:nth-child(odd) > td {
+	background-color: #f3f3f3;
+}
+
+.students_table a {
+	color: #333;
+}
+
+.students_table a:hover {
+	color: #A465CC;
 }
 
 /* ----------------------*/
