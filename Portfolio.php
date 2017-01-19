@@ -246,7 +246,12 @@ function color_inverse($color) {
 </div>
 <style>
     .project_file:nth-child(even) {
-        background-color:<?php if ($dog['StyleCode'] == 1){echo "";}else{ echo color_inverse(color_inverse($dog['KleurCode']));} ?>;
+        <?php 
+			if($dog['StyleCode'] == 2) {
+				echo "background-color:";
+				color_inverse(color_inverse($dog['KleurCode']));
+			}
+		?>;
 }
     
 </style>

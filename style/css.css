@@ -342,17 +342,68 @@ input[type="number"]:focus,
 }
 
 /* ---- Studentfile ---- */
+.cijfer_toewijzen_table_links,
+.cijfer_toewijzen_table_rechts {
+	width: 48%;
+	margin-right: 2%;
+	float: left;
+	background-color: #6e4381;
+}
+
+
+.cijfer_toewijzen_table_rechts {
+	margin-left: 2%;
+	margin-right: 0;
+}
+
+
+.cijfer_toewijzen_table table {
+	width: 100%;
+	text-align: left
+}
+
+.cijfer_toewijzen_table th {
+	background-color: #9F4183;
+	color: #fff;
+	padding: 8px;
+}
+
+.cijfer_toewijzen_table tr:nth-child(odd) > td {
+	background-color: #f3f3f3;
+}
+
+.cijfer_toewijzen_table tr:nth-child(even) > td {
+	background-color: #fff;
+}
+
+.cijfer_toewijzen_table td {
+	padding: 8px;
+}
+
+.cijfer_toewijzen_table a {
+	color: #333;
+	text-decoration: none;
+}
+
+.cijfer_toewijzen_table a:hover {
+	color: #A465CC;
+	text-decoration: underline;
+}
+
 .number_cijfer {
     width: 25px!important;
     font-size: 15px!important;
 }
 
 .number_sub {
-	width: 30px!important;
-	height: 20px!important;
-	font-size: 10px!important; 
-	padding: 0!important;
-	margin-left: 10px!important;
+	border: none!important;
+    padding: 0!important;
+    margin: 0!important;
+	background-color: transparent!important;
+}
+
+.number_sub:hover {
+	text-decoration: underline;
 }
 
 input[type=number]::-webkit-inner-spin-button, 
@@ -362,8 +413,26 @@ input[type=number]::-webkit-outer-spin-button {
   
 }
 
+.cijfer_toewijzen_cv {
+	background-color: #9F4183;	
+	display: inline-block;
+	padding: 15px;
+	margin-top: 15px;
+}
+
+.cijfer_toewijzen_cv a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.cijfer_toewijzen_cv a:hover {
+	color: #A465CC;
+	text-decoration: underline;
+}
+
 /* ---- Cijfers ---- */
-.cijfer_header {
+.cijfer_header_links,
+.cijfer_header_rechts {
 	width: 46%;
 	font-size: 15pt;
 	background-color: #6e4381;
@@ -373,7 +442,7 @@ input[type=number]::-webkit-outer-spin-button {
 	margin-right: 2%;
 }
 
-.cijfer_header:nth-child(2) {
+.cijfer_header_rechts {
 	margin-left: 2%;
 	margin-right: 0;
 }
@@ -416,6 +485,7 @@ input[type=number]::-webkit-outer-spin-button {
 /* ---- Studenten ---- */
 .students_table {
 	width: 100%;
+	background-color: #6e4381;
 }
 
 .students_table th {
@@ -432,6 +502,10 @@ input[type=number]::-webkit-outer-spin-button {
 
 .students_table tr:nth-child(odd) > td {
 	background-color: #f3f3f3;
+}
+
+.students_table tr:nth-child(even) > td {
+	background-color: #fff;
 }
 
 .students_table a {

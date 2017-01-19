@@ -5,49 +5,87 @@
     if (isset($_SESSION['login_docent']))
     {
         require 'connection_database.php';
-        $get = "SELECT * FROM cv JOIN gebruiker WHERE StudentNummer = '{$_GET['student']}' OR StudentNummer = '{$_GET['student']}'";
-        $get1 = "SELECT * FROM project JOIN gebruiker ON project.StudentNummer = gebruiker.GebruikerID  WHERE StudentNummer = '{$_GET['student']}' ";
-        $get2 = "SELECT * FROM slbproduct JOIN gebruiker ON slbproduct.GebruikerID = gebruiker.GebruikerID  WHERE slbproduct.GebruikerID = '{$_GET['student']}' ";
+        $get = "	SELECT * 
+					FROM cv 
+					JOIN gebruiker 
+					WHERE StudentNummer = '{$_GET['student']}' 
+					OR StudentNummer = '{$_GET['student']}'";
+					
+        $get1 = "	SELECT * 
+					FROM project 
+					JOIN gebruiker ON project.StudentNummer = gebruiker.GebruikerID  
+					WHERE StudentNummer = '{$_GET['student']}' ";
+					
+        $get2 = "	SELECT * 
+					FROM slbproduct 
+					JOIN gebruiker ON slbproduct.GebruikerID = gebruiker.GebruikerID  
+					WHERE slbproduct.GebruikerID = '{$_GET['student']}' ";
+					
         $query = mysqli_query($DBConnect, $get);
         $query1 = mysqli_query($DBConnect, $get1);
         $query2 = mysqli_query($DBConnect, $get2);
         $row = mysqli_fetch_assoc($query);
-
-        if ($row['StudentNummer'] == $_GET['student'])
-        {
-            echo "CV:<br> <a href='includes/CV/{$row['Gebruiker']}.{$row['Link']}'> {$row['Gebruiker']}_CV</a><br>";
-        } else
-        {
-            echo "CV: <br>User has no CV<br>";
-        }
-
-        echo "<br>Project:<br>";
-
-        while ($row1 = mysqli_fetch_assoc($query1))
-        {
-            echo "<a href='includes/project/{$row1['Naam']}{$row1['Gebruiker']}.{$row1['Project']}' target='blank'>{$row1['Naam']}</a> &nbsp &nbsp <form action='#' method='post'>Cijfer:&nbsp &nbsp" . $row1['Cijfer'] . "&nbsp &nbsp <input class='number_cijfer' type='text' name='{$row1['Naam']}'><input class='number_sub' type='submit' name='{$row1['ProjectNummer']}' value='ADD'>  </form> ";
-            if (isset($_POST[$row1['ProjectNummer']]))
-            {
-                $show = "UPDATE project SET Cijfer = '" . $_POST[$row1['Naam']] . "' WHERE ProjectNummer = '{$row1['ProjectNummer']}' ";
-                mysqli_query($DBConnect, $show);
-                header('refresh:0');
-            }
-        }
-
-        echo "<br>SLB Product:<br>";
-        while ($row2 = mysqli_fetch_assoc($query2))
-        {
-            echo "<a href='includes/SLB/{$row2['Historie']}{$row2['Gebruiker']}.{$row2['SLBProduct']}' target='blank'>{$row2['Historie']}</a> &nbsp <form action='#' method='post'>Cijfer:&nbsp &nbsp" . $row2['Cijfer'] . "&nbsp &nbsp <input class='number_cijfer' type='text' name='{$row2['Historie']}'><input class='number_sub' type='submit' name='{$row2['SLBProductCode']}' value='ADD'>  </form> <br>";
-            if (isset($_POST[$row2['SLBProductCode']]))
-            {
-                $show1 = "UPDATE slbproduct SET Cijfer = '" . $_POST[$row2['Historie']] . "' WHERE SLBProductCode = '{$row2['SLBProductCode']}' ";
-                mysqli_query($DBConnect, $show1);
-                header('refresh:0');
-            }
-        }
+		
+		echo "<div class='cijfer_header_links'>Projecten</div>";
+		echo "<div class='cijfer_header_rechts'>SLB Projecten</div>";
+		echo "<div class='clear'></div>";
+        echo "<div class='cijfer_toewijzen_table_links cijfer_toewijzen_table'>";
+			echo "<table>";
+				echo "<th>Naam</th>";
+				echo "<th>Cijfer</th>";
+				echo "<th colspan='2'>Cijfer toevoegen</th>";
+				while ($row1 = mysqli_fetch_assoc($query1)) {
+					echo "<tr>";
+					echo "<td><a href='includes/project/{$row1['Naam']}{$row1['Gebruiker']}.{$row1['Project']}' target='blank'>{$row1['Naam']}</a></td>";
+					echo "<td>" . $row1['Cijfer'] . "</td>";
+					echo "<form action='#' method='post'>";
+						echo "<td><input class='number_cijfer' type='text' name='{$row1['Naam']}'></td>";
+						echo "<td><input class='number_sub' type='submit' name='{$row1['ProjectNummer']}' value='Toevoegen'></td>";
+					echo "</form>";
+					echo "</tr>";
+					
+					if (isset($_POST[$row1['ProjectNummer']])) {
+						$show = "UPDATE project SET Cijfer = '" . $_POST[$row1['Naam']] . "' WHERE ProjectNummer = '{$row1['ProjectNummer']}' ";
+						mysqli_query($DBConnect, $show);
+						header('refresh:0');
+					}
+				}
+			echo "</table>";
+		echo "</div>";
+		
+		echo "<div class='cijfer_toewijzen_table_rechts cijfer_toewijzen_table'>";
+			echo "<table>";
+				echo "<th>Naam</th>";
+				echo "<th>Cijfer</th>";
+				echo "<th colspan='2'>Cijfer toevoegen</th>";
+				while ($row2 = mysqli_fetch_assoc($query2)) {
+					echo "<tr>";
+					echo "<td><a href='includes/SLB/{$row2['Historie']}{$row2['Gebruiker']}.{$row2['SLBProduct']}' target='blank'>{$row2['Historie']}</a></td>";
+					echo "<td>" . $row2['Cijfer']. "</td>";
+					echo "<form action='#' method='post'>";
+						echo "<td><input class='number_cijfer' type='text' name='{$row2['Historie']}'></td>";
+						echo "<td><input class='number_sub' type='submit' name='{$row2['SLBProductCode']}' value='Toevoegen'></td>";
+					echo "</form>";
+					echo "</tr>";
+					
+					if (isset($_POST[$row2['SLBProductCode']])) {
+						$show1 = "UPDATE slbproduct SET Cijfer = '" . $_POST[$row2['Historie']] . "' WHERE SLBProductCode = '{$row2['SLBProductCode']}' ";
+						mysqli_query($DBConnect, $show1);
+						header('refresh:0');
+					}
+				}
+			echo "</table>";
+		echo "</div>";
+		echo "<div class='clear'></div>";
+		
+		echo "<div class='cijfer_toewijzen_cv'>";
+			if ($row['StudentNummer'] == $_GET['student']) {
+				echo "<a href='includes/CV/{$row['Gebruiker']}.{$row['Link']}'> {$row['Gebruiker']}_CV</a>";
+			} else {
+				echo "User has no CV";
+			}
+		echo "</div>";
     }
     ?>
-	
 </div>
 <?php include "includes/botinclude.php"; ?>
-            
