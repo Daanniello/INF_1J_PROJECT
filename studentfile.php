@@ -1,5 +1,6 @@
 <?php include "includes/topinclude.php"; ?>
 <div class="inhoud">
+	<div class="titel_naam">Cijfers</div>
     <?php
     if (isset($_SESSION['login_docent']))
     {
@@ -46,7 +47,7 @@
         }
     }
     ?>
-
+	
 </div>
 <?php include "includes/botinclude.php"; ?>
             

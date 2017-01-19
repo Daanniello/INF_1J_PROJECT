@@ -100,24 +100,28 @@ and open the template in the editor.
                     ?> 
                 </div>
 				
+				<div class="session">
+					<?php print_r($_SESSION); ?>
+				</div>
+				
 				<div class="nav">
                 <?php
 					echo "";
 					echo "<ul>";
 					echo "<li class='li_opmaak'><a href='index.php' >Home</a></li>";
-					if (isset($_SESSION["id"]))
-					{
-						echo "<li class='li_opmaak'><a href='logout.php'>Log out</a></li>";
-						echo "<li class='li_opmaak'><a href='portfolio.php'>Portfolio </a></li>";
+					if (isset($_SESSION["id"])) {
 						echo "<li class='li_opmaak'><a href='comment.php'>Comment</a></li>";
-						echo "<li class='li_opmaak'><a href='editpage.php'>Edit profile</a></li>";
-						echo "<li class='li_opmaak'><a href='cijfer.php'>Cijfers</a></li>";
-						echo "<li class='li_opmaak'><a href='cv.php'>Curriculum vitae</a></li>";
-						if (isset($_SESSION['login_docent'])){
+						if (isset($_SESSION['login_user'])) {
+							echo "<li class='li_opmaak'><a href='portfolio.php'>Portfolio </a></li>";
+							echo "<li class='li_opmaak'><a href='editpage.php'>Edit profile</a></li>";
+							echo "<li class='li_opmaak'><a href='cijfer.php'>Cijfers</a></li>";
+							echo "<li class='li_opmaak'><a href='cv.php'>Curriculum vitae</a></li>";
+						}
+						if (isset($_SESSION['login_docent'])) {
 							echo "<li class='li_opmaak'><a href='docent.php'>Studenten</a></li>";
 						}
-					} else
-					{
+						echo "<li class='li_opmaak'><a href='logout.php'>Log out</a></li>";
+					} else {
 						echo "<li class='li_opmaak'><a href='login.php'>Log in </a></li>";
 						echo "<li class='li_opmaak'><a href='register.php'>Register </a></li>";
 					}

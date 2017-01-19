@@ -64,6 +64,12 @@ input[type="submit"]:hover {
     margin-top: 55px;
 }
 
+.session {
+	position: absolute;
+	top: 0;
+	margin-left: 12px;
+}
+
 /* ---- Social media bar ---- */
 .social {
     width: 40px;
@@ -139,6 +145,7 @@ input[type="submit"]:hover {
 .inhoud {
     background-color: #fff;
     padding: 20px;
+	min-height: 500px;
 }
 
 /* ---- Homepage ---- */
@@ -170,13 +177,20 @@ input[type="submit"]:hover {
 .titel_naam {
     font-size: 50px;
     text-align: center;
+<<<<<<< HEAD
     margin-bottom: 20px;
     color: #333;
+=======
+	margin-bottom: 30px;
+	color: #fff;
+    border-bottom: 5px solid #6e4381;
+    background-color: #9F4183;
+>>>>>>> 30dd6748a5e5df0150f0d0ebb78603a080c80d52
 }
 
 .project_upload {
     background-color: #6e4381;
-    margin-right: 40px;
+    margin-right: 30px;
     padding-bottom: 10px;
     display: inline-block;
     
@@ -197,10 +211,37 @@ input[type="submit"]:hover {
 
 .project_upload_file {
     width: 280px;
-    height: 250px;
+    min-height: 250px;
     float: left; 
+<<<<<<< HEAD
     background-color: #f3f3f3;
     padding: 10px;
+=======
+	background-color: #9F4183;
+}
+
+.project_file {
+	padding: 10px;
+	
+}
+
+.project_file:first-child {
+	padding-top: 10px;
+}
+
+.project_file:nth-child(even) {
+	background-color: #A0337E;
+}
+
+.project_file a {
+	text-decoration: none;
+	color: #fff;
+}
+
+.project_file a:hover {
+	color: #c0c0c0;
+	text-decoration: underline;
+>>>>>>> 30dd6748a5e5df0150f0d0ebb78603a080c80d52
 }
 
 .beschrijving {
@@ -310,7 +351,7 @@ input[type="number"]:focus,
     background-color: lightgrey;
 }
 
-/* ---- Cijfers ---- */
+/* ---- Studentfile ---- */
 .number_cijfer {
     width: 25px!important;
     font-size: 15px!important;
@@ -328,6 +369,86 @@ input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button { 
     -webkit-appearance: none; 
     margin: 0; 
+}
+
+/* ---- Cijfers ---- */
+.cijfer_header {
+	width: 46%;
+	font-size: 15pt;
+	background-color: #6e4381;
+	color: #fff;
+	float: left;
+	padding: 1%;
+	margin-right: 2%;
+}
+
+.cijfer_header:nth-child(2) {
+	margin-left: 2%;
+	margin-right: 0;
+}
+
+.cijfer_table {
+	width: 48%;
+	margin-right: 2%;
+	float: left;
+	background-color: #6e4381;
+}
+
+.cijfer_table:last-child {
+	margin-left: 2%;
+	margin-right: 0;
+}
+
+.cijfer_table table {
+	width: 100%;
+	text-align: left
+}
+
+.cijfer_table th {
+	background-color: #9F4183;
+	color: #fff;
+	padding: 8px;
+	width: 50%;
+}
+
+.cijfer_table td {
+	padding: 8px;
+}
+
+.cijfer_table tr:nth-child(odd) > td {
+	background-color: #f3f3f3;
+}
+
+.cijfer_table tr:nth-child(even) > td {
+	background-color: #fff;
+}
+/* ---- Studenten ---- */
+.students_table {
+	width: 100%;
+}
+
+.students_table th {
+	width: 25%;
+	text-align: left;
+	background-color: #9F4183;
+	padding: 8px;
+	color: #fff;
+}
+
+.students_table td {
+	padding: 8px;
+}
+
+.students_table tr:nth-child(odd) > td {
+	background-color: #f3f3f3;
+}
+
+.students_table a {
+	color: #333;
+}
+
+.students_table a:hover {
+	color: #A465CC;
 }
 
 /* ----------------------*/
