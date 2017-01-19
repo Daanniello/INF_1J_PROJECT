@@ -10,10 +10,11 @@ include "connection_database.php";
         <?php 
         if (isset($_SESSION['username'])){
             $show = "SELECT * FROM student WHERE GebruikerID = '{$_SESSION['id']}'";
-        $result = mysqli_query($DBConnect, $query);
-        $row = mysqli_fetch_assoc($result);
-        echo "Portfolio van {$row['Naam']}";
-        }else{
+			$result = mysqli_query($DBConnect, $query);
+			$row = mysqli_fetch_assoc($result);
+			echo "Portfolio van {$row['Naam']}";
+        } else {
+			
         }
          ?>
     </div>
@@ -24,14 +25,12 @@ include "connection_database.php";
 					Projecten
 				</div>
 				<?php
-				if (isset($_SESSION["login_user"]) == 1)
-				{
+				if (isset($_SESSION["login_user"]) == 1) {
 					echo '
 						<input type="file" name="upload_project"><br>
 						<input type="text" name="name" placeholder="Name of project"><br>
 						<input type="submit" name="submit" value="Upload">';
-				} else
-				{
+				} else {
 					echo "<div class='project_upload_title'> you have to log in first to edit this file </div>";
 				}
 				?>
@@ -42,33 +41,28 @@ include "connection_database.php";
 			<?php
 			if (isset($_POST['submit']))
 			{
-				if (empty($_FILES['upload_project']['name']) || empty($_POST['name']))
-				{
+				if (empty($_FILES['upload_project']['name']) || empty($_POST['name'])) {
 					echo "Je hebt geen bestand of naam gekozen.";
-				} else
-				{
+				} else {
 					$name = $_POST['name'];
 					$file = $_FILES['upload_project']['name'];
 					$ext = pathinfo($file, PATHINFO_EXTENSION);
 					$query = "INSERT INTO project VALUES(NULL,'$name','$ext','{$_SESSION['id']}',NULL)";
 					mysqli_query($DBConnect, $query);
-				$target_path = "includes/project/";
+					$target_path = "includes/project/";
 
-				$target_path = $target_path .$name .$_SESSION['username'] . ".".$ext;
+					$target_path = $target_path .$name .$_SESSION['username'] . ".".$ext;
 
-				if (move_uploaded_file($_FILES['upload_project']['tmp_name'], $target_path))
-				{
-					
-				} else
-				{
-					echo "There was an error uploading the file, please try again!";
-				}
-				header("Refresh:0"); 
+					if (move_uploaded_file($_FILES['upload_project']['tmp_name'], $target_path)) {
+						
+					} else {
+						echo "There was an error uploading the file, please try again!";
+					}
+					header("Refresh:0"); 
 				}
 			}
 			
-			if (isset($_SESSION['username']))
-			{
+			if (isset($_SESSION['username'])) {
 				
 				$naam = "SELECT * FROM project WHERE StudentNummer = '{$_SESSION['id']}'";
 				$show = mysqli_query($DBConnect, $naam);
@@ -78,7 +72,6 @@ include "connection_database.php";
 					echo "<a href='includes/project/{$row['Naam']}{$_SESSION['username']}.{$row['Project']}' target='blank'>{$row['Naam']}</a><br> ";
 					echo "</div>";
 				}
-				
 			}
 			?>
 
@@ -92,14 +85,12 @@ include "connection_database.php";
 					SLB Projecten
 				</div>
 				<?php
-				if (isset($_SESSION["login_user"]) == 1)
-				{
+				if (isset($_SESSION["login_user"]) == 1) {
 					echo '	
 					<input type="file" name="upload_project1"><br>
 					<input type="text" name="textname" placeholder="Name of SLBProduct"><br>
 					<input type="submit" name="submit1" value="Upload" >';
-				} else
-				{
+				} else {
 					echo "<div class='project_upload_title'> you have to log in first to edit this file </div>";
 				}
 				?>
@@ -108,52 +99,45 @@ include "connection_database.php";
 		
 		<div class="project_upload_file">
 			<?php
-			if (isset($_POST['submit1']))
-			{
-				if (empty($_FILES['upload_project1']['name']) || empty($_POST['textname']))
-				{
+			if (isset($_POST['submit1'])) {
+				if (empty($_FILES['upload_project1']['name']) || empty($_POST['textname'])) {
 					echo "Je hebt geen bestand of naam gekozen.";
-				} else
-				{
+				} else {
 					$name1 = $_POST['textname'];
 					$file = $_FILES['upload_project1']['name'];
 					$ext1 = pathinfo($file, PATHINFO_EXTENSION);
 					$query = "INSERT INTO slbproduct VALUES(NULL,'$name1','$ext1',NULL,'{$_SESSION['id']}')";
 					mysqli_query($DBConnect, $query);
-				$target_path = "includes/SLB/";
+					$target_path = "includes/SLB/";
 
-				$target_path = $target_path .$name1 .$_SESSION['username'] . ".".$ext1;
+					$target_path = $target_path .$name1 .$_SESSION['username'] . ".".$ext1;
 
-				if (move_uploaded_file($_FILES['upload_project1']['tmp_name'], $target_path))
-				{
-					
-				} else
-				{
-					echo "There was an error uploading the file, please try again!";
-				}
-				header("Refresh:0"); 
+					if (move_uploaded_file($_FILES['upload_project1']['tmp_name'], $target_path)) {
+						
+					} else {
+						echo "There was an error uploading the file, please try again!";
+					}
+					header("Refresh:0"); 
 				}
 			}
 			
-			if (isset($_SESSION['username']))
-			{
+			if (isset($_SESSION['username'])) {
 				
 				$naam1 = "SELECT * FROM slbproduct WHERE GebruikerID = '{$_SESSION['id']}'";
 				$show1 = mysqli_query($DBConnect, $naam1);
 				
 				while ($row1 = mysqli_fetch_assoc($show1)){
+					echo "<div class='project_file'>";
 					echo "<a href='includes/SLB/{$row1['Historie']}{$_SESSION['username']}.{$row1['SLBProduct']}' target='blank'>{$row1['Historie']}</a><br> ";
+					echo "</div>";
 				}
-				
 			}
 			?>
 		</div>
     </div>
     <div class="beschrijving">
         <?php
-        if (isset($_SESSION['username']))
-        {
-            
+        if (isset($_SESSION['username'])) {
             require 'Connection_database.php';
             $get = "SELECT beschrijving FROM student WHERE GebruikerID = '{$_SESSION['id']}' ";
             $query = mysqli_query($DBConnect, $get);
@@ -168,17 +152,12 @@ include "connection_database.php";
                     mysqli_query($DBConnect, $querie);
                     echo "query send";
                     header("Refresh:0");
-                   
                 }
-            } else
-            {
-
-
+            } else {
                 echo $row['beschrijving'];
                 
             }
-        } else
-        {
+        } else {
             
         }
         ?> 

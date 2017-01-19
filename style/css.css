@@ -231,6 +231,7 @@ input[type="submit"]:hover {
 
 .project_file a:hover {
 	color: #c0c0c0;
+	text-decoration: underline;
 }
 
 .beschrijving {
@@ -381,6 +382,7 @@ input[type=number]::-webkit-outer-spin-button {
 	width: 48%;
 	margin-right: 2%;
 	float: left;
+	background-color: #6e4381;
 }
 
 .cijfer_table:last-child {
@@ -408,6 +410,9 @@ input[type=number]::-webkit-outer-spin-button {
 	background-color: #f3f3f3;
 }
 
+.cijfer_table tr:nth-child(even) > td {
+	background-color: #fff;
+}
 /* ---- Studenten ---- */
 .students_table {
 	width: 100%;

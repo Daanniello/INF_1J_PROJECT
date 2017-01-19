@@ -1,5 +1,6 @@
 <?php include "includes/topinclude.php"; ?>
 <div class="inhoud">
+	<div class="titel_naam">Curriculum Vitae</div> 
     <?php
     if (isset($_SESSION['username']))
     {
@@ -26,7 +27,10 @@
             $fetch2 = mysqli_fetch_assoc($result2);
             
             echo "<a href='includes/CV/{$_SESSION['username']}.{$fetch2['Link']}' target='blank'>" . "CV_" . $_SESSION['username'] . "</a>";
-            echo "<form enctype='multipart/form-data' action='cv.php' method='post'><input type='file' name='upload1' value='CV'> <input type='submit' name='submit1' value='edit cv' ></form>";
+            echo "<form enctype='multipart/form-data' action='cv.php' method='post'>";
+				echo "<input type='file' name='upload1' value='CV'><br>";
+				echo "<input type='submit' name='submit1' value='Bewerk CV' >";
+			echo "</form>";
             if (isset($_POST['submit1']))
             {
                 if (empty($_FILES['upload1']))
@@ -63,10 +67,10 @@
         } else
         {
             echo "Je hebt nog geen CV, Upload hem nu.";
-            echo "	<form enctype='multipart/form-data' action='#' method='post'>
-						<input type='file' name='upload' value='CV'><br>
-						<input type='submit' name='submit' value='upload cv' >
-					</form> ";
+            echo "<form enctype='multipart/form-data' action='#' method='post'>";
+				echo "<input type='file' name='upload' value='CV'><br>";
+				echo "<input type='submit' name='submit' value='Upload CV'>";
+			echo "</form>";
             if (isset($_POST['submit']))
             {
                 if (empty($_FILES['upload']))
