@@ -44,7 +44,7 @@
                                 Naam varchar(30),
                                 TelefoonNummer varchar(10),
                                 Email varchar(40),
-                                Land varchar(20),
+                                Land varchar(20),   
                                 Woonplaats varchar(25),
                                 Adres varchar(250),
                                 Postcode varchar(6),

@@ -26,12 +26,12 @@ input[type="submit"] {
     color: #6e4381;
     cursor: pointer;
     margin-bottom: 10px;
-	outline: none;
+    outline: none;
 }
 
 input[type="submit"]:hover {
-	color: #A465CC;
-	border-color: #A465CC;
+    color: #A465CC;
+    border-color: #A465CC;
 }
 
 
@@ -50,18 +50,18 @@ input[type="submit"]:hover {
 .header {
     background-color: #6e4381;
     padding: 10px 10px 0 10px;
-	color: #fff;
+    color: #fff;
 }
 
 .headerimg img {
-	float: left;
+    float: left;
     width: 175px;
 }
 
 .titel{
-	font-size: 36pt;
-	float: left;
-	margin-top: 55px;
+    font-size: 36pt;
+    float: left;
+    margin-top: 55px;
 }
 
 .session {
@@ -80,7 +80,7 @@ input[type="submit"]:hover {
 }
 
 .image_social {
-	margin-top: 4px;
+    margin-top: 4px;
     margin-left: 5px;
     margin-bottom: 2px;
     height: 30px;
@@ -122,7 +122,7 @@ input[type="submit"]:hover {
 }
 
 .nav ul {
-	padding-left: 10px;
+    padding-left: 10px;
 }
 
 .nav li{
@@ -166,7 +166,7 @@ input[type="submit"]:hover {
 }
 
 .homeTekst{
-	width: 248px;
+    width: 248px;
     height: 300px;
     padding-top: 100px;
     text-align: center;
@@ -177,10 +177,15 @@ input[type="submit"]:hover {
 .titel_naam {
     font-size: 50px;
     text-align: center;
+<<<<<<< HEAD
+    margin-bottom: 20px;
+    color: #333;
+=======
 	margin-bottom: 30px;
 	color: #fff;
     border-bottom: 5px solid #6e4381;
     background-color: #9F4183;
+>>>>>>> 30dd6748a5e5df0150f0d0ebb78603a080c80d52
 }
 
 .project_upload {
@@ -192,12 +197,12 @@ input[type="submit"]:hover {
 }
 
 .upload_top {
-	padding: 5px;
-	color: #fff;
+    padding: 5px;
+    color: #fff;
 }
 
 .upload_top input {
-	margin-top: 5px!important;
+    margin-top: 5px!important;
 }
 
 .project_upload_title {
@@ -208,6 +213,10 @@ input[type="submit"]:hover {
     width: 280px;
     min-height: 250px;
     float: left; 
+<<<<<<< HEAD
+    background-color: #f3f3f3;
+    padding: 10px;
+=======
 	background-color: #9F4183;
 }
 
@@ -232,6 +241,7 @@ input[type="submit"]:hover {
 .project_file a:hover {
 	color: #c0c0c0;
 	text-decoration: underline;
+>>>>>>> 30dd6748a5e5df0150f0d0ebb78603a080c80d52
 }
 
 .beschrijving {
@@ -259,20 +269,20 @@ input[type="password"],
 input[type="date"],
 input[type="number"],
 #select_country {
-	outline: none;
+    outline: none;
     border: none;
     padding: 3px;
-	width: 200px;
-	height: 17px;
+    width: 200px;
+    height: 17px;
     background-color: #f3f3f3;
     border-right: 2px solid grey;
     border-left: 2px solid grey;	
 }
 
 #select_country {
-	width: 210px;
-	height: 23px;
-	margin-left: -4px;
+    width: 210px;
+    height: 23px;
+    margin-left: -4px;
 }
 
 input[type="text"]:focus, 
@@ -280,10 +290,10 @@ input[type="password"]:focus,
 input[type="date"]:focus,
 input[type="number"]:focus,
 #select_country:focus {
-	border-top: 2px solid grey;
-	border-bottom: 2px solid grey;
-	padding-top: 1px;
-	padding-bottom: 1px;
+    border-top: 2px solid grey;
+    border-bottom: 2px solid grey;
+    padding-top: 1px;
+    padding-bottom: 1px;
 }
 
 /* ---- Comment page ---- */
@@ -342,28 +352,104 @@ input[type="number"]:focus,
 }
 
 /* ---- Studentfile ---- */
+.cijfer_toewijzen_table_links,
+.cijfer_toewijzen_table_rechts {
+	width: 48%;
+	margin-right: 2%;
+	float: left;
+	background-color: #6e4381;
+}
+
+
+.cijfer_toewijzen_table_rechts {
+	margin-left: 2%;
+	margin-right: 0;
+}
+
+
+.cijfer_toewijzen_table table {
+	width: 100%;
+	text-align: left
+}
+
+.cijfer_toewijzen_table th {
+	background-color: #9F4183;
+	color: #fff;
+	padding: 8px;
+}
+
+.cijfer_toewijzen_table tr:nth-child(odd) > td {
+	background-color: #f3f3f3;
+}
+
+.cijfer_toewijzen_table tr:nth-child(even) > td {
+	background-color: #fff;
+}
+
+.cijfer_toewijzen_table td {
+	padding: 8px;
+}
+
+.cijfer_toewijzen_table a {
+	color: #333;
+	text-decoration: none;
+}
+
+.cijfer_toewijzen_table a:hover {
+	color: #A465CC;
+	text-decoration: underline;
+}
+
 .number_cijfer {
     width: 25px!important;
     font-size: 15px!important;
 }
 
 .number_sub {
-	width: 30px!important;
-	height: 20px!important;
-	font-size: 10px!important; 
-	padding: 0!important;
-	margin-left: 10px!important;
+<<<<<<< HEAD
+	border: none!important;
+    padding: 0!important;
+    margin: 0!important;
+	background-color: transparent!important;
+}
+
+.number_sub:hover {
+	text-decoration: underline;
+=======
+    width: 30px!important;
+    height: 20px!important;
+    font-size: 10px!important; 
+    padding: 0!important;
+    margin-left: 10px!important;
+>>>>>>> origin/master
 }
 
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
-	-webkit-appearance: none; 
-	margin: 0; 
-  
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+
+.cijfer_toewijzen_cv {
+	background-color: #9F4183;	
+	display: inline-block;
+	padding: 15px;
+	margin-top: 15px;
+}
+
+.cijfer_toewijzen_cv a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.cijfer_toewijzen_cv a:hover {
+	color: #A465CC;
+	text-decoration: underline;
 }
 
 /* ---- Cijfers ---- */
-.cijfer_header {
+.cijfer_header_links,
+.cijfer_header_rechts {
 	width: 46%;
 	font-size: 15pt;
 	background-color: #6e4381;
@@ -373,7 +459,7 @@ input[type=number]::-webkit-outer-spin-button {
 	margin-right: 2%;
 }
 
-.cijfer_header:nth-child(2) {
+.cijfer_header_rechts {
 	margin-left: 2%;
 	margin-right: 0;
 }
@@ -416,6 +502,7 @@ input[type=number]::-webkit-outer-spin-button {
 /* ---- Studenten ---- */
 .students_table {
 	width: 100%;
+	background-color: #6e4381;
 }
 
 .students_table th {
@@ -434,6 +521,10 @@ input[type=number]::-webkit-outer-spin-button {
 	background-color: #f3f3f3;
 }
 
+.students_table tr:nth-child(even) > td {
+	background-color: #fff;
+}
+
 .students_table a {
 	color: #333;
 }
@@ -449,7 +540,7 @@ input[type=number]::-webkit-outer-spin-button {
     background-color: #6e4381;
     min-height: 60px;
     padding: 10px;
-	color: #fff;
+    color: #fff;
 }
 
 .school{
@@ -464,11 +555,11 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .link a {
-	color: #fff;
+    color: #fff;
 }
 
 .link a:hover {
-	color: #A465CC;
+    color: #A465CC;
 }
 
 .linkStyle{

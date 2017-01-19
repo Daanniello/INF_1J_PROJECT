@@ -19,8 +19,7 @@ include "Connection_database.php";
             echo"Please don't do that."
             . "I will find you"
                     . " and I will kill you."
-                    . " Especially if your name is Frank Tieck";
-            
+                    . " Especially if your name is Frank Tieck and Kevin";
         } 
         
         else
@@ -46,7 +45,7 @@ include "Connection_database.php";
     ?>
     <div class="tabel">
         <?php
-        if ($DBConnect === FALSE)
+       if ($DBConnect === FALSE)
         {
             echo "<p>Unable to connect to the database server.</p>"
             . "<p>Error code " . mysqli_errno() . ": " . mysqli_error()
@@ -66,7 +65,7 @@ include "Connection_database.php";
                 if (mysqli_num_rows($QueryResult2) == 0)
                 {
                     echo "<p>There are no comments given yet!</p>";
-                } else
+                }  else
                 {
                     echo "<h2>The following comments have been given:</h2>";
                     while ($Row = mysqli_fetch_assoc($QueryResult2))

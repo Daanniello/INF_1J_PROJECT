@@ -4,8 +4,8 @@
 		<div class="cijfer_tables">
 			<?php
 				
-				echo "<div class='cijfer_header'>Projecten</div>";
-				echo "<div class='cijfer_header'>SLB Projecten</div>";
+				echo "<div class='cijfer_header_links'>Projecten</div>";
+				echo "<div class='cijfer_header_rechts'>SLB Projecten</div>";
 				echo "<div class='clear'></div>";
 				echo "<div class='cijfer_table'>";
 					echo "<table >";
@@ -16,7 +16,11 @@
 					while ($row = mysqli_fetch_assoc($query)){
 						echo "<tr>";
 						echo "<td>{$row['Naam']}</td>";
-						echo "<td>{$row['Cijfer']}</td>";
+						if(empty($row['Cijfer'])) {
+							echo "<td>Niet toegewezen</td>";
+						} else {
+							echo "<td>{$row['Cijfer']}</td>";
+						}
 						echo "</tr>";
 					}
 					echo "</table>";
