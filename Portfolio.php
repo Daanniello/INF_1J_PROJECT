@@ -2,10 +2,39 @@
 <?php
 include "includes/topinclude.php";
 include "connection_database.php";
+function color_inverse($color) {
+            $color = str_replace('#', '', $color);
+            if (strlen($color) != 6) {
+                return '000000';
+            }
+            $rgb = '';
+            for ($x = 0; $x < 3; $x++) {
+                $c = 255 - hexdec(substr($color, (4 * $x), 2));
+                $c = ($c < 0) ? 0 : dechex($c);
+                $rgb .= (strlen($c) < 2) ? '0' . $c : $c;
+            }
+            return '#' . $rgb;
+        }
+ 
 ?>
 
+
 <div class="inhoud " >
-    <div class="titel_naam">
+    <div class="titel_naam" style="<?php 
+    
+    $cat = "SELECT * FROM style WHERE StudentNummer = '{$_SESSION['id']}' ";
+    $lion = mysqli_query($DBConnect, $cat);
+    $dog = mysqli_fetch_assoc($lion);
+    if ($dog['StyleCode'] == 1){
+        echo "";
+    }elseif ($dog['StyleCode'] == 2){
+        echo "background-color:{$dog['KleurCode']}; border-bottom: 5px solid ".color_inverse($dog['KleurCode']);
+        
+    }
+    
+    
+    
+    ?>">
         
         <?php 
         if (isset($_SESSION['username'])){
@@ -18,7 +47,21 @@ include "connection_database.php";
         }
          ?>
     </div>
-    <div class="project_upload">
+    <div class="project_upload" style="<?php 
+    
+    $cat = "SELECT * FROM style WHERE StudentNummer = '{$_SESSION['id']}' ";
+    $lion = mysqli_query($DBConnect, $cat);
+    $dog = mysqli_fetch_assoc($lion);
+    if ($dog['StyleCode'] == 1){
+        echo "";
+    }elseif ($dog['StyleCode'] == 2){
+        echo "background-color:{$dog['KleurCode']}; ";
+        
+    }
+    
+    
+    
+    ?>">
 		<div class="upload_top">
 			<form enctype='multipart/form-data' action="portfolio.php" method="post">
 				<div class="project_upload_title">
@@ -37,7 +80,19 @@ include "connection_database.php";
 			</form>
 		</div>
 		
-		<div class="project_upload_file">
+		<div class="project_upload_file" style="<?php 
+    
+    
+    if ($dog['StyleCode'] == 1){
+        echo "";
+    }elseif ($dog['StyleCode'] == 2){
+        echo "background-color:".color_inverse($dog['KleurCode']).";" ;
+        
+    }
+    
+    
+    
+    ?>">
 			<?php
 			if (isset($_POST['submit']))
 			{
@@ -78,7 +133,21 @@ include "connection_database.php";
 		</div>
     </div>
 
-    <div class="project_upload">
+    <div class="project_upload" style="<?php 
+    
+    $cat = "SELECT * FROM style WHERE StudentNummer = '{$_SESSION['id']}' ";
+    $lion = mysqli_query($DBConnect, $cat);
+    $dog = mysqli_fetch_assoc($lion);
+    if ($dog['StyleCode'] == 1){
+        echo "";
+    }elseif ($dog['StyleCode'] == 2){
+        echo "background-color:{$dog['KleurCode']}; ";
+        
+    }
+    
+    
+    
+    ?>">
 		<div class="upload_top">
 			<form enctype='multipart/form-data' action="portfolio.php" method="post">
 				<div class="project_upload_title">
@@ -135,7 +204,19 @@ include "connection_database.php";
 			?>
 		</div>
     </div>
-    <div class="beschrijving">
+    <div class="beschrijving" style="<?php 
+    
+    
+    if ($dog['StyleCode'] == 1){
+        echo "";
+    }elseif ($dog['StyleCode'] == 2){
+        echo "border: 2px solid".color_inverse($dog['KleurCode']).";" ;
+        
+    }
+    
+    
+    
+    ?>">
         <?php
         if (isset($_SESSION['username'])) {
             require 'Connection_database.php';
@@ -163,4 +244,10 @@ include "connection_database.php";
         ?> 
     </div>
 </div>
+<style>
+    .project_file:nth-child(even) {
+        background-color:<?php if ($dog['StyleCode'] == 1){echo "";}else{ echo color_inverse(color_inverse($dog['KleurCode']));} ?>;
+}
+    
+</style>
 <?php include "includes/botinclude.php"; ?>
