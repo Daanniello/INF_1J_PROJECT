@@ -74,7 +74,9 @@ include "connection_database.php";
 				$show = mysqli_query($DBConnect, $naam);
 				
 				while ($row = mysqli_fetch_assoc($show)){
+					echo "<div class='project_file'>";
 					echo "<a href='includes/project/{$row['Naam']}{$_SESSION['username']}.{$row['Project']}' target='blank'>{$row['Naam']}</a><br> ";
+					echo "</div>";
 				}
 				
 			}
