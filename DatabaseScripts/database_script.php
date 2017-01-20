@@ -172,6 +172,14 @@
                             VALUES (3,'SLBer')";
             $SQLRechtAdmin = "INSERT INTO recht(RechtCode,Recht)
                             VALUES (4,'Admin')";
+            $SQLDocentComment = "CREATE TABLE docent_comment(
+                            MessageID INT NOT NULL AUTO_INCREMENT,
+                            Message_Comment VARCHAR(500) NOT NULL,
+                            ProjectNummer int,
+                            Docent INT(11) NOT NULL,
+                            PRIMARY KEY (MessageID),
+                            FOREIGN KEY (ProjectNummer) REFERENCES Project(ProjectNummer),
+                            FOREIGN KEY (Docent) REFERENCES Docent(DocentCode));";
             
         }
         $queryArray = [];
@@ -193,6 +201,7 @@
         array_push($queryArray, $SQLRechtDocent);
         array_push($queryArray, $SQLRechtSLBer);
         array_push($queryArray, $SQLRechtAdmin);
+        array_push($queryArray, $SQLDocentComment);
 
         foreach ($queryArray as $query) {
             $QueryResult = mysqli_query($DBConnect, $query);
