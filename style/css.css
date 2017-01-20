@@ -177,15 +177,10 @@ input[type="submit"]:hover {
 .titel_naam {
     font-size: 50px;
     text-align: center;
-<<<<<<< HEAD
-    margin-bottom: 20px;
-    color: #333;
-=======
 	margin-bottom: 30px;
 	color: #fff;
     border-bottom: 5px solid #6e4381;
     background-color: #9F4183;
->>>>>>> 30dd6748a5e5df0150f0d0ebb78603a080c80d52
 }
 
 .project_upload {
@@ -213,11 +208,8 @@ input[type="submit"]:hover {
     width: 280px;
     min-height: 250px;
     float: left; 
-<<<<<<< HEAD
     background-color: #f3f3f3;
     padding: 10px;
-=======
-	background-color: #9F4183;
 }
 
 .project_file {
@@ -406,7 +398,6 @@ input[type="number"]:focus,
 }
 
 .number_sub {
-<<<<<<< HEAD
 	border: none!important;
     padding: 0!important;
     margin: 0!important;
@@ -415,13 +406,6 @@ input[type="number"]:focus,
 
 .number_sub:hover {
 	text-decoration: underline;
-=======
-    width: 30px!important;
-    height: 20px!important;
-    font-size: 10px!important; 
-    padding: 0!important;
-    margin-left: 10px!important;
->>>>>>> origin/master
 }
 
 input[type=number]::-webkit-inner-spin-button, 
