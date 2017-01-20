@@ -9,6 +9,7 @@
 				echo "<div class='clear'></div>";
 				echo "<div class='cijfer_table'>";
 					echo "<table >";
+                                        echo "<tr>";
 					echo "<th>Naam </th>";
 					echo "<th>Cijfer</th>";
 					$show="SELECT * FROM project WHERE StudentNummer = '{$_SESSION['id']}'";
@@ -28,6 +29,7 @@
 				
 				echo "<div class='cijfer_table'>";
 					echo "<table>";
+                                        echo "<tr>";
 					echo "<th>Naam </th>";
 					echo "<th>Cijfer</th>";
 					$show1 ="SELECT * FROM slbproduct WHERE GebruikerID = '{$_SESSION['id']}'";
