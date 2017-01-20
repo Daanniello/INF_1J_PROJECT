@@ -38,6 +38,7 @@ input[type="submit"]:hover {
 .container {
     margin: 0 auto;
     width: 1000px;
+    background-color:white;
 }
 
 .clear {
@@ -147,7 +148,11 @@ input[type="submit"]:hover {
     padding: 20px;
 	min-height: 500px;
 }
-
+.home_image img{
+    width:1000px;
+    margin-top:50px;
+    margin-bottom:50px;
+}
 /* ---- Homepage ---- */
 .inhoud_home {
     background-color: #fff;
@@ -549,4 +554,70 @@ input[type=number]::-webkit-outer-spin-button {
     float: left;
     font-size: 9pt;
     line-height: 15pt;
+}
+/* Responsive */
+@media screen and (max-width: 600px) {
+    .header{
+      width:100%;  
+    }
+    .container{
+        width:100%;
+    }
+    .titel{
+        width:100%;
+        text-align:center;
+    }
+    .nav li{
+        width:100%;
+        height:50px;
+        text-align:center;
+    }
+    .avatar{
+        text-align:center;
+        width:100%;
+        background-color:#6e4381;
+    }
+    .social{
+        margin-top:0px;
+    }
+    .information{
+        width:100%;
+        text-align:center;
+        
+    }
+    .information ul{
+        width:100%;
+        text-align:center;
+        
+    }
+    .information form{
+        float:right;
+        width:100%;
+    }
+    .information form input{
+        width:50%;
+    }
+    .headerimg{
+        width:100%;
+        text-align:center;
+        
+    }
+    .homeFoto img{
+        width:100%;
+    }
+    .homeTekst{
+        width:100%;
+        height:100%;
+    }
+    .home_image img{
+        width:100%;
+    }
+    .linkStyle{
+        width:100%;
+    }
+    .footer{
+        width:100%;
+        height:225px;
+    }
+    
 }

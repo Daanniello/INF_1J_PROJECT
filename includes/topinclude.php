@@ -11,6 +11,7 @@ and open the template in the editor.
         <title>Stenden Portfolio</title>
         <link rel="stylesheet" type="text/css" href="style/css.css"> 
         <link rel="icon" href="includes/images/stenden_logo.png" type="image/x-icon"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
         <div class="social">
@@ -78,7 +79,8 @@ and open the template in the editor.
                             } else
                             {
                                 $upload = $_FILES['upload']['name'];
-                                $string = "UPDATE student SET Profielfoto = '$upload' WHERE GebruikerID = '{$_SESSION['id']}' ";
+                                $ext2 = pathinfo($upload, PATHINFO_EXTENSION);
+                                $string = "UPDATE student SET Profielfoto = '.$ext2' WHERE GebruikerID = '{$_SESSION['id']}' ";
                                 mysqli_query($DBConnect, $string);
                                 $target_path = "includes/profielfoto/";
 

@@ -1,5 +1,7 @@
 <?php include "includes/topinclude.php"; ?>
 <div class="inhoud_home">
+    
+    
     <div class="homeTitel">
         <h1>Welkom bij het Portfolio van Stenden.</h1>
     </div>
@@ -11,4 +13,5 @@
     </div>
     <div class="clear"></div>
 </div>
+<div class='home_image'><img src="includes/images/banner.jpg" alt="Banner"></div>
 <?php include "includes/botinclude.php"; ?>
