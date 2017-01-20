@@ -308,7 +308,7 @@ input[type="number"]:focus,
     width: 100px;
     height: 20px;
     text-align: center;
-    background-color: lightgrey;
+    background-color: purple;
 }
 
 .profielfoto{
@@ -321,7 +321,7 @@ input[type="number"]:focus,
     padding: 10px;
     height: 80px;
     float: left;
-    background-color: silver;
+	background-color: #6e4381;
 }
 
 .date{
@@ -330,7 +330,7 @@ input[type="number"]:focus,
     padding-right: 5px;
     float: left;
     text-align: right;
-    background-color: lightgrey;
+    background-color: purple;
 }
 
 .time{
@@ -338,7 +338,7 @@ input[type="number"]:focus,
     height: 20px;
     padding-right: 5px;
     float: left;
-    background-color: lightgrey;
+    background-color: purple;
 }
 
 /* ---- Studentfile ---- */

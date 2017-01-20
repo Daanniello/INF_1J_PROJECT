@@ -22,6 +22,36 @@ if (isset($_SESSION['username']))
 </form>
 
 <?php
-if(isset($_POST['docent_comment']))
+if (isset($_POST['submit']))
+{
+    if (empty($_POST['docent_comment']))
+    {
+        echo"fill something in.";
+    } elseif (ctype_space($_POST['comment']))
+    {
+        echo"Please don't do that."
+        . "I will find you"
+        . " and I will kill you."
+        . " Especially if your name is Frank Tieck and Kevin";
+    } else
+    {
+        $comment = stripslashes($_POST['comment']);
+            $GID = $_SESSION['id'];
+            $date = date("Y-m-d");
+            $time = date("H:i:s");
+            $SQLstring = "INSERT INTO $tablenaam VALUES ('NULL', '$comment', '$GID', '$date', '$time')";
+            $QueryResult = mysqli_query($DBConnect, $SQLstring);
+            if ($QueryResult === FALSE)
+            {
+                echo "<p>Unable to execute the query.</p>"
+                . "<p>Error code " . mysqli_errno($DBConnect)
+                . ": " . mysqli_error($DBConnect) . "</p>";
+                echo"$SQLstring";
+            } else
+            {
+                echo "<p>The comment has been added.</p>";
+            }
+    }
+}
 include "includes/botinclude.php";
 ?>
