@@ -25,6 +25,7 @@
         $query1 = mysqli_query($DBConnect, $get1);
         $query2 = mysqli_query($DBConnect, $get2);
         $row = mysqli_fetch_assoc($query);
+
 		
 		echo "<div class='cijfer_header_links'>Projecten</div>";
 		echo "<div class='cijfer_header_rechts'>SLB Projecten</div>";
@@ -40,14 +41,14 @@
 					echo "<td>" . $row1['Cijfer'] . "</td>";
 					echo "<form action='#' method='post'>";
 						echo "<td><input class='number_cijfer' type='text' name='{$row1['Naam']}'></td>";
-						echo "<td><input class='number_sub' type='submit' name='{$row1['ProjectNummer']}' value='Toevoegen'></td>";
+						echo "<td><input class='number_sub' type='submit' name='P{$row1['Naam']}' value='Toevoegen'></td>";
 					echo "</form>";
 					echo "</tr>";
 					
-					if (isset($_POST[$row1['ProjectNummer']])) {
+					if (isset($_POST['P'.$row1['Naam']])) {
 						$show = "UPDATE project SET Cijfer = '" . $_POST[$row1['Naam']] . "' WHERE ProjectNummer = '{$row1['ProjectNummer']}' ";
 						mysqli_query($DBConnect, $show);
-						header('refresh:0');
+						echo "<meta http-equiv='refresh' content='0'>";
 					}
 				}
 			echo "</table>";
@@ -64,14 +65,14 @@
 					echo "<td>" . $row2['Cijfer']. "</td>";
 					echo "<form action='#' method='post'>";
 						echo "<td><input class='number_cijfer' type='text' name='{$row2['Historie']}'></td>";
-						echo "<td><input class='number_sub' type='submit' name='{$row2['SLBProductCode']}' value='Toevoegen'></td>";
+						echo "<td><input class='number_sub' type='submit' name='Q{$row2['Historie']}' value='Toevoegen'></td>";
 					echo "</form>";
 					echo "</tr>";
 					
-					if (isset($_POST[$row2['SLBProductCode']])) {
+					if (isset($_POST['Q'.$row2['Historie']])) {
 						$show1 = "UPDATE slbproduct SET Cijfer = '" . $_POST[$row2['Historie']] . "' WHERE SLBProductCode = '{$row2['SLBProductCode']}' ";
 						mysqli_query($DBConnect, $show1);
-						header('refresh:0');
+						echo "<meta http-equiv='refresh' content='0'>";
 					}
 				}
 			echo "</table>";
@@ -85,6 +86,7 @@
 				echo "User has no CV";
 			}
 		echo "</div>";
+
     }
     ?>
 </div>

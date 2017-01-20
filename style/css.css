@@ -208,13 +208,11 @@ input[type="submit"]:hover {
     width: 280px;
     min-height: 250px;
     float: left; 
-    background-color: #f3f3f3;
-    padding: 10px;
+	background-color: #9F4183;
 }
 
 .project_file {
 	padding: 10px;
-	
 }
 
 .project_file:first-child {
@@ -233,7 +231,7 @@ input[type="submit"]:hover {
 .project_file a:hover {
 	color: #c0c0c0;
 	text-decoration: underline;
->>>>>>> 30dd6748a5e5df0150f0d0ebb78603a080c80d52
+
 }
 
 .beschrijving {
