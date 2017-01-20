@@ -20,8 +20,10 @@
                             Message_Comment VARCHAR(500) NOT NULL,
                             ProjectNummer int,
                             Docent INT(11) NOT NULL,
+                            GebruikerID INT NOT NULL,
                             PRIMARY KEY (MessageID),
                             FOREIGN KEY (ProjectNummer) REFERENCES Project(ProjectNummer),
+                            FOREIGN KEY (GebruikerID) REFERENCES gebruiker(GebruikerID),
                             FOREIGN KEY (Docent) REFERENCES Docent(DocentCode));";
         }
         $queryArray = [];
