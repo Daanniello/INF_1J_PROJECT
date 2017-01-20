@@ -20,7 +20,7 @@ include "connection_database.php";
                     </select>
                     </p>
                     <p>Kleur optie:</p><p>
-                        <input type='color' name='color' checked> COLOR
+                        <input type='color' name='color'> COLOR
                         
                     </p>
                     <p>Lettertype:
