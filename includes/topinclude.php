@@ -12,13 +12,13 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" href="style/css.css"> 
         <link rel="icon" href="includes/images/stenden_logo.png" type="image/x-icon"/>
     </head>
-    <div class="social">
-        <a href="https://twitter.com/stenden" target="_blank">					<img class='image_social' src="includes/images/twitter.png" alt="Twitter"></a>
-        <a href="https://www.instagram.com/stenden/" target="_blank">			<img class='image_social' src="includes/images/instagram.png" alt="Instagram"></a>
-        <a href="https://www.facebook.com/stenden/" target="_blank">			<img class='image_social' src="includes/images/facebook.png" alt="Facebook"></a>
-        <a href="https://www.youtube.com/user/marketingstenden" target="_blank"><img class='image_social' src="includes/images/youtube.png" alt="Youtube"></a>
-    </div>
     <body>
+        <div class="social">
+            <a href="https://twitter.com/stenden" target="_blank">					<img class='image_social' src="includes/images/twitter.png" alt="Twitter"></a>
+            <a href="https://www.instagram.com/stenden/" target="_blank">			<img class='image_social' src="includes/images/instagram.png" alt="Instagram"></a>
+            <a href="https://www.facebook.com/stenden/" target="_blank">			<img class='image_social' src="includes/images/facebook.png" alt="Facebook"></a>
+            <a href="https://www.youtube.com/user/marketingstenden" target="_blank"><img class='image_social' src="includes/images/youtube.png" alt="Youtube"></a>
+        </div>
         <div class="container">
             <div class="header">
                 <div class="headerimg">
@@ -69,7 +69,7 @@ and open the template in the editor.
                         require 'Connection_database.php';
 
 
-                        echo "</br><form enctype='multipart/form-data' action='#' method='post'><input type='file' name='upload'><br><input type='submit' name='sub_foto' value='Change Photo'></form>";
+                        echo "<br><form enctype='multipart/form-data' action='#' method='post'><input type='file' name='upload'><br><input type='submit' name='sub_foto' value='Change Photo'></form>";
                         if (isset($_POST['sub_foto']))
                         {
                             if (empty($_FILES['upload']['name']))

@@ -4,7 +4,7 @@
         <h1>Welkom bij het Portfolio van Stenden.</h1>
     </div>
     <div class="homeFoto">
-        <img src="includes/images/home.jpg">
+        <img src="includes/images/home.jpg" alt="homeFoto">
     </div>
     <div class="homeTekst">
         hier komen comments van gebruikers.
