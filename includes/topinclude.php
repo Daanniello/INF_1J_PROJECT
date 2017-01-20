@@ -13,16 +13,16 @@ and open the template in the editor.
         <link rel="icon" href="includes/images/stenden_logo.png" type="image/x-icon"/>
     </head>
     <div class="social">
-        <a href="https://twitter.com/stenden" target="_blank">					<img class='image_social' src="includes/images/twitter.png" ></a>
-        <a href="https://www.instagram.com/stenden/" target="_blank">			<img class='image_social' src="includes/images/instagram.png" ></a>
-        <a href="https://www.facebook.com/stenden/" target="_blank">			<img class='image_social' src="includes/images/facebook.png" ></a>
-        <a href="https://www.youtube.com/user/marketingstenden" target="_blank"><img class='image_social' src="includes/images/youtube.png" ></a>
+        <a href="https://twitter.com/stenden" target="_blank">					<img class='image_social' src="includes/images/twitter.png" alt="Twitter"></a>
+        <a href="https://www.instagram.com/stenden/" target="_blank">			<img class='image_social' src="includes/images/instagram.png" alt="Instagram"></a>
+        <a href="https://www.facebook.com/stenden/" target="_blank">			<img class='image_social' src="includes/images/facebook.png" alt="Facebook"></a>
+        <a href="https://www.youtube.com/user/marketingstenden" target="_blank"><img class='image_social' src="includes/images/youtube.png" alt="Youtube"></a>
     </div>
     <body>
         <div class="container">
             <div class="header">
                 <div class="headerimg">
-                    <a href="index.php"><img src="includes/images/stenden_logo.png"></a>
+                    <a href="index.php"><img src="includes/images/stenden_logo.png" alt="Stenden"></a>
                 </div>
                 <div class="titel">
                     <span>Port Stenden</span>
@@ -41,10 +41,10 @@ and open the template in the editor.
                         $pointpos = strrpos($row["Profielfoto"], ".");
                         $fish = substr($proffoto, $pointpos, 5);
 
-                        echo "<a href='portfolio.php'><img src='includes/profielfoto/{$_SESSION['username']}{$fish}' width='100' height='100' ></a>";
+                        echo "<a href='portfolio.php'><img src='includes/profielfoto/{$_SESSION['username']}{$fish}' alt='profielfoto' width='100' height='100' ></a>";
                     } else
                     {
-                        echo "<a href='index.php'><img src='includes/images/avatar.png' width='100' height='100' ></a>";
+                        echo "<a href='index.php'><img src='includes/images/avatar.png' alt='avatar' width='100' height='100' ></a>";
                     }
                     ?>
 
