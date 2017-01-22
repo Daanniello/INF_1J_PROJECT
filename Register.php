@@ -30,8 +30,8 @@ $countries = array("Afghanistan", "Albania", "Algeria", "American Samoa", "Andor
     if (isset($_POST["submit"])) {
         if (empty($_POST["username"]) || empty($_POST["password"]) || empty($_POST["mail"]) || empty($_POST["naam"]) || empty($_POST["telefoon"]) || empty($_POST["school"]) || empty($_POST["geboortedatum"]) || empty($_POST["woonplaats"]) || empty($_POST["adres"]) || empty($_POST["postcode"]) || empty($_POST["land"]) || empty($_FILES["upload"])) {
             echo "You have not filled everything in. ";
-        } elseif (preg_match( '/\s/', $_POST['username']) && preg_match( '/\s/', $_POST['password'])) {
-            echo "The username and password may not contain spaces";
+        } elseif (preg_match( '/\s/', $_POST['username']) || preg_match( '/\s/', $_POST['password']) || preg_match( '/\s/', $_POST['mail']) || preg_match( '/\s/', $_POST['naam']) || preg_match( '/\s/', $_POST['telefoon']) || preg_match( '/\s/', $_POST['school']) || preg_match( '/\s/', $_POST['woonplaats']) || preg_match( '/\s/', $_POST['adres']) || preg_match( '/\s/', $_POST['postcode'])) {
+            echo "The fields may not contain spaces";
         } elseif ($_POST["password"] !== $_POST["password1"]) {
             echo "the password is not the same.";
         } elseif (strlen($_POST['password']) < 6 || strlen($_POST['username']) < 6) {
