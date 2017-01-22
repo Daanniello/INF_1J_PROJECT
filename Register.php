@@ -30,6 +30,8 @@ $countries = array("Afghanistan", "Albania", "Algeria", "American Samoa", "Andor
     if (isset($_POST["submit"])) {
         if (empty($_POST["username"]) || empty($_POST["password"]) || empty($_POST["mail"]) || empty($_POST["naam"]) || empty($_POST["telefoon"]) || empty($_POST["school"]) || empty($_POST["geboortedatum"]) || empty($_POST["woonplaats"]) || empty($_POST["adres"]) || empty($_POST["postcode"]) || empty($_POST["land"]) || empty($_FILES["upload"])) {
             echo "You have not filled everything in. ";
+        } elseif (preg_match( '/\s/', $_POST['username']) && preg_match( '/\s/', $_POST['password'])) {
+            echo "The username and password may not contain spaces";
         } elseif ($_POST["password"] !== $_POST["password1"]) {
             echo "the password is not the same.";
         } elseif (strlen($_POST['password']) < 6 || strlen($_POST['username']) < 6) {
@@ -63,7 +65,7 @@ $countries = array("Afghanistan", "Albania", "Algeria", "American Samoa", "Andor
             $postcode = $_POST["postcode"];
             $land = $_POST["land"];
             $string = "INSERT INTO gebruiker (gebruikerID,gebruiker,rechtcode,wachtwoord) VALUES (NULL,'$username',1,'$password_hash')";
-            $stringcheck = "SELECT Gebruiker, Email FROM gebruiker,student WHERE Gebruiker = '$username' OR Email = '$mail'";
+            $stringcheck = "SELECT Gebruiker, Email FROM gebruiker JOIN student ON gebruiker.GebruikerID = student.GebruikerID WHERE Gebruiker = '$username' OR Email = '$mail'";
             $querycheck = mysqli_query($DBConnect, $stringcheck);
             $target_path = "includes/profielfoto/";
             $target_path = $target_path . $username . substr(basename($_FILES['upload']['name']), strrpos(basename($_FILES['upload']['name']), "."), 5);
@@ -71,8 +73,9 @@ $countries = array("Afghanistan", "Albania", "Algeria", "American Samoa", "Andor
             $upload = ".$imageFileType";
             if (mysqli_num_rows($querycheck) == 1) {
                 echo "username or mail already taken";
-            } elseif ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
+            } elseif ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "JPG" && $imageFileType != "PNG" && $imageFileType != "JPEG") {
                 echo "only JPG, PNG en JPEG files.";
+                echo $imageFileType;
             } else {
                 mysqli_query($DBConnect, $string);
                 $stringGetID = "SELECT gebruikerID FROM gebruiker WHERE gebruiker = '$username'";
