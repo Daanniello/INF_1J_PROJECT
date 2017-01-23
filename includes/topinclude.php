@@ -119,7 +119,7 @@ and open the template in the editor.
 							echo "<li class='li_opmaak'><a href='cijfer.php'>Cijfers</a></li>";
 							echo "<li class='li_opmaak'><a href='cv.php'>Curriculum vitae</a></li>";
 						}
-						if (isset($_SESSION['login_docent'])) {
+						if (isset($_SESSION['login_docent']) || isset($_SESSION['login_slber'])) {
 							echo "<li class='li_opmaak'><a href='docent.php'>Studenten</a></li>";
 						}
 						echo "<li class='li_opmaak'><a href='logout.php'>Log out</a></li>";
