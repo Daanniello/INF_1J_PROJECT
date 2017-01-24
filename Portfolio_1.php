@@ -48,7 +48,7 @@ function color_inverse($color)
             
         }
         ?>
-    </div>ss
+    </div>
     <div class="beschrijving_titel">Beschrijving</div>
     <div class="beschrijving" style="<?php
     if ($dog['StyleCode'] == 1)
