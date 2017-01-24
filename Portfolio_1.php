@@ -24,7 +24,7 @@ function color_inverse($color)
 
 <div class="inhoud " >
     <div class="titel_naam" style="<?php
-    $cat = "SELECT * FROM style WHERE StudentNummer = '{$_SESSION['id']}' ";
+    $cat = "SELECT * FROM style WHERE StudentNummer = '{$_GET['student']}' ";
     $lion = mysqli_query($DBConnect, $cat);
     $dog = mysqli_fetch_assoc($lion);
     if ($dog['StyleCode'] == 1)
@@ -39,8 +39,8 @@ function color_inverse($color)
         <?php
         if (isset($_SESSION['username']))
         {
-            $show = "SELECT * FROM student WHERE GebruikerID = '{$_SESSION['id']}'";
-            $result = mysqli_query($DBConnect, $query);
+            $show = "SELECT * FROM student WHERE GebruikerID = '{$_GET['student']}'";
+            $result = mysqli_query($DBConnect, $show);
             $row = mysqli_fetch_assoc($result);
             echo "Portfolio van {$row['Naam']}";
         } else
@@ -48,7 +48,7 @@ function color_inverse($color)
             
         }
         ?>
-    </div>
+    </div>ss
     <div class="beschrijving_titel">Beschrijving</div>
     <div class="beschrijving" style="<?php
     if ($dog['StyleCode'] == 1)
