@@ -568,6 +568,21 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: 9pt;
     line-height: 15pt;
 }
+.social_portfolio{
+        width:200px;
+        height:200px;
+        margin:0 auto;
+    }
+    .social_portfolio_facebook{
+        width:400px;
+        height:300px;
+        
+    }
+    .social_portfolio_facebook img{
+        width:200px;
+        height:80px;
+        
+    }
 /* Responsive */
 @media screen and (max-width: 600px) {
     .header{
@@ -732,4 +747,6 @@ input[type=number]::-webkit-outer-spin-button {
         width:100%;
         font-size:0px;
     }
+    
+    
 }

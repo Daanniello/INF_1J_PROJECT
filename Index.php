@@ -10,5 +10,5 @@
     </div>
     <div class="clear"></div>
 </div>
-<div class='home_image'><img src="includes/images/banner.jpg" alt="Banner"></div>
+
 <?php include "includes/botinclude.php"; ?>

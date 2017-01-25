@@ -81,7 +81,7 @@ function color_inverse($color)
                  } else
                  {
                      echo $row['beschrijving'];
-                    echo "<form action='#' method='post'><textarea name='area' ></textarea><input type='submit' name='submit2' value='Voeg toe'> </form> ";
+                     echo "<form action='#' method='post'><textarea name='area' ></textarea><input type='submit' name='submit2' value='Voeg toe'> </form> ";
                      if (isset($_POST['submit2']))
                      {
                          $vul = $_POST['area'];
@@ -97,6 +97,7 @@ function color_inverse($color)
              }
              ?> 
     </div>
+    <div class=""></div>
     <div class="project_upload" style="<?php
     $cat = "SELECT * FROM style WHERE StudentNummer = '{$_SESSION['id']}' ";
     $lion = mysqli_query($DBConnect, $cat);
@@ -138,51 +139,51 @@ function color_inverse($color)
             echo "background-color:" . color_inverse($dog['KleurCode']) . ";";
         }
         ?>">
-        <?php
-        if (isset($_POST['submit']))
-        {
+                 <?php
+                 if (isset($_POST['submit']))
+                 {
 
-            if (empty($_FILES['upload_project']['name']) || empty($_POST['name']))
-            {
-                echo "Je hebt geen bestand of naam gekozen.";
-            } elseif (preg_match('/\s/', $_POST['name']))
-            {
-                echo "Je mag geen spatie of andere tekens gebruiken";
-            } else
-            {
-                $name = $_POST['name'];
-                $file = $_FILES['upload_project']['name'];
-                $ext = pathinfo($file, PATHINFO_EXTENSION);
-                $query = "INSERT INTO project VALUES(NULL,'$name','$ext','{$_SESSION['id']}',NULL)";
-                mysqli_query($DBConnect, $query);
-                $target_path = "includes/project/";
+                     if (empty($_FILES['upload_project']['name']) || empty($_POST['name']))
+                     {
+                         echo "Je hebt geen bestand of naam gekozen.";
+                     } elseif (preg_match('/\s/', $_POST['name']))
+                     {
+                         echo "Je mag geen spatie of andere tekens gebruiken";
+                     } else
+                     {
+                         $name = $_POST['name'];
+                         $file = $_FILES['upload_project']['name'];
+                         $ext = pathinfo($file, PATHINFO_EXTENSION);
+                         $query = "INSERT INTO project VALUES(NULL,'$name','$ext','{$_SESSION['id']}',NULL)";
+                         mysqli_query($DBConnect, $query);
+                         $target_path = "includes/project/";
 
-                $target_path = $target_path . $name . $_SESSION['username'] . "." . $ext;
+                         $target_path = $target_path . $name . $_SESSION['username'] . "." . $ext;
 
-                if (move_uploaded_file($_FILES['upload_project']['tmp_name'], $target_path))
-                {
-                    
-                } else
-                {
-                    echo "There was an error uploading the file, please try again!";
-                }
-            }
-        }
+                         if (move_uploaded_file($_FILES['upload_project']['tmp_name'], $target_path))
+                         {
+                             
+                         } else
+                         {
+                             echo "There was an error uploading the file, please try again!";
+                         }
+                     }
+                 }
 
-        if (isset($_SESSION['username']))
-        {
+                 if (isset($_SESSION['username']))
+                 {
 
-            $naam = "SELECT * FROM project WHERE StudentNummer = '{$_SESSION['id']}'";
-            $show = mysqli_query($DBConnect, $naam);
+                     $naam = "SELECT * FROM project WHERE StudentNummer = '{$_SESSION['id']}'";
+                     $show = mysqli_query($DBConnect, $naam);
 
-            while ($row = mysqli_fetch_assoc($show))
-            {
-                echo "<div class='project_file'>";
-                echo "<a href='includes/project/{$row['Naam']}{$_SESSION['username']}.{$row['Project']}' target='blank'>{$row['Naam']}</a><br> ";
-                echo "</div>";
-            }
-        }
-        ?>
+                     while ($row = mysqli_fetch_assoc($show))
+                     {
+                         echo "<div class='project_file'>";
+                         echo "<a href='includes/project/{$row['Naam']}{$_SESSION['username']}.{$row['Project']}' target='blank'>{$row['Naam']}</a><br> ";
+                         echo "</div>";
+                     }
+                 }
+                 ?>
 
         </div>
     </div>
@@ -228,71 +229,185 @@ function color_inverse($color)
             echo "background-color:" . color_inverse($dog['KleurCode']) . ";";
         }
         ?>">
-        <?php
-             if (isset($_POST['submit1']))
-             {
-                 if (empty($_FILES['upload_project1']['name']) || empty($_POST['textname']))
+                 <?php
+                 if (isset($_POST['submit1']))
                  {
-                     echo "Je hebt geen bestand of naam gekozen.";
-                 } elseif (preg_match('/\s/', $_POST['textname']))
-                 {
-                     echo "Je mag geen spatie of andere tekens gebruiken";
-                 } else
-                 {
-                     $name1 = $_POST['textname'];
-                     $file = $_FILES['upload_project1']['name'];
-                     $ext1 = pathinfo($file, PATHINFO_EXTENSION);
-                     $query = "INSERT INTO slbproduct VALUES(NULL,'$name1','$ext1',NULL,'{$_SESSION['id']}')";
-                     mysqli_query($DBConnect, $query);
-                     $target_path = "includes/SLB/";
-
-                     $target_path = $target_path . $name1 . $_SESSION['username'] . "." . $ext1;
-
-                     if (move_uploaded_file($_FILES['upload_project1']['tmp_name'], $target_path))
+                     if (empty($_FILES['upload_project1']['name']) || empty($_POST['textname']))
                      {
-                         
+                         echo "Je hebt geen bestand of naam gekozen.";
+                     } elseif (preg_match('/\s/', $_POST['textname']))
+                     {
+                         echo "Je mag geen spatie of andere tekens gebruiken";
                      } else
                      {
-                         echo "There was an error uploading the file, please try again!";
+                         $name1 = $_POST['textname'];
+                         $file = $_FILES['upload_project1']['name'];
+                         $ext1 = pathinfo($file, PATHINFO_EXTENSION);
+                         $query = "INSERT INTO slbproduct VALUES(NULL,'$name1','$ext1',NULL,'{$_SESSION['id']}')";
+                         mysqli_query($DBConnect, $query);
+                         $target_path = "includes/SLB/";
+
+                         $target_path = $target_path . $name1 . $_SESSION['username'] . "." . $ext1;
+
+                         if (move_uploaded_file($_FILES['upload_project1']['tmp_name'], $target_path))
+                         {
+                             
+                         } else
+                         {
+                             echo "There was an error uploading the file, please try again!";
+                         }
                      }
                  }
-             }
 
-             if (isset($_SESSION['username']))
-             {
-
-                 $naam1 = "SELECT * FROM slbproduct WHERE GebruikerID = '{$_SESSION['id']}'";
-                 $show1 = mysqli_query($DBConnect, $naam1);
-
-                 while ($row1 = mysqli_fetch_assoc($show1))
+                 if (isset($_SESSION['username']))
                  {
-                     echo "<div class='project_file'>";
-                     echo "<a href='includes/SLB/{$row1['Historie']}{$_SESSION['username']}.{$row1['SLBProduct']}' target='blank'>{$row1['Historie']}</a><br> ";
-                     echo "</div>";
+
+                     $naam1 = "SELECT * FROM slbproduct WHERE GebruikerID = '{$_SESSION['id']}'";
+                     $show1 = mysqli_query($DBConnect, $naam1);
+
+                     while ($row1 = mysqli_fetch_assoc($show1))
+                     {
+                         echo "<div class='project_file'>";
+                         echo "<a href='includes/SLB/{$row1['Historie']}{$_SESSION['username']}.{$row1['SLBProduct']}' target='blank'>{$row1['Historie']}</a><br> ";
+                         echo "</div>";
+                     }
                  }
-             }
-             ?>
+                 ?>
         </div>
     </div>
-    
+
 </div>
 <style>
     .project_file:nth-child(even) {
 
-        background-color:<?php if ($dog['StyleCode'] == 1)
-             {
-                 echo "";
-             } else
-             {
-                 echo color_inverse(color_inverse($dog['KleurCode']));
-             } ?>;
+        background-color:<?php
+        if ($dog['StyleCode'] == 1)
+        {
+            echo "";
+        } else
+        {
+            echo color_inverse(color_inverse($dog['KleurCode']));
+        }
+        ?>;
     }
-    
-    
 
-        
 
-    
+
+
+
+
 
 </style>
+<div class="social_portfolio">
+    <div class="social_portfolio_facebook">
+        <a href='<?php
+        require 'connection_database.php';
+        $kijk1 = "SELECT * FROM social WHERE StudentNummer = '{$_SESSION['id']}' ";
+        $uitvoer1 = mysqli_query($DBConnect, $kijk1);
+        $tik1 = mysqli_fetch_assoc($uitvoer1);
+        echo $tik1['facebook'];
+        ?>'><img src='includes/images/facebook_button.jpg'></a>
+        <form action='' method='post'><input type="text" name="face" placeholder="voeg je facebook link toe"><br><input type="submit" name="facebook" value="OK"> </form>
+    </div>
+</div>
+<?php
+if (isset($_POST['facebook']))
+{
+    if (mysqli_num_rows($uitvoer1)== 0)
+    {
+        $string1 = "INSERT INTO social VALUES ('{$_SESSION['id']}',NULL,NULL,NULL,NULL)";
+        mysqli_query($DBConnect, $string1);
+        
+    } 
+    
+
+        $string = "UPDATE social SET facebook = '{$_POST['face']}' WHERE StudentNummer = '{$_SESSION['id']}'";
+
+        mysqli_query($DBConnect, $string);
+
+        echo "<meta http-equiv='refresh' content='0'>";
+    
+}
+?>
+<div class="social_portfolio">
+    <div class="social_portfolio_facebook">
+        <a href='<?php
+require 'connection_database.php';
+$kijk = "SELECT * FROM social WHERE StudentNummer = '{$_SESSION['id']}' ";
+$uitvoer = mysqli_query($DBConnect, $kijk);
+$tik = mysqli_fetch_assoc($uitvoer);
+echo $tik['linkedin'];
+?>'><img src='includes/images/linkedin.png'></a>
+        <form action='' method='post'><input type="text" name="linked" placeholder="voeg je linkedin link toe"><br><input type="submit" name="linkedin" value="OK"> </form>
+    </div>
+</div>
+<?php
+if (isset($_POST['linkedin']))
+{
+    if (mysqli_num_rows($uitvoer) == 0)
+    {
+        $string1 = "INSERT INTO social VALUES ('{$_SESSION['id']}',NULL,NULL,NULL,NULL)";
+        mysqli_query($DBConnect, $string1);
+    }
+
+    $string = "UPDATE social SET linkedin = '{$_POST['linked']}' WHERE StudentNummer = '{$_SESSION['id']}'";
+
+    mysqli_query($DBConnect, $string);
+    echo "<meta http-equiv='refresh' content='0'>";
+}
+?>
+<div class="social_portfolio">
+    <div class="social_portfolio_facebook">
+        <a href='<?php
+require 'connection_database.php';
+$kijk2 = "SELECT * FROM social WHERE StudentNummer = '{$_SESSION['id']}' ";
+$uitvoer2 = mysqli_query($DBConnect, $kijk2);
+$tik2 = mysqli_fetch_assoc($uitvoer2);
+echo $tik2['twitter'];
+?>'><img src='includes/images/twitter_button.png'></a>
+        <form action='' method='post'><input type="text" name="twit" placeholder="voeg je twitter link toe"><br><input type="submit" name="twitter" value="OK"> </form>
+    </div>
+</div>
+<?php
+if (isset($_POST['twitter']))
+{
+    if (mysqli_num_rows($uitvoer) == 0)
+    {
+        $string1 = "INSERT INTO social VALUES ('{$_SESSION['id']}',NULL,NULL,NULL,NULL)";
+        mysqli_query($DBConnect, $string1);
+    }
+
+    $string = "UPDATE social SET twitter = '{$_POST['twit']}' WHERE StudentNummer = '{$_SESSION['id']}'";
+
+    mysqli_query($DBConnect, $string);
+    echo "<meta http-equiv='refresh' content='0'>";
+}
+?>
+<div class="social_portfolio">
+    <div class="social_portfolio_facebook">
+        <a href='<?php
+require 'connection_database.php';
+$kijk3 = "SELECT * FROM social WHERE StudentNummer = '{$_SESSION['id']}' ";
+$uitvoer3 = mysqli_query($DBConnect, $kijk3);
+$tik3 = mysqli_fetch_assoc($uitvoer3);
+echo $tik3['instagram'];
+?>'><img src='includes/images/instagram_button.png'></a>
+        <form action='' method='post'><input type="text" name="insta" placeholder="voeg je twitter link toe"><br><input type="submit" name="instagram" value="OK"> </form>
+    </div>
+</div>
+<?php
+if (isset($_POST['instagram']))
+{
+    if (mysqli_num_rows($uitvoer) == 0)
+    {
+        $string1 = "INSERT INTO social VALUES ('{$_SESSION['id']}',NULL,NULL,NULL,NULL)";
+        mysqli_query($DBConnect, $string1);
+    }
+
+    $string = "UPDATE social SET instagram = '{$_POST['insta']}' WHERE StudentNummer = '{$_SESSION['id']}'";
+
+    mysqli_query($DBConnect, $string);
+    echo "<meta http-equiv='refresh' content='0'>";
+}
+?>
 <?php include "includes/botinclude.php"; ?>
