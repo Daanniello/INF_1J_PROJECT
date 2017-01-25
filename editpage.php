@@ -14,8 +14,8 @@ include "connection_database.php";
                 <div class=editform>
                     <p>Stijl optie: 
                     <select name='style'>
-                        <option value='1'>Reset</option>
                         <option value='2'>Custom</option> 
+                        <option value='1'>Reset</option>
                         
                     </select>
                     </p>
