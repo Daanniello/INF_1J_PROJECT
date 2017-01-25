@@ -1,7 +1,7 @@
 <?php include "includes/topinclude.php"; ?>
 	<div class="inhoud">
 	<?php 
-        if (isset($_SESSION['login_docent'])){
+        if (isset($_SESSION['login_docent']) || isset($_SESSION['login_slber'])){
             require 'connection_database.php';
             $show = 'SELECT * FROM student JOIN gebruiker ON student.GebruikerID = gebruiker.GebruikerID WHERE Rechtcode = "1" ';
             $query = mysqli_query($DBConnect, $show);
@@ -15,7 +15,7 @@
 			
             while ($row = mysqli_fetch_assoc($query)){
 				echo "<tr>";
-					echo "<td><a href='studentfile.php?student={$row['StudentNummer']}'>{$row['Naam']}</a></td>";
+					echo "<td>{$row['Naam']}&nbsp&nbsp<a href='studentfile.php?student={$row['StudentNummer']}'>Cijfers </a>&nbsp&nbsp<a href='portfolio_1.php?student={$row['StudentNummer']}'>Portfolio</a></td>";
 					echo "<td>{$row['StudentNummer']}</td>";
 					echo "<td>{$row['TelefoonNummer']}</td>";
 					echo "<td>{$row['Email']}</td>";

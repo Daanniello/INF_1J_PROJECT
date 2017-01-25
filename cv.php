@@ -28,7 +28,7 @@
             
             echo "<a href='includes/CV/{$_SESSION['username']}.{$fetch2['Link']}' target='blank'>" . "CV_" . $_SESSION['username'] . "</a>";
             echo "<form enctype='multipart/form-data' action='cv.php' method='post'>";
-				echo "<input type='file' name='upload1' value='CV'><br>";
+				echo "<input type='file' name='upload1'><br>";
 				echo "<input type='submit' name='submit1' value='Bewerk CV' >";
 			echo "</form>";
             if (isset($_POST['submit1']))

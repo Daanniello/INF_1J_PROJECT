@@ -38,6 +38,7 @@ input[type="submit"]:hover {
 .container {
     margin: 0 auto;
     width: 1000px;
+    background-color:white;
 }
 
 .clear {
@@ -147,7 +148,11 @@ input[type="submit"]:hover {
     padding: 20px;
 	min-height: 500px;
 }
-
+.home_image img{
+    width:1000px;
+    margin-top:50px;
+    margin-bottom:50px;
+}
 /* ---- Homepage ---- */
 .inhoud_home {
     background-color: #fff;
@@ -177,9 +182,10 @@ input[type="submit"]:hover {
 
 .project_upload {
     background-color: #6e4381;
-    margin-right: 30px;
+    
     padding-bottom: 10px;
     display: inline-block;
+    margin-left:130px;
     
 }
 
@@ -201,6 +207,7 @@ input[type="submit"]:hover {
     min-height: 250px;
     float: left; 
 	background-color: #9F4183;
+        
 }
 
 .project_file {
@@ -228,15 +235,21 @@ input[type="submit"]:hover {
 
 .beschrijving {
    background-color: #fff;
-   border: 2px solid #6e4381;
-   width: 200px;
-   height: 200px;
-   float: right;
+   
+   width: 400px;
+   height: 150px;
+   margin:0 auto;
+   margin-bottom :20px;
+   text-align:center;
+}
+.beschrijving_titel{
+    text-align:center;
+    font-size:25px;
 }
 
 .beschrijving textarea{
-    width:195px;
-    height:195px;
+    width:400px;
+    height:50px;
 }
 
 /* ---- Form fields ---- */
@@ -541,4 +554,169 @@ input[type=number]::-webkit-outer-spin-button {
     float: left;
     font-size: 9pt;
     line-height: 15pt;
+}
+/* Responsive */
+@media screen and (max-width: 600px) {
+    .header{
+      width:100%;  
+      padding:0px;
+    }
+    .container{
+        width:100%;
+    }
+    .titel{
+        width:100%;
+        text-align:center;
+        
+    }
+    .nav li{
+        width:100%;
+        height:50px;
+        text-align:center;
+        padding:0px;
+    }
+    .nav ul{
+        padding:0px;
+    }
+    .avatar{
+        text-align:center;
+        width:100%;
+        background-color:#6e4381;
+    }
+    .social{
+        margin-top:0px;
+        width:0px;
+    }
+    .information{
+        width:100%;
+        text-align:center;
+        margin:0px;
+    }
+    .information ul{
+        width:100%;
+        text-align:center;
+        padding:0px;
+    }
+    .information form{
+        margin:0 auto;
+        width:100%;
+    }
+    .information form input{
+        width:50%;
+    }
+    .headerimg img{
+        width:0px;
+        text-align:center;
+        
+    }
+    .homeFoto img{
+        width:100%;
+    }
+    .homeTekst{
+        width:100%;
+        height:100%;
+    }
+    .home_image img{
+        width:100%;
+    }
+    .linkStyle{
+        width:100%;
+    }
+    .footer{
+        width:100%;
+        height:225px;
+        padding:0px;
+        padding-bottom:20px;
+    }
+    .inhoud_home{
+        width:100%;
+    }
+    .link{
+        width:100%;
+        text-align:center;
+        
+        
+    }
+    .school{
+        width:100%;
+        text-align:center;
+    }
+    .social img{
+        width:0px;
+    }
+    .inhoud{
+        text-align:center;
+        padding:0px;
+        margin:50px;
+        
+        
+    }
+    .project_upload{
+        margin-right:0px;
+        margin-bottom:50px;
+        margin-left:0px;
+    }
+    .beschrijving{
+        float:none;
+        text-align:center;
+        width:100%;
+    }
+    .tabel{
+        width:100%;
+        float:none;
+        
+    }
+    .post{
+        width:100%;
+        padding:0px;
+        padding-top:20px;
+        height:100%;
+        border-top: 5px solid purple;
+         
+    }
+    .message{
+        width:100%;
+        float:none;
+        padding-left:0px;
+        padding-right:0px;
+    }
+    .date{
+        width:100%;
+        text-align: center;
+        padding:0px;
+        margin:0px;
+        float:none;
+        padding-left:0px;
+        padding-right:0px;
+    }
+    .time{
+        width:100%;
+        margin-bottom:30px;
+         padding:0px;
+         float:none;
+         padding-left:0px;
+        padding-right:0px;
+    }
+    .gebruiker{
+        width:100%;
+        float:none;
+    }
+    .naam{
+        width:100px;
+        padding:0px;
+        margin:0 auto;
+    }
+    .profielfoto{
+        float:none;
+        margin: 0 auto;
+    }
+    .formlabel{
+        width:100%;
+        padding:0px;
+        margin:0px;
+    }
+    .homeTitel{
+        width:100%;
+        font-size:0px;
+    }
 }

@@ -49,6 +49,54 @@ function color_inverse($color)
         }
         ?>
     </div>
+    <div class="beschrijving_titel">Beschrijving</div>
+    <div class="beschrijving" style="<?php
+    if ($dog['StyleCode'] == 1)
+    {
+        echo "";
+    } elseif ($dog['StyleCode'] == 2)
+    {
+        echo "border: 2px solid" . color_inverse($dog['KleurCode']) . ";";
+    }
+    ?>">
+             <?php
+             if (isset($_SESSION['username']))
+             {
+                 require 'Connection_database.php';
+                 $get = "SELECT beschrijving FROM student WHERE GebruikerID = '{$_SESSION['id']}' ";
+                 $query = mysqli_query($DBConnect, $get);
+                 $row = mysqli_fetch_assoc($query);
+
+                 if (empty($row['beschrijving']))
+                 {
+                     echo "<form action='#' method='post'><textarea name='area' ></textarea><input type='submit' name='submit2' value='Voeg toe'> </form> ";
+                     if (isset($_POST['submit2']))
+                     {
+                         $vul = $_POST['area'];
+                         $querie = "UPDATE student SET beschrijving = '$vul' WHERE GebruikerID = '{$_SESSION['id']}' ";
+                         mysqli_query($DBConnect, $querie);
+                         echo "query send";
+                         header("Refresh:0");
+                     }
+                 } else
+                 {
+                     echo $row['beschrijving'];
+                    echo "<form action='#' method='post'><textarea name='area' ></textarea><input type='submit' name='submit2' value='Voeg toe'> </form> ";
+                     if (isset($_POST['submit2']))
+                     {
+                         $vul = $_POST['area'];
+                         $querie = "UPDATE student SET beschrijving = '$vul' WHERE GebruikerID = '{$_SESSION['id']}' ";
+                         mysqli_query($DBConnect, $querie);
+                         echo "query send";
+                         header("Refresh:0");
+                     }
+                 }
+             } else
+             {
+                 
+             }
+             ?> 
+    </div>
     <div class="project_upload" style="<?php
     $cat = "SELECT * FROM style WHERE StudentNummer = '{$_SESSION['id']}' ";
     $lion = mysqli_query($DBConnect, $cat);
@@ -226,44 +274,7 @@ function color_inverse($color)
              ?>
         </div>
     </div>
-    <div class="beschrijving" style="<?php
-    if ($dog['StyleCode'] == 1)
-    {
-        echo "";
-    } elseif ($dog['StyleCode'] == 2)
-    {
-        echo "border: 2px solid" . color_inverse($dog['KleurCode']) . ";";
-    }
-    ?>">
-             <?php
-             if (isset($_SESSION['username']))
-             {
-                 require 'Connection_database.php';
-                 $get = "SELECT beschrijving FROM student WHERE GebruikerID = '{$_SESSION['id']}' ";
-                 $query = mysqli_query($DBConnect, $get);
-                 $row = mysqli_fetch_assoc($query);
-
-                 if (empty($row['beschrijving']))
-                 {
-                     echo "<form action='#' method='post'><textarea name='area' ></textarea><input type='submit' name='submit2' value='Voeg toe'> </form> ";
-                     if (isset($_POST['submit2']))
-                     {
-                         $vul = $_POST['area'];
-                         $querie = "UPDATE student SET beschrijving = '$vul' WHERE GebruikerID = '{$_SESSION['id']}' ";
-                         mysqli_query($DBConnect, $querie);
-                         echo "query send";
-                         header("Refresh:0");
-                     }
-                 } else
-                 {
-                     echo $row['beschrijving'];
-                 }
-             } else
-             {
-                 
-             }
-             ?> 
-    </div>
+    
 </div>
 <style>
     .project_file:nth-child(even) {

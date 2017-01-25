@@ -11,18 +11,19 @@ and open the template in the editor.
         <title>Stenden Portfolio</title>
         <link rel="stylesheet" type="text/css" href="style/css.css"> 
         <link rel="icon" href="includes/images/stenden_logo.png" type="image/x-icon"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <div class="social">
-        <a href="https://twitter.com/stenden" target="_blank">					<img class='image_social' src="includes/images/twitter.png" ></a>
-        <a href="https://www.instagram.com/stenden/" target="_blank">			<img class='image_social' src="includes/images/instagram.png" ></a>
-        <a href="https://www.facebook.com/stenden/" target="_blank">			<img class='image_social' src="includes/images/facebook.png" ></a>
-        <a href="https://www.youtube.com/user/marketingstenden" target="_blank"><img class='image_social' src="includes/images/youtube.png" ></a>
-    </div>
     <body>
+        <div class="social">
+            <a href="https://twitter.com/stenden" target="_blank">					<img class='image_social' src="includes/images/twitter.png" alt="Twitter"></a>
+            <a href="https://www.instagram.com/stenden/" target="_blank">			<img class='image_social' src="includes/images/instagram.png" alt="Instagram"></a>
+            <a href="https://www.facebook.com/stenden/" target="_blank">			<img class='image_social' src="includes/images/facebook.png" alt="Facebook"></a>
+            <a href="https://www.youtube.com/user/marketingstenden" target="_blank"><img class='image_social' src="includes/images/youtube.png" alt="Youtube"></a>
+        </div>
         <div class="container">
             <div class="header">
                 <div class="headerimg">
-                    <a href="index.php"><img src="includes/images/stenden_logo.png"></a>
+                    <a href="index.php"><img src="includes/images/stenden_logo.png" alt="Stenden"></a>
                 </div>
                 <div class="titel">
                     <span>Port Stenden</span>
@@ -41,10 +42,10 @@ and open the template in the editor.
                         $pointpos = strrpos($row["Profielfoto"], ".");
                         $fish = substr($proffoto, $pointpos, 5);
 
-                        echo "<a href='portfolio.php'><img src='includes/profielfoto/{$_SESSION['username']}{$fish}' width='100' height='100' ></a>";
+                        echo "<a href='portfolio.php'><img src='includes/profielfoto/{$_SESSION['username']}{$fish}' alt='profielfoto' width='100' height='100' ></a>";
                     } else
                     {
-                        echo "<a href='index.php'><img src='includes/images/avatar.png' width='100' height='100' ></a>";
+                        echo "<a href='index.php'><img src='includes/images/avatar.png' alt='avatar' width='100' height='100' ></a>";
                     }
                     ?>
 
@@ -69,7 +70,7 @@ and open the template in the editor.
                         require 'Connection_database.php';
 
 
-                        echo "</br><form enctype='multipart/form-data' action='#' method='post'><input type='file' name='upload'><br><input type='submit' name='sub_foto' value='Change Photo'></form>";
+                        echo "<br><form enctype='multipart/form-data' action='#' method='post'><input type='file' name='upload'><br><input type='submit' name='sub_foto' value='Change Photo'></form>";
                         if (isset($_POST['sub_foto']))
                         {
                             if (empty($_FILES['upload']['name']))
@@ -78,7 +79,8 @@ and open the template in the editor.
                             } else
                             {
                                 $upload = $_FILES['upload']['name'];
-                                $string = "UPDATE student SET Profielfoto = '$upload' WHERE GebruikerID = '{$_SESSION['id']}' ";
+                                $ext2 = pathinfo($upload, PATHINFO_EXTENSION);
+                                $string = "UPDATE student SET Profielfoto = '.$ext2' WHERE GebruikerID = '{$_SESSION['id']}' ";
                                 mysqli_query($DBConnect, $string);
                                 $target_path = "includes/profielfoto/";
 
@@ -117,7 +119,7 @@ and open the template in the editor.
 							echo "<li class='li_opmaak'><a href='cijfer.php'>Cijfers</a></li>";
 							echo "<li class='li_opmaak'><a href='cv.php'>Curriculum vitae</a></li>";
 						}
-						if (isset($_SESSION['login_docent'])) {
+						if (isset($_SESSION['login_docent']) || isset($_SESSION['login_slber'])) {
 							echo "<li class='li_opmaak'><a href='docent.php'>Studenten</a></li>";
 						}
 						echo "<li class='li_opmaak'><a href='logout.php'>Log out</a></li>";
