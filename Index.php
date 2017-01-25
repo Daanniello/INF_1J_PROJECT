@@ -6,9 +6,6 @@
     <div class="homeFoto">
         <img src="includes/images/home.jpg">
     </div>
-    <div class="homeTekst">
-        hier komen comments van gebruikers.
-    </div>
     <div class="clear"></div>
 </div>
 <?php include "includes/botinclude.php"; ?>

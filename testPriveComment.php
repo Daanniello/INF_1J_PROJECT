@@ -32,23 +32,24 @@ if (isset($_POST['submit']))
         echo"Please don't do that."
         . "I will find you"
         . " and I will kill you."
-        . " Especially if your name is Frank Tieck and Kevin";
+        . " Especially if your name is Frank Tieck or Kevin";
     } else
     {
         $comment = stripslashes($_POST['comment']);
-            $GID = $_SESSION['id'];
-            $SQLstring = "INSERT INTO $tablenaam VALUES ('NULL', '$comment', '$GID', '$date', '$time')";
-            $QueryResult = mysqli_query($DBConnect, $SQLstring);
-            if ($QueryResult === FALSE)
-            {
-                echo "<p>Unable to execute the query.</p>"
-                . "<p>Error code " . mysqli_errno($DBConnect)
-                . ": " . mysqli_error($DBConnect) . "</p>";
-                echo"$SQLstring";
-            } else
-            {
-                echo "<p>The comment has been added.</p>";
-            }
+        $GID = $_SESSION['id'];
+        $projectNummer = "SELECT ProjectNummer FROM project WHERE ";
+        $SQLstring = "INSERT INTO $tablenaam VALUES ('NULL', '$comment', '$GID')";
+        $QueryResult = mysqli_query($DBConnect, $SQLstring);
+        if ($QueryResult === FALSE)
+        {
+            echo "<p>Unable to execute the query.</p>"
+            . "<p>Error code " . mysqli_errno($DBConnect)
+            . ": " . mysqli_error($DBConnect) . "</p>";
+            echo"$SQLstring";
+        } else
+        {
+            echo "<p>The comment has been added.</p>";
+        }
     }
 }
 include "includes/botinclude.php";
