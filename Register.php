@@ -19,7 +19,7 @@ $schools = array("Leeuwarden", "Emmen", "Meppel", "Assen", "Groningen", "Bali", 
             }
             ?>
         </select><br>
-        <label class="formlabel">Geboortedatum: </label><input type="date" name="geboortedatum" min="1900-01-01"><br>
+        <label class="formlabel">Geboortedatum: </label><input type="date" name="geboortedatum" min="1900-01-01" max="2017-01-01"><br>
         <label class="formlabel">Woonplaats: </label><input type="text" name="woonplaats" maxlength="25"><br>
         <label class="formlabel">Adres: </label><input type="text" name="adres" maxlength="250"><br>
         <label class="formlabel">Postcode: </label><input type="text" name="postcode" maxlength="6"><br>
