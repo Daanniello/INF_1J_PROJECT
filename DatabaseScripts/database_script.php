@@ -139,7 +139,7 @@
                                 (
                                 StyleID int NOT NULL AUTO_INCREMENT,
                                 StyleCode int(2),
-                                KleurCode int(2),
+                                KleurCode varchar(30),
                                 Lettertype varchar(16),
                                 LetterGrote int(3),
                                 StudentNummer int,
