@@ -298,6 +298,7 @@ function color_inverse($color)
 
 
 </style>
+<div class="social_portfolio_4">
 <div class="social_portfolio">
     <div class="social_portfolio_facebook">
         <a href='<?php
@@ -410,4 +411,6 @@ if (isset($_POST['instagram']))
     echo "<meta http-equiv='refresh' content='0'>";
 }
 ?>
+</div>
+<div class="clear"></div>
 <?php include "includes/botinclude.php"; ?>

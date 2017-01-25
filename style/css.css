@@ -569,10 +569,15 @@ input[type=number]::-webkit-outer-spin-button {
     line-height: 15pt;
 }
 .social_portfolio{
-        width:200px;
-        height:200px;
-        margin:0 auto;
+        width:400px;
+        height:250px;
+        float:left;
+        
     }
+    .social_portfolio form{
+        text-align:center;
+    }
+    
     .social_portfolio_facebook{
         width:400px;
         height:300px;
@@ -581,7 +586,15 @@ input[type=number]::-webkit-outer-spin-button {
     .social_portfolio_facebook img{
         width:200px;
         height:80px;
-        
+        margin-left:100px;
+    }
+    .social_portfolio_4{
+        width:1000px;
+        height:400px;
+        margin:0 auto;
+        margin-top:50px;
+        margin-bottom:50px;
+        margin-left:95px;
     }
 /* Responsive */
 @media screen and (max-width: 600px) {
@@ -689,6 +702,11 @@ input[type=number]::-webkit-outer-spin-button {
         text-align:center;
         width:100%;
     }
+    .beschrijving textarea{
+        float:none;
+        text-align:center;
+        width:100%;
+    }
     .tabel{
         width:100%;
         float:none;
@@ -747,6 +765,31 @@ input[type=number]::-webkit-outer-spin-button {
         width:100%;
         font-size:0px;
     }
+    .social_portfolio{
+        width:100%;
+        height:250px;
+        float:left;
+        
+    }
+    .social_portfolio form{
+       width:100%;
+    }
     
+    .social_portfolio_facebook{
+        width:100%;
+        height:300px;
+        
+    }
+    .social_portfolio_facebook img{
+        width:200px;
+        height:80px;
+        
+    }
+    .social_portfolio_4{
+        width:100%;
+        height:400px;
+        
+        margin:0px;
+    }
     
 }
