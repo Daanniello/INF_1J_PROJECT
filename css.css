@@ -1,0 +1,798 @@
+/* --------------------*/
+/* ------ Main ------ */
+/* ----------------- */
+
+body {
+    margin:0;
+    padding:0;
+    background-color: #f3f3f3;
+    font-family: arial;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+textarea{
+    resize: none;
+    outline: none;
+}
+
+input[type="submit"] {
+    border: 3px solid #6e4381;
+    background-color: #fff;
+    padding: 8px 14px;
+    color: #6e4381;
+    cursor: pointer;
+    margin-bottom: 10px;
+    outline: none;
+}
+
+input[type="submit"]:hover {
+    color: #A465CC;
+    border-color: #A465CC;
+}
+
+
+.container {
+    margin: 0 auto;
+    width: 1000px;
+    background-color: white;
+    box-shadow: 10px 10px 5px #888888;
+    border-radius: 0 0 15px 15px;
+}
+
+.clear {
+    clear: both;
+}
+
+/* ----------------------*/
+/* ------ Header ------ */
+/* ------------------- */
+.header {
+    background-color: #6e4381;
+    padding: 10px 10px 0 10px;
+    color: #fff;
+}
+
+.headerimg img {
+    float: left;
+    width: 175px;
+}
+
+.titel{
+    font-size: 36pt;
+    float: left;
+    margin-top: 55px;
+}
+
+.session {
+	position: absolute;
+	top: 0;
+	margin-left: 12px;
+}
+
+/* ---- Social media bar ---- */
+.social {
+    width: 40px;
+    background-color: #6e4381;
+    position: fixed;
+    margin-top: 200px;
+    border-radius: 0px 20px 20px 0px;
+}
+
+.image_social {
+    margin-top: 4px;
+    margin-left: 5px;
+    margin-bottom: 2px;
+    height: 30px;
+    width: 30px;
+
+}
+.image_social:hover {
+    border: 2px solid #fff;
+    border-radius: 20px;
+    margin-left: 3px;
+    margin-top: 2px;
+    margin-bottom: 0px;
+}
+
+/* ---- Informatie ---- */
+.information{
+    float:right;
+    margin-right:40px;
+}
+
+.information ul{
+    list-style-type: none;
+    text-align: right;
+    margin-top:0px;
+}
+
+/* ---- Avatar ---- */
+.avatar{
+    width: 100px;
+    height: 100px;
+    float: right;
+    background-color: #f3f3f3;
+}
+
+/* ---- Navigatie ---- */
+.nav {
+    float: left;
+    width: 100%;
+}
+
+.nav ul {
+    padding-left: 10px;
+}
+
+.nav li{
+    display: inline-block;
+}
+
+.nav a{
+    color: #fff;
+    text-decoration: none;
+    padding: 12px;
+}
+
+.nav a:hover{
+    border-bottom: 3px solid #fff;
+}
+
+/* ----------------------*/
+/* ------ Inhoud ------ */
+/* ------------------- */
+.inhoud {
+    background-color: #fff;
+    padding: 50px;
+	min-height: 500px;
+}
+.home_image img{
+    width: 1000px;
+    margin-top:50px;
+    margin-bottom:50px;
+}
+/* ---- Homepage ---- */
+.inhoud_home {
+    background-color: #fff;
+}
+
+.homeFoto img{
+    max-height: 400px;
+    float: left;
+}
+
+.homeTitel{
+    float: left;
+    position: absolute;
+    font-size: 70%;
+    padding-left: 15px;
+}
+
+/* ---- Portfolio page ---- */
+.titel_naam {
+    font-size: 50px;
+    text-align: center;
+	margin-bottom: 30px;
+	color: #fff;
+    border-bottom: 5px solid #6e4381;
+    background-color: #9F4183;
+}
+
+.project_upload {
+    background-color: #6e4381;
+    padding-bottom: 10px;
+    display: inline-block;
+    margin-left:130px;
+    
+}
+
+.upload_top {
+    padding: 5px;
+    color: #fff;
+}
+
+.upload_top input {
+    margin-top: 5px!important;
+}
+
+.project_upload_title {
+    font-size: 20pt;
+}
+
+.project_upload_file {
+    width: 280px;
+    min-height: 250px;
+    float: left; 
+	background-color: #9F4183;
+        
+}
+
+.project_file {
+	padding: 10px;
+}
+
+.project_file:first-child {
+	padding-top: 10px;
+}
+
+.project_file:nth-child(even) {
+	background-color: #A0337E;
+}
+
+.project_file a {
+	text-decoration: none;
+	color: #fff;
+}
+
+.project_file a:hover {
+	color: #c0c0c0;
+	text-decoration: underline;
+
+}
+
+.beschrijving {
+   background-color: #fff;
+   
+   width: 400px;
+   height: 150px;
+   margin:0 auto;
+   margin-bottom :20px;
+   text-align:center;
+}
+.beschrijving_titel{
+    text-align:center;
+    font-size:25px;
+}
+
+.beschrijving textarea{
+    width:400px;
+    height:50px;
+}
+
+/* ---- Form fields ---- */
+.formlabel {
+    width: 200px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+input[type="text"], 
+input[type="password"],
+input[type="date"],
+input[type="number"],
+input[type="email"],
+.select{
+    outline: none;
+    border: none;
+    padding: 3px;
+    width: 200px;
+    height: 17px;
+    background-color: #f3f3f3;
+    border-right: 2px solid grey;
+    border-left: 2px solid grey;	
+}
+
+.select{
+    width: 210px;
+    height: 23px;
+    margin-left: -4px;
+}
+
+.select select{
+    outline: none;
+    border: none;
+    padding: 3px;
+    width: 200px;
+    height: 17px;
+    background-color: #f3f3f3;
+    border-right: 2px solid grey;
+    border-left: 2px solid grey;	
+}
+
+input[type="text"]:focus, 
+input[type="password"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+.select:focus {
+    border-top: 2px solid grey;
+    border-bottom: 2px solid grey;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+
+/* ---- Comment page ---- */
+.tabel{
+    width: 960px;
+    height: 100%;
+}
+
+.post{
+    width: 960px;
+    height: 118px;
+    padding-bottom: 50px;
+}
+
+.gebruiker{
+    width: 100px;
+    height: 120px;
+    float: left;
+}
+
+.naam{
+    width: 100px;
+    height: 20px;
+    text-align: center;
+    background-color: purple;
+}
+
+.profielfoto{
+    width: 100px;
+    height: 100px;
+}
+
+.message{
+    width: 820px;
+    padding: 10px;
+    height: 80px;
+    float: left;
+	background-color: #6e4381;
+}
+
+.date{
+    width: 770px;
+    height: 20px;
+    padding-right: 5px;
+    float: left;
+    text-align: right;
+    background-color: purple;
+}
+
+.time{
+    width: 60px;
+    height: 20px;
+    padding-right: 5px;
+    float: left;
+    background-color: purple;
+}
+
+/* ---- Studentfile ---- */
+.cijfer_toewijzen_table_links,
+.cijfer_toewijzen_table_rechts {
+	width: 48%;
+	margin-right: 2%;
+	float: left;
+	background-color: #6e4381;
+}
+
+
+.cijfer_toewijzen_table_rechts {
+	margin-left: 2%;
+	margin-right: 0;
+}
+
+
+.cijfer_toewijzen_table table {
+	width: 100%;
+	text-align: left
+}
+
+.cijfer_toewijzen_table th {
+	background-color: #9F4183;
+	color: #fff;
+	padding: 8px;
+}
+
+.cijfer_toewijzen_table tr:nth-child(odd) > td {
+	background-color: #f3f3f3;
+}
+
+.cijfer_toewijzen_table tr:nth-child(even) > td {
+	background-color: #fff;
+}
+
+.cijfer_toewijzen_table td {
+	padding: 8px;
+}
+
+.cijfer_toewijzen_table a {
+	color: #333;
+	text-decoration: none;
+}
+
+.cijfer_toewijzen_table a:hover {
+	color: #A465CC;
+	text-decoration: underline;
+}
+
+.number_cijfer {
+    width: 25px!important;
+    font-size: 15px!important;
+}
+
+.number_sub {
+	border: none!important;
+    padding: 0!important;
+    margin: 0!important;
+	background-color: transparent!important;
+}
+
+.number_sub:hover {
+	text-decoration: underline;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+
+.cijfer_toewijzen_cv {
+	background-color: #9F4183;	
+	display: inline-block;
+	padding: 15px;
+	margin-top: 15px;
+}
+
+.cijfer_toewijzen_cv a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.cijfer_toewijzen_cv a:hover {
+	color: #A465CC;
+	text-decoration: underline;
+}
+
+/* ---- Cijfers ---- */
+.cijfer_header_links,
+.cijfer_header_rechts {
+	width: 46%;
+	font-size: 15pt;
+	background-color: #6e4381;
+	color: #fff;
+	float: left;
+	padding: 1%;
+	margin-right: 2%;
+}
+
+.cijfer_header_rechts {
+	margin-left: 2%;
+	margin-right: 0;
+}
+
+.cijfer_table {
+	width: 48%;
+	margin-right: 2%;
+	float: left;
+	background-color: #6e4381;
+}
+
+.cijfer_table:last-child {
+	margin-left: 2%;
+	margin-right: 0;
+}
+
+.cijfer_table table {
+	width: 100%;
+	text-align: left
+}
+
+.cijfer_table th {
+	background-color: #9F4183;
+	color: #fff;
+	padding: 8px;
+	width: 50%;
+}
+
+.cijfer_table td {
+	padding: 8px;
+}
+
+.cijfer_table tr:nth-child(odd) > td {
+	background-color: #f3f3f3;
+}
+
+.cijfer_table tr:nth-child(even) > td {
+	background-color: #fff;
+}
+/* ---- Studenten ---- */
+.students_table {
+	width: 100%;
+	background-color: #6e4381;
+}
+
+.students_table th {
+	width: 25%;
+	text-align: left;
+	background-color: #9F4183;
+	padding: 8px;
+	color: #fff;
+}
+
+.students_table td {
+	padding: 8px;
+}
+
+.students_table tr:nth-child(odd) > td {
+	background-color: #f3f3f3;
+}
+
+.students_table tr:nth-child(even) > td {
+	background-color: #fff;
+}
+
+.students_table a {
+	color: #333;
+}
+
+.students_table a:hover {
+	color: #A465CC;
+}
+
+/* ----------------------*/
+/* ------ Footer ------ */
+/* ------------------- */
+.footer {
+    background-color: #6e4381;
+    min-height: 60px;
+    padding: 10px;
+    color: #fff;
+    border-radius: 0 0 15px 15px;
+}
+
+.school{
+    width: 250px;
+    float: left;
+    padding-top: 23px;
+}
+
+.link{
+    width: 720px;
+    float: left;
+}
+
+.link a {
+    color: #fff;
+}
+
+.link a:hover {
+    color: #A465CC;
+}
+
+.linkStyle{
+    width: 240px;
+    float: left;
+    font-size: 9pt;
+    line-height: 15pt;
+}
+.social_portfolio{
+        width:400px;
+        height:250px;
+        float:left;
+        
+    }
+    .social_portfolio form{
+        text-align:center;
+    }
+    
+    .social_portfolio_facebook{
+        width:400px;
+        height:300px;
+        
+    }
+    .social_portfolio_facebook img{
+        width:200px;
+        height:80px;
+        margin-left:100px;
+    }
+    .social_portfolio_4{
+        width:1000px;
+        height:400px;
+        margin:0 auto;
+        margin-top:50px;
+        margin-bottom:50px;
+        margin-left:95px;
+    }
+/* Responsive */
+@media screen and (max-width: 600px) {
+    .header{
+      width:100%;  
+      padding:0px;
+    }
+    .container{
+        width:100%;
+    }
+    .titel{
+        width:100%;
+        text-align:center;
+        
+    }
+    .nav li{
+        width:100%;
+        height:50px;
+        text-align:center;
+        padding:0px;
+    }
+    .nav ul{
+        padding:0px;
+    }
+    .avatar{
+        text-align:center;
+        width:100%;
+        background-color:#6e4381;
+    }
+    .social{
+        margin-top:0px;
+        width:0px;
+    }
+    .information{
+        width:100%;
+        text-align:center;
+        margin:0px;
+    }
+    .information ul{
+        width:100%;
+        text-align:center;
+        padding:0px;
+    }
+    .information form{
+        margin:0 auto;
+        width:100%;
+    }
+    .information form input{
+        width:50%;
+    }
+    .headerimg img{
+        width:0px;
+        text-align:center;
+        
+    }
+    .homeFoto img{
+        width:100%;
+    }
+    .homeTekst{
+        width:100%;
+        height:100%;
+    }
+    .home_image img{
+        width:100%;
+    }
+    .linkStyle{
+        width:100%;
+    }
+    .footer{
+        width:100%;
+        height:225px;
+        padding:0px;
+        padding-bottom:20px;
+    }
+    .inhoud_home{
+        width:100%;
+    }
+    .link{
+        width:100%;
+        text-align:center;
+        
+        
+    }
+    .school{
+        width:100%;
+        text-align:center;
+    }
+    .social img{
+        width:0px;
+    }
+    .inhoud{
+        text-align:center;
+        padding:0px;
+        margin:50px;
+        
+        
+    }
+    .project_upload{
+        margin-right:0px;
+        margin-bottom:50px;
+        margin-left:0px;
+    }
+    .beschrijving{
+        float:none;
+        text-align:center;
+        width:100%;
+    }
+    .beschrijving textarea{
+        float:none;
+        text-align:center;
+        width:100%;
+    }
+    .tabel{
+        width:100%;
+        float:none;
+        
+    }
+    .post{
+        width:100%;
+        padding:0px;
+        padding-top:20px;
+        height:100%;
+        border-top: 5px solid purple;
+         
+    }
+    .message{
+        width:100%;
+        float:none;
+        padding-left:0px;
+        padding-right:0px;
+    }
+    .date{
+        width:100%;
+        text-align: center;
+        padding:0px;
+        margin:0px;
+        float:none;
+        padding-left:0px;
+        padding-right:0px;
+    }
+    .time{
+        width:100%;
+        margin-bottom:30px;
+         padding:0px;
+         float:none;
+         padding-left:0px;
+        padding-right:0px;
+    }
+    .gebruiker{
+        width:100%;
+        float:none;
+    }
+    .naam{
+        width:100px;
+        padding:0px;
+        margin:0 auto;
+    }
+    .profielfoto{
+        float:none;
+        margin: 0 auto;
+    }
+    .formlabel{
+        width:100%;
+        padding:0px;
+        margin:0px;
+    }
+    .homeTitel{
+        width:100%;
+        font-size:0px;
+    }
+    .social_portfolio{
+        width:100%;
+        height:250px;
+        float:left;
+        
+    }
+    .social_portfolio form{
+       width:100%;
+    }
+    
+    .social_portfolio_facebook{
+        width:100%;
+        height:300px;
+        
+    }
+    .social_portfolio_facebook img{
+        width:200px;
+        height:80px;
+        
+    }
+    .social_portfolio_4{
+        width:100%;
+        height:400px;
+        
+        margin:0px;
+    }
+    
+}
