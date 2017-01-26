@@ -3,6 +3,8 @@
 include "includes/topinclude.php";
 include "connection_database.php";
 
+
+
 function color_inverse($color)
 {
     $color = str_replace('#', '', $color);
@@ -22,19 +24,43 @@ function color_inverse($color)
 ?>
 
 
-<div class="inhoud " >
-    <div class="titel_naam" style="<?php
-    $cat = "SELECT * FROM style WHERE StudentNummer = '{$_SESSION['id']}' ";
-    $lion = mysqli_query($DBConnect, $cat);
-    $dog = mysqli_fetch_assoc($lion);
-    if ($dog['StyleCode'] == 1)
-    {
+<div class="inhoud " style="<?php
+    $sql = "SELECT * FROM style WHERE StudentNummer = '{$_SESSION['id']}' ";
+    $result = mysqli_query($DBConnect, $sql);
+    $table = mysqli_fetch_assoc($result);
+    if ($table['StyleCode'] == 1){
         echo "";
-    } elseif ($dog['StyleCode'] == 2)
-    {
-        echo "background-color:{$dog['KleurCode']}; border-bottom: 5px solid " . color_inverse($dog['KleurCode']);
+    } elseif ($table['StyleCode'] == 2){
+        echo "font-family: "; 
+        $ltype = $table['Lettertype'];
+        $lsize = $table['LetterGrote'];
+        switch($ltype){
+            case ($ltype=="arial"):
+                echo "Arial,Helvetica Neue,Helvetica,sans-serif";
+                break;
+            case ($ltype=="georgia"):
+                echo "Georgia,Times,Times New Roman,serif";
+                break;
+            case ($ltype=="palatino"):
+                echo "Palatino,Palatino Linotype,Palatino LT STD,Book Antiqua,Georgia,serif";
+                break;
+            case ($ltype=="lucida"):
+                echo "Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif";
+                break;
+            default:
+                echo "Arial,Helvetica Neue,Helvetica,sans-serif";
+        }
+        echo "; ";
+        echo "font-size: $lsize em !important;}";
+     ?>">
+    <div class="titel_naam" style="<?php
+    if ($table['StyleCode'] == 1){
+        echo "";
+    } elseif ($table['StyleCode'] == 2){
+            echo "background-color:{$table['KleurCode']}; border-bottom: 5px solid " . color_inverse($table['KleurCode']);
+        }
     }
-    ?>">
+    ?>;">
 
         <?php
         if (isset($_SESSION['username']))
@@ -50,7 +76,7 @@ function color_inverse($color)
         ?>
     </div>
     <div class="beschrijving_titel">Beschrijving</div>
-    <div class="beschrijving" >
+    <div class="beschrijving">
              <?php
              if (isset($_SESSION['username']))
              {
@@ -61,7 +87,7 @@ function color_inverse($color)
 
                  if (empty($row['beschrijving']))
                  {
-                     echo "<form action='#' method='post'><textarea name='area' ></textarea><input type='submit' name='submit2' value='Voeg toe'> </form> ";
+                     echo "<form action='#' method='post'><textarea name='area'></textarea><input type='submit' name='submit2' value='Pas aan'> </form> ";
                      if (isset($_POST['submit2']))
                      {
                          $vul = $_POST['area'];
@@ -72,7 +98,7 @@ function color_inverse($color)
                      }
                  } else
                  {
-                     echo $row['beschrijving'];
+                     echo "<p>".$row['beschrijving']."</p>";
                      echo "<form action='#' method='post'><textarea name='area' ></textarea><input type='submit' name='submit2' value='Voeg toe'> </form> ";
                      if (isset($_POST['submit2']))
                      {
@@ -91,15 +117,15 @@ function color_inverse($color)
     </div>
     <div class=""></div>
     <div class="project_upload" style="<?php
-    $cat = "SELECT * FROM style WHERE StudentNummer = '{$_SESSION['id']}' ";
-    $lion = mysqli_query($DBConnect, $cat);
-    $dog = mysqli_fetch_assoc($lion);
-    if ($dog['StyleCode'] == 1)
+    $sql = "SELECT * FROM style WHERE StudentNummer = '{$_SESSION['id']}' ";
+    $result = mysqli_query($DBConnect, $sql);
+    $table = mysqli_fetch_assoc($result);
+    if ($table['StyleCode'] == 1)
     {
         echo "";
-    } elseif ($dog['StyleCode'] == 2)
+    } elseif ($table['StyleCode'] == 2)
     {
-        echo "background-color:{$dog['KleurCode']}; ";
+        echo "background-color:{$table['KleurCode']}; ";
     }
     ?>">
         <div class="upload_top">
@@ -111,9 +137,9 @@ function color_inverse($color)
                 if (isset($_SESSION["login_user"]) == 1)
                 {
                     echo '
-						<input type="file" name="upload_project"><br>
-						<input type="text" name="name" placeholder="Name of project"><br>
-						<input type="submit" name="submit" value="Upload">';
+                        <input type="file" name="upload_project"><br>
+                        <input type="text" name="name" placeholder="Name of project"><br>
+                        <input type="submit" name="submit" value="Upload">';
                 } else
                 {
                     echo "<div class='project_upload_title'> you have to log in first to edit this file </div>";
@@ -123,12 +149,12 @@ function color_inverse($color)
         </div>
 
         <div class="project_upload_file" style="<?php
-        if ($dog['StyleCode'] == 1)
+        if ($table['StyleCode'] == 1)
         {
             echo "";
-        } elseif ($dog['StyleCode'] == 2)
+        } elseif ($table['StyleCode'] == 2)
         {
-            echo "background-color:" . color_inverse($dog['KleurCode']) . ";";
+            echo "background-color:" . color_inverse($table['KleurCode']) . ";";
         }
         ?>">
                  <?php
@@ -181,15 +207,15 @@ function color_inverse($color)
     </div>
 
     <div class="project_upload" style="<?php
-    $cat = "SELECT * FROM style WHERE StudentNummer = '{$_SESSION['id']}' ";
-    $lion = mysqli_query($DBConnect, $cat);
-    $dog = mysqli_fetch_assoc($lion);
-    if ($dog['StyleCode'] == 1)
+    $sql = "SELECT * FROM style WHERE StudentNummer = '{$_SESSION['id']}' ";
+    $result = mysqli_query($DBConnect, $sql);
+    $table = mysqli_fetch_assoc($result);
+    if ($table['StyleCode'] == 1)
     {
         echo "";
-    } elseif ($dog['StyleCode'] == 2)
+    } elseif ($table['StyleCode'] == 2)
     {
-        echo "background-color:{$dog['KleurCode']}; ";
+        echo "background-color:{$table['KleurCode']}; ";
     }
     ?>">
         <div class="upload_top">
@@ -201,9 +227,9 @@ function color_inverse($color)
                 if (isset($_SESSION["login_user"]) == 1)
                 {
                     echo '	
-					<input type="file" name="upload_project1"><br>
-					<input type="text" name="textname" placeholder="Name of SLBProduct"><br>
-					<input type="submit" name="submit1" value="Upload" >';
+                    <input type="file" name="upload_project1"><br>
+                    <input type="text" name="textname" placeholder="Name of SLBProduct"><br>
+                    <input type="submit" name="submit1" value="Upload" >';
                 } else
                 {
                     echo "<div class='project_upload_title'> you have to log in first to edit this file </div>";
@@ -213,12 +239,12 @@ function color_inverse($color)
         </div>
 
         <div class="project_upload_file" style="<?php
-        if ($dog['StyleCode'] == 1)
+        if ($table['StyleCode'] == 1)
         {
             echo "";
-        } elseif ($dog['StyleCode'] == 2)
+        } elseif ($table['StyleCode'] == 2)
         {
-            echo "background-color:" . color_inverse($dog['KleurCode']) . ";";
+            echo "background-color:" . color_inverse($table['KleurCode']) . ";";
         }
         ?>">
                  <?php
@@ -268,27 +294,20 @@ function color_inverse($color)
         </div>
     </div>
 
-
+</div>
 <style>
     .project_file:nth-child(even) {
 
         background-color:<?php
-        if ($dog['StyleCode'] == 1)
+        if ($table['StyleCode'] == 1)
         {
             echo "";
         } else
         {
-            echo color_inverse(color_inverse($dog['KleurCode']));
+            echo color_inverse(color_inverse($table['KleurCode']));
         }
         ?>;
     }
-
-
-
-
-
-
-
 </style>
 <div class="social_portfolio_4">
 <div class="social_portfolio">
@@ -405,5 +424,4 @@ if (isset($_POST['instagram']))
 ?>
 </div>
 <div class="clear"></div>
-</div>
 <?php include "includes/botinclude.php"; ?>
