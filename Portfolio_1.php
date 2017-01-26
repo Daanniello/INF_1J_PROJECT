@@ -141,7 +141,7 @@ function color_inverse($color)
         <div class="project_upload_file" >
                  <?php
                  
-                 if (isset($_SESSION['login_slber']) || isset($_SESSION['login_docent']))
+                 if (isset($_SESSION['login_slber']))
                  {
 
                      $naam1 = "SELECT * FROM slbproduct s JOIN gebruiker g ON s.GebruikerID = g.GebruikerID WHERE g.GebruikerID = '{$_GET['student']}'";
