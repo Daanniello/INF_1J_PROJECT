@@ -51,7 +51,7 @@ function color_inverse($color)
                 echo "Arial,Helvetica Neue,Helvetica,sans-serif";
         }
         echo "; ";
-        echo "font-size: $lsize em !important;}";
+        echo "font-size: {$lsize}px !important;}";
     }
      ?>">
     <div class="titel_naam" style="<?php
