@@ -32,7 +32,7 @@ $schools = array("Leeuwarden", "Emmen", "Meppel", "Assen", "Groningen", "Bali", 
                 ?>
         </select><br>
         <label class="formlabel">Profiel foto: </label><input type="file" name ="upload"><br>
-        <input type="submit" name="submit">
+        <input type="submit" name="submit" value="Verzenden">
     </form>
     <?php
     if (isset($_POST["submit"])) {

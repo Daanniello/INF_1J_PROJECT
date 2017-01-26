@@ -3,7 +3,7 @@
 		<form action="#" method="post">
 			<label class="formlabel">Username: </label><input type="text" name="username"><br>
 			<label class="formlabel">Password: </label><input type="password" name="password"><br>
-			<input type="submit" name="sub">
+			<input type="submit" name="sub" value="Verzenden">
 		</form>
            
 		<?php
