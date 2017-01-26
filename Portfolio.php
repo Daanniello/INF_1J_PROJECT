@@ -50,15 +50,7 @@ function color_inverse($color)
         ?>
     </div>
     <div class="beschrijving_titel">Beschrijving</div>
-    <div class="beschrijving" style="<?php
-    if ($dog['StyleCode'] == 1)
-    {
-        echo "";
-    } elseif ($dog['StyleCode'] == 2)
-    {
-        echo "border: 2px solid" . color_inverse($dog['KleurCode']) . ";";
-    }
-    ?>">
+    <div class="beschrijving" >
              <?php
              if (isset($_SESSION['username']))
              {
