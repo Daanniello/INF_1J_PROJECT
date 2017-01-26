@@ -52,6 +52,7 @@ function color_inverse($color)
         }
         echo "; ";
         echo "font-size: $lsize em !important;}";
+    }
      ?>">
     <div class="titel_naam" style="<?php
     if ($table['StyleCode'] == 1){
@@ -59,7 +60,7 @@ function color_inverse($color)
     } elseif ($table['StyleCode'] == 2){
             echo "background-color:{$table['KleurCode']}; border-bottom: 5px solid " . color_inverse($table['KleurCode']);
         }
-    }
+    
     ?>;">
 
         <?php
