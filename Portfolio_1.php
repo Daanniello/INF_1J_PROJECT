@@ -37,7 +37,7 @@ function color_inverse($color)
     ?>">
 
         <?php
-        if (isset($_SESSION['username']))
+        if (isset($_SESSION['login_slber']) || isset($_SESSION['login_docent']))
         {
             $show = "SELECT * FROM student WHERE GebruikerID = '{$_GET['student']}'";
             $result = mysqli_query($DBConnect, $show);
@@ -50,15 +50,7 @@ function color_inverse($color)
         ?>
     </div>
     <div class="beschrijving_titel">Beschrijving</div>
-    <div class="beschrijving" style="<?php
-    if ($dog['StyleCode'] == 1)
-    {
-        echo "";
-    } elseif ($dog['StyleCode'] == 2)
-    {
-        echo "border: 2px solid" . color_inverse($dog['KleurCode']) . ";";
-    }
-    ?>">
+    <div class="beschrijving" >
              <?php
              if (isset($_SESSION['login_slber']) || isset($_SESSION['login_docent']))
              {
@@ -86,7 +78,7 @@ function color_inverse($color)
 
     
     
-</div>
+
 <style>
     .project_file:nth-child(even) {
 
@@ -106,4 +98,120 @@ function color_inverse($color)
     
 
 </style>
+<div class="project_upload" >
+        <div class="upload_top">
+            <form enctype='multipart/form-data' action="portfolio.php" method="post">
+                <div class="project_upload_title">
+                    Projecten
+                </div>
+                
+            </form>
+        </div>
+
+        <div class="project_upload_file" >
+                 <?php
+                 
+                 if (isset($_SESSION['login_slber'])|| isset($_SESSION['login_docent']))
+                 {
+
+                     $naam = "SELECT * FROM project as p JOIN gebruiker as g ON g.GebruikerID = p.StudentNummer WHERE StudentNummer = '{$_GET['student']}'";
+                     $show = mysqli_query($DBConnect, $naam);
+
+                     while ($row = mysqli_fetch_assoc($show))
+                     {
+                         echo "<div class='project_file'>";
+                         echo "<a href='includes/project/{$row['Naam']}{$row['Gebruiker']}.{$row['Project']}' target='blank'>{$row['Naam']}</a><br> ";
+                         echo "</div>";
+                     }
+                 }
+                 ?>
+
+        </div>
+</div>
+    <div class="project_upload" >
+        <div class="upload_top">
+            <form enctype='multipart/form-data' action="portfolio.php" method="post">
+                <div class="project_upload_title">
+                    SLB Projecten
+                </div>
+                
+            </form>
+        </div>
+
+        <div class="project_upload_file" >
+                 <?php
+                 
+                 if (isset($_SESSION['login_slber']) || isset($_SESSION['login_docent']))
+                 {
+
+                     $naam1 = "SELECT * FROM slbproduct s JOIN gebruiker g ON s.GebruikerID = g.GebruikerID WHERE g.GebruikerID = '{$_GET['student']}'";
+                     $show1 = mysqli_query($DBConnect, $naam1);
+
+                     while ($row1 = mysqli_fetch_assoc($show1))
+                     {
+                         echo "<div class='project_file'>";
+                         echo "<a href='includes/SLB/{$row1['Historie']}{$row1['Gebruiker']}.{$row1['SLBProduct']}' target='blank'>{$row1['Historie']}</a><br> ";
+                         echo "</div>";
+                     }
+                 }
+                 ?>
+        </div>
+    </div>
+    
+<div class="social_portfolio_4">
+<div class="social_portfolio">
+    <div class="social_portfolio_facebook">
+        <a href='<?php
+        if (isset($_SESSION['login_slber']) || isset($_SESSION['login_docent'])){
+        require 'connection_database.php';
+        $kijk1 = "SELECT * FROM social WHERE StudentNummer = '{$_GET['student']}' ";
+        $uitvoer1 = mysqli_query($DBConnect, $kijk1);
+        $tik1 = mysqli_fetch_assoc($uitvoer1);
+        echo $tik1['facebook'];
+        }
+        ?>'><img src='includes/images/facebook_button.jpg'></a>
+        </div>
+</div>
+    <div class="social_portfolio">
+    <div class="social_portfolio_facebook">
+        <a href='<?php
+        if (isset($_SESSION['login_slber']) || isset($_SESSION['login_docent'])){
+        require 'connection_database.php';
+        $kijk1 = "SELECT * FROM social WHERE StudentNummer = '{$_GET['student']}' ";
+        $uitvoer1 = mysqli_query($DBConnect, $kijk1);
+        $tik1 = mysqli_fetch_assoc($uitvoer1);
+        echo $tik1['linkedin'];
+        }
+        ?>'><img src='includes/images/linkedin.png'></a>
+        </div>
+</div>
+    <div class="social_portfolio">
+    <div class="social_portfolio_facebook">
+        <a href='<?php
+        if (isset($_SESSION['login_slber']) || isset($_SESSION['login_docent'])){
+        require 'connection_database.php';
+        $kijk1 = "SELECT * FROM social WHERE StudentNummer = '{$_GET['student']}' ";
+        $uitvoer1 = mysqli_query($DBConnect, $kijk1);
+        $tik1 = mysqli_fetch_assoc($uitvoer1);
+        echo $tik1['facebook'];
+        }
+        ?>'><img src='includes/images/twitter_button.png'></a>
+        </div>
+</div>
+    <div class="social_portfolio">
+    <div class="social_portfolio_facebook">
+        <a href='<?php
+        if (isset($_SESSION['login_slber']) || isset($_SESSION['login_docent'])){
+        require 'connection_database.php';
+        $kijk1 = "SELECT * FROM social WHERE StudentNummer = '{$_GET['student']}' ";
+        $uitvoer1 = mysqli_query($DBConnect, $kijk1);
+        $tik1 = mysqli_fetch_assoc($uitvoer1);
+        echo $tik1['instagram'];
+        }
+        ?>'><img src='includes/images/instagram_button.png'></a>
+        </div>
+</div>
+</div>
+    <div class="clear"></div>
+</div>
 <?php include "includes/botinclude.php"; ?>

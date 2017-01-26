@@ -268,7 +268,7 @@ function color_inverse($color)
         </div>
     </div>
 
-</div>
+
 <style>
     .project_file:nth-child(even) {
 
@@ -405,4 +405,5 @@ if (isset($_POST['instagram']))
 ?>
 </div>
 <div class="clear"></div>
+</div>
 <?php include "includes/botinclude.php"; ?>

@@ -611,12 +611,11 @@ input[type=number]::-webkit-outer-spin-button {
         margin-left:100px;
     }
     .social_portfolio_4{
-        width:1000px;
+        width:900px;
         height:400px;
         margin:0 auto;
-        margin-top:50px;
-        margin-bottom:50px;
-        margin-left:95px;
+       padding-left:45px;
+       margin-top:20px;
     }
 /* Responsive */
 @media screen and (max-width: 600px) {
