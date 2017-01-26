@@ -18,10 +18,12 @@
             $SQLDocentComment = "CREATE TABLE docent_comment(
                             MessageID INT NOT NULL AUTO_INCREMENT,
                             Message_Comment VARCHAR(500) NOT NULL,
-                            ProjectNummer int,
+                            ProjectNummer INT NOT NULL,
+                            StudentNummer INT NOT NULL,
                             GebruikerID INT NOT NULL,
                             PRIMARY KEY (MessageID),
                             FOREIGN KEY (ProjectNummer) REFERENCES Project(ProjectNummer),
+                            FOREIGN KEY (StudentNummer) REFERENCES Student(StudentNummer),
                             FOREIGN KEY (GebruikerID) REFERENCES gebruiker(GebruikerID));";
         }
         $queryArray = [];

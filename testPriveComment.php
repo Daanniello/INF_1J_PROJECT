@@ -37,8 +37,12 @@ if (isset($_POST['submit']))
     {
         $comment = stripslashes($_POST['comment']);
         $GID = $_SESSION['id'];
-        $projectNummer = "SELECT ProjectNummer FROM project WHERE ";
-        $SQLstring = "INSERT INTO $tablenaam VALUES ('NULL', '$comment', '$GID')";
+        $projectNummer = "SELECT ProjectNummer 
+                            FROM project 
+                            JOIN gebruiker ON project.StudentNummer = gebruiker.GebruikerID  
+                            WHERE StudentNummer = '{$_GET['student']}' ";
+        $StudentNummer = ;
+        $SQLstring = "INSERT INTO $tablenaam VALUES ('NULL', '$comment', '$projectNummer', '$StudentNummer', '$GID')";
         $QueryResult = mysqli_query($DBConnect, $SQLstring);
         if ($QueryResult === FALSE)
         {
