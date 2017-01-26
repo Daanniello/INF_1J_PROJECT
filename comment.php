@@ -3,7 +3,7 @@ include "includes/topinclude.php";
 include "Connection_database.php";
 ?>
 <div class="inhoud">
-    <form Method="POST" Action="comment.php">
+    <form class="message_post" Method="POST" Action="comment.php">
         <p>Comment:</p>
         <p><textarea name="comment" rows="4" cols="50" maxlength="250"></textarea></p>
         <p><input type="submit" name="submit" value="Send"/></p>
@@ -94,11 +94,6 @@ include "Connection_database.php";
                                     ?>
                                 </div>
                             </div>
-                            <div class="message">
-                                <?php
-                                echo "{$Row['Message']}";
-                                ?>
-                            </div>
                             <div class="date">
                                 <?php
                                 echo "{$Row['Date']} |";
@@ -109,6 +104,12 @@ include "Connection_database.php";
                                 echo "{$Row['Time']}";
                                 ?>
                             </div>
+                            <div class="message">
+                                <?php
+                                echo "{$Row['Message']}";
+                                ?>
+                            </div>
+                            
                         </div>
                         <?php
                     }
