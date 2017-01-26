@@ -103,7 +103,7 @@ and open the template in the editor.
                 </div>
 				
 				<div class="session">
-					<?php print_r($_SESSION); ?>
+					<?php //print_r($_SESSION); ?>
 				</div>
 				
 				<div class="nav">

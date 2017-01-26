@@ -3,10 +3,10 @@
     
     
     <div class="homeTitel">
-        <h1>Welkom bij het Portfolio van Stenden.</h1>
+        <h1>Welkom bij het Portfolio van Stenden</h1>
     </div>
     <div class="homeFoto">
-        <img src="includes/images/home.jpg" alt="homeFoto">
+        <img src="includes/images/home.png" alt="homeFoto">
     </div>
     <div class="clear"></div>
 </div>

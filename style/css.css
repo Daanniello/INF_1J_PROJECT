@@ -39,6 +39,9 @@ input[type="submit"]:hover {
     margin: 0 auto;
     width: 1000px;
     background-color: white;
+    box-shadow: 10px 10px 5px #888888;
+    border: #6e4381 solid 4px; 
+    border-radius: 0 0 15px 15px;
 }
 
 .clear {
@@ -60,9 +63,15 @@ input[type="submit"]:hover {
 }
 
 .titel{
-    font-size: 36pt;
+    font-size: 28pt;
     float: left;
-    margin-top: 55px;
+    margin-top: 50px;
+    background-color: white;
+    border: solid black 1px;
+    border-radius: 25px;
+    color: #6e4381;
+    padding: 0 15px;
+
 }
 
 .session {
@@ -76,7 +85,8 @@ input[type="submit"]:hover {
     width: 40px;
     background-color: #6e4381;
     position: fixed;
-    margin-top: 200px;
+    margin-top: 245px;
+    border: solid #614381 1px;
     border-radius: 0px 20px 20px 0px;
 }
 
@@ -114,6 +124,10 @@ input[type="submit"]:hover {
     height: 100px;
     float: right;
     background-color: #f3f3f3;
+    border-radius: 5px;
+}
+.avatar img{
+    border-radius: 5px;
 }
 
 /* ---- Navigatie ---- */
@@ -145,7 +159,7 @@ input[type="submit"]:hover {
 /* ------------------- */
 .inhoud {
     background-color: #fff;
-    padding: 20px;
+    padding: 50px;
 	min-height: 500px;
 }
 .home_image img{
@@ -157,17 +171,17 @@ input[type="submit"]:hover {
 .inhoud_home {
     background-color: #fff;
 }
-
+.homeFoto{
+    text-align: center;
+}
 .homeFoto img{
-    max-height: 400px;
-    float: left;
+    max-height: 500px;
+    
 }
 
 .homeTitel{
-    float: left;
-    position: absolute;
-    font-size: 70%;
-    padding-left: 15px;
+    text-shadow: 1px 1px purple;
+    text-align: center;
 }
 
 /* ---- Portfolio page ---- */
@@ -607,7 +621,12 @@ input[type=number]::-webkit-outer-spin-button {
     }
     .titel{
         width:100%;
+        border: initial;
+        border-radius: initial;
+        background-color: initial;
+        color: white;
         text-align:center;
+        margin-bottom: 15px;
         
     }
     .nav li{
@@ -622,7 +641,7 @@ input[type=number]::-webkit-outer-spin-button {
     .avatar{
         text-align:center;
         width:100%;
-        background-color:#6e4381;
+        padding-bottom: 10px;
     }
     .social{
         margin-top:0px;
@@ -632,6 +651,7 @@ input[type=number]::-webkit-outer-spin-button {
         width:100%;
         text-align:center;
         margin:0px;
+        padding-top: 10px;
     }
     .information ul{
         width:100%;
@@ -763,7 +783,7 @@ input[type=number]::-webkit-outer-spin-button {
     }
     .homeTitel{
         width:100%;
-        font-size:0px;
+        font-size:12px;
     }
     .social_portfolio{
         width:100%;
