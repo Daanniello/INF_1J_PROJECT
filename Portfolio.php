@@ -385,7 +385,7 @@ $uitvoer3 = mysqli_query($DBConnect, $kijk3);
 $tik3 = mysqli_fetch_assoc($uitvoer3);
 echo $tik3['instagram'];
 ?>'><img src='includes/images/instagram_button.png'></a>
-        <form action='' method='post'><input type="text" name="insta" placeholder="voeg je twitter link toe"><br><input type="submit" name="instagram" value="OK"> </form>
+        <form action='' method='post'><input type="text" name="insta" placeholder="voeg je instagram link toe"><br><input type="submit" name="instagram" value="OK"> </form>
     </div>
 </div>
 <?php
