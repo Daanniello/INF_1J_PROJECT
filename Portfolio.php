@@ -100,7 +100,7 @@ function color_inverse($color)
                  } else
                  {
                      echo "<p>".$row['beschrijving']."</p>";
-                     echo "<form action='#' method='post'><textarea name='area' ></textarea><input type='submit' name='submit2' value='Voeg toe'> </form> ";
+                     echo "<form action='#' method='post'><textarea name='area' ></textarea><input type='submit' name='submit2' value='Pas aan'> </form> ";
                      if (isset($_POST['submit2']))
                      {
                          $vul = $_POST['area'];
