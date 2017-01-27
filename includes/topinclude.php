@@ -93,6 +93,7 @@ and open the template in the editor.
                                 {
                                     echo "There was an error uploading the file, please try again!";
                                 } echo "<br><br> It can take some time to change...";
+                                echo "<meta http-equiv='refresh' content='0' ";
                             }
                         }
                     } else
@@ -123,6 +124,9 @@ and open the template in the editor.
 						if (isset($_SESSION['login_docent']) || isset($_SESSION['login_slber'])) {
 							echo "<li class='li_opmaak'><a href='docent.php'>Studenten</a></li>";
 						}
+                                                if (isset($_SESSION['login_admin'])){
+                                                        echo "<li class='li_opmaak'><a href='rechtaanpassen.php'>Recht Aanpassen</a></li>";
+                                                }
 						echo "<li class='li_opmaak'><a href='logout.php'>Log out</a></li>";
 					} else {
 						echo "<li class='li_opmaak'><a href='login.php'>Log in </a></li>";

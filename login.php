@@ -21,13 +21,15 @@
 					$row = mysqli_fetch_assoc($result);
                                         $password_crypt = $row['Wachtwoord'];
                                     
-					if ($count == 1) {
+					if ($count == 1 && password_verify($password, $password_crypt)){
 						$_SESSION['id'] = $row["GebruikerID"];
 						
 						if ($row["rechtcode"]== 2){
 							$_SESSION['login_docent']= 2;
 						} elseif($row["rechtcode"]== 3){
 							$_SESSION['login_slber']= 3;
+						} elseif($row["rechtcode"]== 4){
+							$_SESSION['login_admin']= 4;
 						} else {
 							$_SESSION['login_user'] = 1;
 						}
