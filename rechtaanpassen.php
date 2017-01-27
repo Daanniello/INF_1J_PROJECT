@@ -78,7 +78,7 @@
                             $resultsSlber = mysqli_fetch_assoc($querySlber);
                             $SQLAlterRecht = "UPDATE gebruiker SET Rechtcode = $recht WHERE GebruikerID = $id";
                             $queryRecht = mysqli_query($DBConnect, $SQLAlterRecht);
-                            $SQLinsert = "INSERT INTO docent VALUES(NULL, NULL, '{$resultsSlber['Naam']}', '{$resultsSlber['TelefoonNummer']}', NULL '{$resultsSlber['Email']}', $id)";
+                            $SQLinsert = "INSERT INTO docent VALUES(NULL, '{$resultsSlber['Naam']}', NULL, '{$resultsSlber['TelefoonNummer']}', '{$resultsSlber['Email']}', NULL, $id)";
                             $queryInsert = mysqli_query($DBConnect, $SQLinsert);
                             $SQLdeleteSlber = "DELETE FROM slber WHERE GebruikerID = $id";
                             $queryDeleteStudent = mysqli_query($DBConnect, $SQLdeleteSlber);

@@ -151,7 +151,7 @@ function color_inverse($color) {
                     $tik1 = mysqli_fetch_assoc($uitvoer1);
                     echo $tik1['facebook'];
                 }
-                ?>'><img src='includes/images/facebook_button.jpg'></a>
+                ?>'target="blank"><img src='includes/images/facebook_button.jpg'></a>
             </div>
         </div>
         <div class="social_portfolio">
@@ -164,7 +164,7 @@ function color_inverse($color) {
                     $tik1 = mysqli_fetch_assoc($uitvoer1);
                     echo $tik1['linkedin'];
                 }
-                ?>'><img src='includes/images/linkedin.png'></a>
+                ?>'target="blank"><img src='includes/images/linkedin.png'></a>
             </div>
         </div>
         <div class="social_portfolio">
@@ -177,7 +177,7 @@ function color_inverse($color) {
                     $tik1 = mysqli_fetch_assoc($uitvoer1);
                     echo $tik1['facebook'];
                 }
-                ?>'><img src='includes/images/twitter_button.png'></a>
+                ?>'target="blank"><img src='includes/images/twitter_button.png'></a>
             </div>
         </div>
         <div class="social_portfolio">
@@ -190,16 +190,16 @@ function color_inverse($color) {
                     $tik1 = mysqli_fetch_assoc($uitvoer1);
                     echo $tik1['instagram'];
                 }
-                ?>'><img src='includes/images/instagram_button.png'></a>
+                ?>'target="blank"><img src='includes/images/instagram_button.png'></a>
             </div>
         </div>
         <div class="social_portfolio">
-            <div class="social_portfolio_facebook">
                 <h2>Stuur deze persoon een Email.</h2>
-                <form method="post" action="email.php">
-                    <textarea rows="14" cols="80" name="message"></textarea>
+                <form method="post" action="email.php?student=<?php echo $_GET['student']; ?>">
+                    <p>Onderwerp: <input type="text" name="onderwerp" /></p>
+                    <textarea rows="10" cols="60" name="message"></textarea>
+                    <input type="submit" name="submit" />
                 </form>
-            </div>
         </div>
     </div>
     <div class="clear"></div>

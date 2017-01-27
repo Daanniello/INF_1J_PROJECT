@@ -37,7 +37,12 @@
 					while ($row1 = mysqli_fetch_assoc($query1)){
 						echo "<tr>";
 						echo "<td>{$row1['Historie']}</td>";
-						echo "<td>{$row1['Cijfer']}</td>";
+						
+                                                if(empty($row1['Cijfer'])) {
+							echo "<td>Niet toegewezen</td>";
+						} else {
+							echo "<td>{$row1['Cijfer']}</td>";
+						}
 						echo "</tr>";
 					}
 					echo "</table>";
