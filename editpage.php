@@ -9,34 +9,23 @@ include "connection_database.php";
         echo "
             <div class=editbox>
                 <h2>Portfolio stijl</h2>
-                <p>Kies hier je gewenste stijl die je wilt voor je portfolio</p>
+                <p>Kies hier je gewenste portfolio stijl:</p><br>
                 <form action='editpage.php' method='post'>
                 <div class=editform>
-                    <p>Stijl optie: 
-                    <select name='style'>
+                    <label class='formlabel'>Stijl:</label>
+                    <select name='style' class='select'>
                         <option value='2'>Custom</option> 
                         <option value='1'>Reset</option>
-                        
-                    </select>
-                    </p>
-                    <p>Kleur optie:</p><p>
-                        <input type='color' name='color'> COLOR
-                        
-                    </p>
-                    <p>Lettertype:
-                    <select name='ltype'>
+                    </select><br>
+                    <label class='formlabel'>Kleur:</label><input type='color' name='color'><br>
+                    <label class='formlabel'>Lettertype:</label>
+                    <select name='ltype' class='select'>
                         <option value='arial'>Arial</option>
                         <option value='georgia'>Georgia</option> 
                         <option value='palatino'>Palatino</option> 
                         <option value='lucida'>Lucida Grande</option>
-                    </select>
-                    <p>Lettertype grootte:
-                    <select name='lsize'>
-                        <option value='11'>11</option>
-                        <option value='12'>12</option> 
-                        <option value='14'>14</option> 
-                        <option value='16'>16</option>
-                    </select></p>
+                    </select><br>
+                    <label class='formlabel'>Lettertype grootte:</label><input type=number name='lsize' min='12' max='20'><br>
                     <input type='submit' value='Versturen'>
                 </div>
                 </form>
