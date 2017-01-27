@@ -41,8 +41,13 @@ and open the template in the editor.
                         $proffoto = $row["Profielfoto"];
                         $pointpos = strrpos($row["Profielfoto"], ".");
                         $fish = substr($proffoto, $pointpos, 5);
-
-                        echo "<a href='portfolio.php'><img src='includes/profielfoto/{$_SESSION['username']}{$fish}' alt='profielfoto' width='100' height='100' ></a>";
+                        
+                        if(isset($_SESSION['login_user'])){
+                            echo "<a href='portfolio.php'><img src='includes/profielfoto/{$_SESSION['username']}{$fish}' alt='profielfoto' width='100' height='100' ></a>";
+                        } else {
+                            echo "<a href='index.php'><img src='includes/images/avatar.png' alt='avatar' width='100' height='100' ></a>";
+                        }
+                        
                     } else
                     {
                         echo "<a href='index.php'><img src='includes/images/avatar.png' alt='avatar' width='100' height='100' ></a>";

@@ -521,6 +521,40 @@ input[type=number]::-webkit-outer-spin-button {
 .cijfer_table tr:nth-child(even) > td {
 	background-color: #fff;
 }
+.cijfer_table1 {
+	width: 48%;
+	margin-right: 2%;
+	float: left;
+	background-color: #6e4381;
+}
+
+.cijfer_table1:last-child {
+	margin-right: 0;
+}
+
+.cijfer_table1 table {
+	width: 100%;
+	text-align: left
+}
+
+.cijfer_table1 th {
+	background-color: #9F4183;
+	color: #fff;
+	padding: 8px;
+	width: 50%;
+}
+
+.cijfer_table1 td {
+	padding: 8px;
+}
+
+.cijfer_table1 tr:nth-child(odd) > td {
+	background-color: #f3f3f3;
+}
+
+.cijfer_table1 tr:nth-child(even) > td {
+	background-color: #fff;
+}
 /* ---- Studenten ---- */
 .students_table {
 	width: 100%;
@@ -658,6 +692,9 @@ input[type=number]::-webkit-outer-spin-button {
         width:0px;
     }
     .cijfer_table {
+	overflow-x:auto;
+    }
+    .cijfer_table1 {
 	overflow-x:auto;
     }
     .information{

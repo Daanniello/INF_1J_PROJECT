@@ -97,10 +97,9 @@
                 }
             }
         }
-        echo "<div class='cijfer_header_links'>Studenten</div>";
-        echo "<div class='cijfer_header_rechts'>Docenten</div>";
+        echo "<div class='cijfer_header_links'>Gebruikers</div>";
         echo "<div class='clear'></div>";
-        echo "<div class='cijfer_table'>";
+        echo "<div class='cijfer_table1'>";
         echo "<table >";
         echo "<tr>";
         echo "<th>GebruikerID</th>";
@@ -125,17 +124,6 @@
             echo "<td><input type='submit' name='submit' value='sent'></<td>";
             echo "</tr></form>";
         }
-        echo "</table>";
-        echo "</div>";
-
-        echo "<div class='cijfer_table'>";
-        echo "<table >";
-        echo "<tr>";
-        echo "<th>GebruikerID</th>";
-        echo "<th>Naam</th>";
-        echo "<th>Recht</th>";
-        echo "<th>Delete</th>";
-        echo "<th></th>";
         $show = "SELECT * FROM gebruiker WHERE Rechtcode = 2";
         $query = mysqli_query($DBConnect, $show);
         while ($row = mysqli_fetch_assoc($query)) {
@@ -152,19 +140,6 @@
             echo "<td><input type='submit' name='submit' value='sent'></<td>";
             echo "</tr></form>";
         }
-        echo "</table>";
-        echo "</div>";
-        
-        echo "<div class='cijfer_header_links'>SLBer</div>";
-        echo "<div class='clear'></div>";
-        echo "<div class='cijfer_table'>";
-        echo "<table >";
-        echo "<tr>";
-        echo "<th>GebruikerID</th>";
-        echo "<th>Naam</th>";
-        echo "<th>Recht</th>";
-        echo "<th>Delete</th>";
-        echo "<th></th>";
         $show = "SELECT * FROM gebruiker WHERE Rechtcode = 3";
         $query = mysqli_query($DBConnect, $show);
         while ($row = mysqli_fetch_assoc($query)) {
@@ -183,6 +158,7 @@
         }
         echo "</table>";
         echo "</div>";
+
         ?>
     </div>
 </div>
