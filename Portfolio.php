@@ -319,8 +319,8 @@ function color_inverse($color)
         $uitvoer1 = mysqli_query($DBConnect, $kijk1);
         $tik1 = mysqli_fetch_assoc($uitvoer1);
         echo $tik1['facebook'];
-        ?>' target="blank"><img src='includes/images/facebook_button.jpg'></a>
-        <form action='' method='post'><input type="text" name="face" placeholder="voeg je facebook link toe"><br><input type="submit" name="facebook" value="OK"> </form>
+        ?>'><img src='includes/images/facebook_button.jpg' alt='facebook'></a>
+        <form action='#' method='post'><input type="text" name="face" placeholder="voeg je facebook link toe"><br><input type="submit" name="facebook" value="OK"> </form>
     </div>
 </div>
 <?php
@@ -350,8 +350,8 @@ $kijk = "SELECT * FROM social WHERE StudentNummer = '{$_SESSION['id']}' ";
 $uitvoer = mysqli_query($DBConnect, $kijk);
 $tik = mysqli_fetch_assoc($uitvoer);
 echo $tik['linkedin'];
-?>' target="blank"><img src='includes/images/linkedin.png'></a>
-        <form action='' method='post'><input type="text" name="linked" placeholder="voeg je linkedin link toe"><br><input type="submit" name="linkedin" value="OK"> </form>
+?>'><img src='includes/images/linkedin.png' alt='linkedin'></a>
+        <form action='#' method='post'><input type="text" name="linked" placeholder="voeg je linkedin link toe"><br><input type="submit" name="linkedin" value="OK"> </form>
     </div>
 </div>
 <?php
@@ -377,8 +377,8 @@ $kijk2 = "SELECT * FROM social WHERE StudentNummer = '{$_SESSION['id']}' ";
 $uitvoer2 = mysqli_query($DBConnect, $kijk2);
 $tik2 = mysqli_fetch_assoc($uitvoer2);
 echo $tik2['twitter'];
-?>'target="blank"><img src='includes/images/twitter_button.png'></a>
-        <form action='' method='post'><input type="text" name="twit" placeholder="voeg je twitter link toe"><br><input type="submit" name="twitter" value="OK"> </form>
+?>'><img src='includes/images/twitter_button.png' alt='twitter'></a>
+        <form action='#' method='post'><input type="text" name="twit" placeholder="voeg je twitter link toe"><br><input type="submit" name="twitter" value="OK"> </form>
     </div>
 </div>
 <?php
@@ -404,8 +404,8 @@ $kijk3 = "SELECT * FROM social WHERE StudentNummer = '{$_SESSION['id']}' ";
 $uitvoer3 = mysqli_query($DBConnect, $kijk3);
 $tik3 = mysqli_fetch_assoc($uitvoer3);
 echo $tik3['instagram'];
-?>'target="blank"><img src='includes/images/instagram_button.png'></a>
-        <form action='' method='post'><input type="text" name="insta" placeholder="voeg je instagram link toe"><br><input type="submit" name="instagram" value="OK"> </form>
+?>'><img src='includes/images/instagram_button.png' alt='instagram'></a>
+        <form action='#' method='post'><input type="text" name="insta" placeholder="voeg je instagram link toe"><br><input type="submit" name="instagram" value="OK"> </form>
     </div>
 </div>
 <?php
