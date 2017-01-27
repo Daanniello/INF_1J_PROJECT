@@ -6,11 +6,11 @@ $schools = array("Leeuwarden", "Emmen", "Meppel", "Assen", "Groningen", "Bali", 
 <div class="inhoud">
     <form enctype="multipart/form-data" action="Register.php" method="post">
         <label class="formlabel">Gebruikersnaam: </label><input type="text" name="username" maxlength="30"><br>
-        <label class="formlabel">Wachtwoord: </label><input type="password" name="password" min="6" maxlength="61"><br>
+        <label class="formlabel">Wachtwoord: </label><input type="password" name="password" maxlength="61"><br>
         <label class="formlabel">Herhaal wachtwoord: </label><input type="password" name="password1" maxlength="61"><br>
         <label class="formlabel">E-mail: </label><input type="email" name="mail" maxlength="40"><br>
         <label class="formlabel">Naam: </label><input type="text" name="naam" maxlength="30"><br>
-        <label class="formlabel">Telefoonnummer: </label><input type="number" name="telefoon" maxlength="10"><br>
+        <label class="formlabel">Telefoonnummer: </label><input type="number" name="telefoon"><br>
         <label class="formlabel">School: </label>
         <select name="school" class="select">
             <?php 
