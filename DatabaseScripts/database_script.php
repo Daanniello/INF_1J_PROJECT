@@ -182,6 +182,8 @@
                             FOREIGN KEY (ProjectNummer) REFERENCES Project(ProjectNummer) ON DELETE CASCADE ON UPDATE CASCADE,
                             FOREIGN KEY (StudentNummer) REFERENCES Student(StudentNummer) ON DELETE CASCADE ON UPDATE CASCADE,
                             FOREIGN KEY (GebruikerID) REFERENCES gebruiker(GebruikerID) ON DELETE CASCADE ON UPDATE CASCADE);";
+            $SQLgebruikeradmin = "INSERT INTO gebruiker VALUES (null,'admin', 4, '$2a$07\$CjwgZT6VlImAlYYskIChCeapvvDDtm4OTqU5x2Jk.QQrGgAMXedWe')";
+            $SQLadmin = "INSERT INTO admin VALUES (null, 'admin', '0611111111', 'admin@admin.nl', 1)";
             
         }
         $queryArray = [];
@@ -204,6 +206,8 @@
         array_push($queryArray, $SQLRechtSLBer);
         array_push($queryArray, $SQLRechtAdmin);
         array_push($queryArray, $SQLDocentComment);
+        array_push($queryArray, $SQLgebruikeradmin);
+        array_push($queryArray, $SQLadmin);
 
         foreach ($queryArray as $query) {
             $QueryResult = mysqli_query($DBConnect, $query);
