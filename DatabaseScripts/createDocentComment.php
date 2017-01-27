@@ -18,13 +18,11 @@
             $SQLDocentComment = "CREATE TABLE docent_comment(
                             MessageID INT NOT NULL AUTO_INCREMENT,
                             Message_Comment VARCHAR(500) NOT NULL,
-                            ProjectNummer INT NOT NULL,
                             StudentNummer INT NOT NULL,
                             GebruikerID INT NOT NULL,
                             PRIMARY KEY (MessageID),
-                            FOREIGN KEY (ProjectNummer) REFERENCES Project(ProjectNummer),
-                            FOREIGN KEY (StudentNummer) REFERENCES Student(StudentNummer),
-                            FOREIGN KEY (GebruikerID) REFERENCES gebruiker(GebruikerID));";
+                            FOREIGN KEY (StudentNummer) REFERENCES Student(StudentNummer) ON UPDATE CASCADE ON DELETE CASCADE,
+                            FOREIGN KEY (GebruikerID) REFERENCES gebruiker(GebruikerID) ON UPDATE CASCADE ON DELETE CASCADE);";
         }
         $queryArray = [];
         array_push($queryArray, $SQLDocentComment);

@@ -2,59 +2,44 @@
 include "includes/topinclude.php";
 include "connection_database.php";
 ?>
-<h1>Hier staan de portfolio's met comments van de docenten die het hebben beoordeeld.</h1>
-<?php
-if (isset($_SESSION['username']))
-{
-    $naam = "SELECT * FROM project WHERE StudentNummer = '{$_SESSION['id']}'";
-    $show = mysqli_query($DBConnect, $naam);
-    while ($row = mysqli_fetch_assoc($show))
-    {
-        echo "<div class='project_file'>";
-        echo "<a href='includes/project/{$row['Naam']}{$_SESSION['username']}.{$row['Project']}' target='blank'>{$row['Naam']}</a><br> ";
-        echo "</div>";
-    }
-}
-?>
-<form action='#' method='post'>
-    <input type='textarea' name='docent_comment'>
-    <input type='submit' name='submit'>
-</form>
+<h1>Prive berichten.</h1>
+
+
 
 <?php
-if (isset($_POST['submit']))
+if (isset($_SESSION['login_docent']) || isset($_SESSION['login_slber']))
 {
-    if (empty($_POST['docent_comment']))
+    ?>
+    <form action='#' method='post'>
+        <input type='textarea' name='docent_comment'>
+        <input type='submit' name='submit'>
+    </form>
+    <?php
+    if (isset($_POST['submit']))
     {
-        echo"fill something in.";
-    } elseif (ctype_space($_POST['comment']))
-    {
-        echo"Please don't do that."
-        . "I will find you"
-        . " and I will kill you."
-        . " Especially if your name is Frank Tieck or Kevin";
-    } else
-    {
-        $comment = stripslashes($_POST['comment']);
-        $GID = $_SESSION['id'];
-        $projectNummer = "SELECT ProjectNummer 
-                            FROM project 
-                            JOIN gebruiker ON project.StudentNummer = gebruiker.GebruikerID  
-                            WHERE StudentNummer = '{$_GET['student']}' ";
-        $StudentNummer = ;
-        $SQLstring = "INSERT INTO $tablenaam VALUES ('NULL', '$comment', '$projectNummer', '$StudentNummer', '$GID')";
-        $QueryResult = mysqli_query($DBConnect, $SQLstring);
-        if ($QueryResult === FALSE)
+        if (empty($_POST['docent_comment']))
         {
-            echo "<p>Unable to execute the query.</p>"
-            . "<p>Error code " . mysqli_errno($DBConnect)
-            . ": " . mysqli_error($DBConnect) . "</p>";
-            echo"$SQLstring";
+            echo"fill something in.";
         } else
         {
-            echo "<p>The comment has been added.</p>";
+            $comment = stripslashes($_POST['docent_comment']);
+            $GID = $_SESSION['id'];
+            $StudentNummer = $_GET['student'];
+            $SQLstring = "INSERT INTO docent_comment VALUES ('NULL', '$comment', '$StudentNummer', '$GID')";
+            mysqli_query($DBConnect, $SQLstring);
         }
     }
 }
+if (isset($_SESSION['login_user']))
+{
+    $string="SELECT * FROM docent_comment WHERE StudentNummer = '{$_SESSION['id']}' ";
+    $show=mysqli_query($DBConnect, $string);
+    while ($row = mysqli_fetch_assoc($show)){
+        echo"{$row['Message_Comment']}";
+        $docent = "SELECT Naam FROM gebruiker WHERE ";
+        echo"{$row['Message_Comment']}";
+    }
+}
+
 include "includes/botinclude.php";
 ?>
