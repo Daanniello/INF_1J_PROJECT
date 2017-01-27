@@ -319,7 +319,7 @@ function color_inverse($color)
         $uitvoer1 = mysqli_query($DBConnect, $kijk1);
         $tik1 = mysqli_fetch_assoc($uitvoer1);
         echo $tik1['facebook'];
-        ?>'><img src='includes/images/facebook_button.jpg'></a>
+        ?>' target="blank"><img src='includes/images/facebook_button.jpg'></a>
         <form action='' method='post'><input type="text" name="face" placeholder="voeg je facebook link toe"><br><input type="submit" name="facebook" value="OK"> </form>
     </div>
 </div>
@@ -350,7 +350,7 @@ $kijk = "SELECT * FROM social WHERE StudentNummer = '{$_SESSION['id']}' ";
 $uitvoer = mysqli_query($DBConnect, $kijk);
 $tik = mysqli_fetch_assoc($uitvoer);
 echo $tik['linkedin'];
-?>'><img src='includes/images/linkedin.png'></a>
+?>' target="blank"><img src='includes/images/linkedin.png'></a>
         <form action='' method='post'><input type="text" name="linked" placeholder="voeg je linkedin link toe"><br><input type="submit" name="linkedin" value="OK"> </form>
     </div>
 </div>
@@ -377,7 +377,7 @@ $kijk2 = "SELECT * FROM social WHERE StudentNummer = '{$_SESSION['id']}' ";
 $uitvoer2 = mysqli_query($DBConnect, $kijk2);
 $tik2 = mysqli_fetch_assoc($uitvoer2);
 echo $tik2['twitter'];
-?>'><img src='includes/images/twitter_button.png'></a>
+?>'target="blank"><img src='includes/images/twitter_button.png'></a>
         <form action='' method='post'><input type="text" name="twit" placeholder="voeg je twitter link toe"><br><input type="submit" name="twitter" value="OK"> </form>
     </div>
 </div>
@@ -404,7 +404,7 @@ $kijk3 = "SELECT * FROM social WHERE StudentNummer = '{$_SESSION['id']}' ";
 $uitvoer3 = mysqli_query($DBConnect, $kijk3);
 $tik3 = mysqli_fetch_assoc($uitvoer3);
 echo $tik3['instagram'];
-?>'><img src='includes/images/instagram_button.png'></a>
+?>'target="blank"><img src='includes/images/instagram_button.png'></a>
         <form action='' method='post'><input type="text" name="insta" placeholder="voeg je instagram link toe"><br><input type="submit" name="instagram" value="OK"> </form>
     </div>
 </div>
