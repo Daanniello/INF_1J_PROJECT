@@ -845,4 +845,16 @@ input[type=number]::-webkit-outer-spin-button {
     padding: 0px;
 
 }
+
+.prive table{
+    width: 100%;
+    border: 1px;
+}
+
+.prive{
+    margin-right: 20px;
+    background-color: black;
+    width:100px;
+    height:200px;
+}
 }

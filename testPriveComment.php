@@ -32,12 +32,26 @@ if (isset($_SESSION['login_docent']) || isset($_SESSION['login_slber']))
 }
 if (isset($_SESSION['login_user']))
 {
-    $string="SELECT * FROM docent_comment WHERE StudentNummer = '{$_SESSION['id']}' ";
-    $show=mysqli_query($DBConnect, $string);
-    while ($row = mysqli_fetch_assoc($show)){
-        echo"{$row['Message_Comment']}";
-        $docent = "SELECT Naam FROM gebruiker WHERE ";
-        echo"{$row['Message_Comment']}";
+    $string = "SELECT * FROM docent_comment WHERE StudentNummer = '{$_SESSION['id']}' ";
+    $show = mysqli_query($DBConnect, $string);
+    echo"<div class='prive'>";
+        echo"<table>";
+        echo"<tr><th>Naam Docent</th><th>Comment</th></tr>";
+    while ($row = mysqli_fetch_assoc($show))
+    {
+        $commentID = $row['GebruikerID'];
+        $docent = "SELECT Naam
+                        FROM student
+                        JOIN docent_comment
+                        ON student.GebruikerID = docent_comment.GebruikerID
+                        WHERE student.GebruikerID = '$commentID'";
+        $SQLResult = mysqli_query($DBConnect, $docent);
+        $naam = mysqli_fetch_assoc($SQLResult);
+        echo"<tr><td>{$naam['Naam']}</td>";
+        echo"<td>{$row['Message_Comment']}</td></tr>";
+        echo"</table>";
+        echo"</div>";
+        
     }
 }
 
