@@ -352,10 +352,10 @@ input[type="email"]:focus,
 }
 
 .message{
-    width: 800px;
+    width: auto;
     padding: 10px;
     margin-left:20px;
-    height: 80px;
+    height: auto;
     float: left;
 	background-color: #6e4381;
         border-radius:0px 20px 20px 20px;
