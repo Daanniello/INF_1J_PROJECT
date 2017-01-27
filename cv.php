@@ -68,7 +68,7 @@
         {
             echo "Je hebt nog geen CV, Upload hem nu.";
             echo "<form enctype='multipart/form-data' action='#' method='post'>";
-				echo "<input type='file' name='upload' value='CV'><br>";
+				echo "<input type='file' name='upload'><br>";
 				echo "<input type='submit' name='submit' value='Upload CV'>";
 			echo "</form>";
             if (isset($_POST['submit']))
