@@ -93,6 +93,7 @@ and open the template in the editor.
                                 {
                                     echo "There was an error uploading the file, please try again!";
                                 } echo "<br><br> It can take some time to change...";
+                                echo "<meta http-equiv='refresh' content='0' ";
                             }
                         }
                     } else
