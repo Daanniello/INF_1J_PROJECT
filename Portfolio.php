@@ -300,9 +300,9 @@ function color_inverse($color)
     .project_file:nth-child(even) {
 
         background-color:<?php
-        if ($table['StyleCode'] == 1)
+        if ($table['StyleCode'] == 1 || $table['StyleCode'] == NULL)
         {
-            echo "";
+            echo "#6e4381";
         } else
         {
             echo color_inverse(color_inverse($table['KleurCode']));

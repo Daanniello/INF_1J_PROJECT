@@ -119,6 +119,7 @@ and open the template in the editor.
 							echo "<li class='li_opmaak'><a href='editpage.php'>Edit profile</a></li>";
 							echo "<li class='li_opmaak'><a href='cijfer.php'>Cijfers</a></li>";
 							echo "<li class='li_opmaak'><a href='cv.php'>Curriculum vitae</a></li>";
+                                                        echo "<li class='li_opmaak'><a href='testPriveComment.php'>Prive berichten</a></li>";
 						}
 						if (isset($_SESSION['login_docent']) || isset($_SESSION['login_slber'])) {
 							echo "<li class='li_opmaak'><a href='docent.php'>Studenten</a></li>";

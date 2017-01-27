@@ -15,7 +15,7 @@
 			
             while ($row = mysqli_fetch_assoc($query)){
 				echo "<tr>";
-					echo "<td>{$row['Naam']}&nbsp&nbsp<a href='studentfile.php?student={$row['StudentNummer']}'>Cijfers </a>&nbsp&nbsp<a href='portfolio_1.php?student={$row['StudentNummer']}'>Portfolio</a></td>";
+					echo "<td>{$row['Naam']}&nbsp&nbsp<a href='studentfile.php?student={$row['StudentNummer']}'>Cijfers </a>&nbsp&nbsp<a href='portfolio_1.php?student={$row['StudentNummer']}'>Portfolio</a>&nbsp&nbsp<a href='testPriveComment.php?student={$row['StudentNummer']}'>Bericht</a></td>";
 					echo "<td>{$row['StudentNummer']}</td>";
 					echo "<td>{$row['TelefoonNummer']}</td>";
 					echo "<td>{$row['Email']}</td>";
