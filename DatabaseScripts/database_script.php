@@ -35,8 +35,8 @@
                                 ProjectNummmer int,
                                 GebruikerID int,
                                 PRIMARY KEY (DocentCode),
-                                FOREIGN KEY (ProjectNummmer) REFERENCES Project(ProjectNummer),
-                                FOREIGN KEY (GebruikerID) REFERENCES Gebruiker(GebruikerID)
+                                FOREIGN KEY (ProjectNummmer) REFERENCES Project(ProjectNummer) ON DELETE CASCADE ON UPDATE CASCADE,
+                                FOREIGN KEY (GebruikerID) REFERENCES Gebruiker(GebruikerID)ON DELETE CASCADE ON UPDATE CASCADE
                                 )";
             $SQLTableStudent = "CREATE TABLE Student
                                 (
@@ -54,7 +54,7 @@
                                 GebruikerID int,
                                 beschrijving varchar(200),
                                 PRIMARY KEY (StudentNummer),
-                                FOREIGN KEY (GebruikerID) REFERENCES Gebruiker(GebruikerID)
+                                FOREIGN KEY (GebruikerID) REFERENCES Gebruiker(GebruikerID) ON DELETE CASCADE ON UPDATE CASCADE
                                 )";
             $SQLTableAdmin = "CREATE TABLE Admin
                                 (
@@ -64,7 +64,7 @@
                                 Email varchar(40),
                                 GebruikerID int,
                                 PRIMARY KEY (AdminCode),
-                                FOREIGN KEY (GebruikerID) REFERENCES Gebruiker(GebruikerID)
+                                FOREIGN KEY (GebruikerID) REFERENCES Gebruiker(GebruikerID) ON DELETE CASCADE ON UPDATE CASCADE
                                 )";
             $SQLTableGebruiker = "CREATE TABLE Gebruiker
                                 (
@@ -73,7 +73,7 @@
                                 Rechtcode int,
                                 Wachtwoord varchar(61),
                                 PRIMARY KEY (GebruikerID),
-                                FOREIGN KEY (Rechtcode) REFERENCES Recht(Rechtcode)
+                                FOREIGN KEY (Rechtcode) REFERENCES Recht(Rechtcode) ON DELETE CASCADE ON UPDATE CASCADE
                                 )";
             $SQLTableGebruikerCommunicatie = "CREATE TABLE Gebruiker_heeft_InterneCommunicatie
                                 (
@@ -81,8 +81,8 @@
                                 GebruikerID int,
                                 CommunicatieCode int,
                                 PRIMARY KEY (Code_Communicatie_ID),
-                                FOREIGN KEY (GebruikerID) REFERENCES Gebruiker(GebruikerID),
-                                FOREIGN KEY (CommunicatieCode) REFERENCES InterneCommunicatie(CommunicatieCode)
+                                FOREIGN KEY (GebruikerID) REFERENCES Gebruiker(GebruikerID) ON DELETE CASCADE ON UPDATE CASCADE,
+                                FOREIGN KEY (CommunicatieCode) REFERENCES InterneCommunicatie(CommunicatieCode) ON DELETE CASCADE ON UPDATE CASCADE
                                 )";
             $SQLTableInterneCommunicatie = "CREATE TABLE InterneCommunicatie
                                 (
@@ -104,7 +104,7 @@
                                 Cijfer FLOAT(4),
                                 GebruikerID int,
                                 PRIMARY KEY (SLBProductCode),
-                                FOREIGN KEY (GebruikerID) REFERENCES Gebruiker(GebruikerID)
+                                FOREIGN KEY (GebruikerID) REFERENCES Gebruiker(GebruikerID) ON DELETE CASCADE ON UPDATE CASCADE
                                 )";
             $SQLTableSLBERSLBProduct = "CREATE TABLE SLBer_heeft_SLBProduct
                                 (
@@ -112,8 +112,8 @@
                                 SLBerID int,
                                 SLBProductCode int,
                                 PRIMARY KEY (Code_SLB_ID),
-                                FOREIGN KEY (SLBerID) REFERENCES SLBer(SLBerID),
-                                FOREIGN KEY (SLBProductCode) REFERENCES SLBProduct(SLBProductCode)
+                                FOREIGN KEY (SLBerID) REFERENCES SLBer(SLBerID) ON DELETE CASCADE ON UPDATE CASCADE,
+                                FOREIGN KEY (SLBProductCode) REFERENCES SLBProduct(SLBProductCode) ON DELETE CASCADE ON UPDATE CASCADE
                                 )";
             $SQLTableSLBer = "CREATE TABLE SLBer
                                 (
@@ -123,7 +123,7 @@
                                 Email varchar(40),
                                 GebruikerID int,
                                 PRIMARY KEY (SLBerID),
-                                FOREIGN KEY (GebruikerID) REFERENCES Gebruiker(GebruikerID)
+                                FOREIGN KEY (GebruikerID) REFERENCES Gebruiker(GebruikerID) ON DELETE CASCADE ON UPDATE CASCADE
                                 )";
             $SQLTableProject = "CREATE TABLE Project
                                 (
@@ -133,7 +133,7 @@
                                 StudentNummer int,
                                 Cijfer FLOAT(4),
                                 PRIMARY KEY (ProjectNummer),
-                                FOREIGN KEY (StudentNummer) REFERENCES Student(StudentNummer)
+                                FOREIGN KEY (StudentNummer) REFERENCES Student(StudentNummer) ON DELETE CASCADE ON UPDATE CASCADE
                                 )";
             $SQLTableStyle = "CREATE TABLE Style
                                 (
@@ -144,7 +144,7 @@
                                 LetterGrote int(3),
                                 StudentNummer int,
                                 PRIMARY KEY (StyleID),
-                                FOREIGN KEY (StudentNummer) REFERENCES Student(StudentNummer)
+                                FOREIGN KEY (StudentNummer) REFERENCES Student(StudentNummer) ON DELETE CASCADE ON UPDATE CASCADE
                                 )";
             $SQLTableCV = "CREATE TABLE CV
                                 (
@@ -152,7 +152,7 @@
                                 Link varchar(45),
                                 StudentNummer int,
                                 PRIMARY KEY (CV_ID),
-                                FOREIGN KEY (StudentNummer) REFERENCES Student(StudentNummer)
+                                FOREIGN KEY (StudentNummer) REFERENCES Student(StudentNummer) ON DELETE CASCADE ON UPDATE CASCADE
                                 )";
             $SQLTableComment = "CREATE TABLE Comment
                                 (
@@ -162,7 +162,7 @@
                                 Date Date NOT NULL,
                                 Time VARCHAR(10) NOT NULL,
                                 PRIMARY KEY (CommentID),
-                                FOREIGN KEY (GebruikerID) REFERENCES Gebruiker(GebruikerID)
+                                FOREIGN KEY (GebruikerID) REFERENCES Gebruiker(GebruikerID) ON DELETE CASCADE ON UPDATE CASCADE
                                 )";
             $SQLRechtStudent = "INSERT INTO recht(RechtCode,Recht)
                             VALUES (1,'Student')";
@@ -175,11 +175,13 @@
             $SQLDocentComment = "CREATE TABLE docent_comment(
                             MessageID INT NOT NULL AUTO_INCREMENT,
                             Message_Comment VARCHAR(500) NOT NULL,
-                            ProjectNummer int,
-                            Docent INT(11) NOT NULL,
+                            ProjectNummer INT NOT NULL,
+                            StudentNummer INT NOT NULL,
+                            GebruikerID INT NOT NULL,
                             PRIMARY KEY (MessageID),
-                            FOREIGN KEY (ProjectNummer) REFERENCES Project(ProjectNummer),
-                            FOREIGN KEY (Docent) REFERENCES Docent(DocentCode));";
+                            FOREIGN KEY (ProjectNummer) REFERENCES Project(ProjectNummer) ON DELETE CASCADE ON UPDATE CASCADE,
+                            FOREIGN KEY (StudentNummer) REFERENCES Student(StudentNummer) ON DELETE CASCADE ON UPDATE CASCADE,
+                            FOREIGN KEY (GebruikerID) REFERENCES gebruiker(GebruikerID) ON DELETE CASCADE ON UPDATE CASCADE);";
             
         }
         $queryArray = [];

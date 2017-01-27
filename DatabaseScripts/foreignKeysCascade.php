@@ -33,6 +33,12 @@ $studentDrop = "ALTER TABLE student DROP FOREIGN KEY student_ibfk_1";
 $studentConstraint = "ALTER TABLE student add FOREIGN KEY(GebruikerID) REFERENCES gebruiker(GebruikerID) ON DELETE CASCADE ON UPDATE CASCADE;";
 $styleDrop = "ALTER TABLE style DROP FOREIGN KEY style_ibfk_1";
 $styleConstraint = "ALTER TABLE style add FOREIGN KEY(StudentNummer) REFERENCES student(StudentNummer) ON DELETE CASCADE ON UPDATE CASCADE;";
+$docentcommentDrop = "ALTER TABLE docent_comment DROP FOREIGN KEY docent_comment_ibfk_1";
+$docentcommentDrop1 = "ALTER TABLE docent_comment DROP FOREIGN KEY docent_comment_ibfk_2";
+$docentcommentDrop2 = "ALTER TABLE docent_comment DROP FOREIGN KEY docent_comment_ibfk_3";
+$docentcommentConstraint = "ALTER TABLE docent_comment add FOREIGN KEY(ProjectNummer) REFERENCES project(ProjectNummer) ON DELETE CASCADE ON UPDATE CASCADE;";
+$docentcommentConstraint1 = "ALTER TABLE docent_comment add FOREIGN KEY(StudentNummer) REFERENCES student(StudentNummer) ON DELETE CASCADE ON UPDATE CASCADE;";
+$docentcommentConstraint2 = "ALTER TABLE docent_comment add FOREIGN KEY(GebruikerID) REFERENCES gebruiker(GebruikerID) ON DELETE CASCADE ON UPDATE CASCADE;";
 
 
 $queryArray = [];
@@ -66,6 +72,12 @@ array_push($queryArray, $studentDrop);
 array_push($queryArray, $studentConstraint);
 array_push($queryArray, $styleDrop);
 array_push($queryArray, $styleConstraint);
+array_push($queryArray, $docentcommentDrop);
+array_push($queryArray, $docentcommentDrop1);
+array_push($queryArray, $docentcommentDrop2);
+array_push($queryArray, $docentcommentConstraint);
+array_push($queryArray, $docentcommentConstraint1);
+array_push($queryArray, $docentcommentConstraint2);
 foreach ($queryArray as $query) {
     $QueryResult = mysqli_query($DBConnect, $query);
     if ($QueryResult === FALSE) {

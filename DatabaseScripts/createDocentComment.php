@@ -22,9 +22,9 @@
                             StudentNummer INT NOT NULL,
                             GebruikerID INT NOT NULL,
                             PRIMARY KEY (MessageID),
-                            FOREIGN KEY (ProjectNummer) REFERENCES Project(ProjectNummer),
-                            FOREIGN KEY (StudentNummer) REFERENCES Student(StudentNummer),
-                            FOREIGN KEY (GebruikerID) REFERENCES gebruiker(GebruikerID));";
+                            FOREIGN KEY (ProjectNummer) REFERENCES Project(ProjectNummer) ON DELETE CASCADE ON UPDATE CASCADE,
+                            FOREIGN KEY (StudentNummer) REFERENCES Student(StudentNummer) ON DELETE CASCADE ON UPDATE CASCADE,
+                            FOREIGN KEY (GebruikerID) REFERENCES gebruiker(GebruikerID) ON DELETE CASCADE ON UPDATE CASCADE);";
         }
         $queryArray = [];
         array_push($queryArray, $SQLDocentComment);
