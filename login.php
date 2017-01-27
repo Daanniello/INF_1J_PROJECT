@@ -28,6 +28,8 @@
 							$_SESSION['login_docent']= 2;
 						} elseif($row["rechtcode"]== 3){
 							$_SESSION['login_slber']= 3;
+						} elseif($row["rechtcode"]== 4){
+							$_SESSION['login_admin']= 4;
 						} else {
 							$_SESSION['login_user'] = 1;
 						}
