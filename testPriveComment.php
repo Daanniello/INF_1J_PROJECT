@@ -2,9 +2,9 @@
 include "includes/topinclude.php";
 include "connection_database.php";
 ?>
+
+<div class='inhoud'>
 <h1>Prive berichten.</h1>
-
-
 
 <?php
 if (isset($_SESSION['login_docent']) || isset($_SESSION['login_slber']))
@@ -52,8 +52,12 @@ if (isset($_SESSION['login_user']))
         echo"</table>";
         echo"</div>";
         
+        
     }
 }
 
-include "includes/botinclude.php";
+?>
+</div>
+
+<?php include "includes/botinclude.php";
 ?>
